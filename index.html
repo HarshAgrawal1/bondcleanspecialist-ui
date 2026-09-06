@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bond Clean Specialist | End of Lease Cleaning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="topbar-inner">
+        <span>Bond back support on every booked clean</span>
+        <a href="tel:1300555014">1300 555 014</a>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html">
+          <span class="mark">B</span>
+          <span class="brand-name">Bond Clean Specialist</span>
+        </a>
+        <nav class="nav">
+          <a class="active" href="index.html">Home</a>
+          <div class="drop">
+            <span>Services</span>
+            <div class="drop-list">
+              <a href="services.html#bond">Bond cleaning</a>
+              <a href="services.html#spring">Spring cleaning</a>
+              <a href="services.html#oven">Oven cleaning</a>
+              <a href="services.html#carpet">Carpet cleaning</a>
+              <a href="services.html#bbq">BBQ cleaning</a>
+            </div>
+          </div>
+          <a href="areas.html">Areas</a>
+          <a href="about.html">About</a>
+          <a href="tips.html">Cleaning tips</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button class="menu-btn" type="button" data-menu aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+          <button class="quote-open" type="button" data-open-quote>Get a quote</button>
+        </div>
+      </div>
+      <div class="mobile-nav" data-mobile-nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="areas.html">Areas</a>
+        <a href="about.html">About</a>
+        <a href="tips.html">Cleaning tips</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Bond Clean Specialist</p>
+            <h1>End of lease cleaning that helps you get the bond back.</h1>
+            <p class="lede">
+              Bond Clean Specialist sends a trained local team to vacant rentals
+              across Gold Coast and Brisbane. We work to a landlord-style
+              checklist, bring our own supplies, and book a free reclean if the
+              inspection flags something we missed.
+            </p>
+            <div class="hero-meta">
+              <span class="chip">Plant-based products</span>
+              <span class="chip">Police-checked cleaners</span>
+              <span class="chip">Same-week bookings</span>
+              <span class="chip">From $40 / hour</span>
+            </div>
+            <div>
+              <a class="btn btn-ink" href="tel:1300555014">Call 1300 555 014</a>
+            </div>
+          </div>
+
+          <aside class="quote-card" id="quote">
+            <h2>Request a free quote</h2>
+            <p class="hint">Step 1 is the property. Step 2 is your contact details.</p>
+            <div class="success" data-success>
+              <h3>Quote request sent</h3>
+              <p>A coordinator from Bond Clean Specialist will call you shortly with a written price.</p>
+            </div>
+            <form data-quote-form>
+              <div class="steps"><span class="on" data-bar></span><span data-bar></span></div>
+              <div data-step="1">
+                <label class="field">
+                  <span>Service</span>
+                  <select data-service required>
+                    <option value="bond">Bond cleaning</option>
+                    <option value="spring">Spring cleaning</option>
+                  </select>
+                </label>
+                <div data-bond>
+                  <div class="grid-2">
+                    <label class="field">
+                      <span>Bed + study</span>
+                      <select required>
+                        <option value="">Choose</option>
+                        <option>1 room</option>
+                        <option>2 rooms</option>
+                        <option>3 rooms</option>
+                        <option>4 rooms</option>
+                        <option>5 rooms</option>
+                        <option>6+ rooms</option>
+                      </select>
+                    </label>
+                    <label class="field">
+                      <span>Bathrooms</span>
+                      <select required>
+                        <option value="">Choose</option>
+                        <option>1 bathroom</option>
+                        <option>2 bathrooms</option>
+                        <option>3 bathrooms</option>
+                        <option>4 bathrooms</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="grid-2">
+                    <label class="field">
+                      <span>Living areas</span>
+                      <select required>
+                        <option value="">Choose</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                      </select>
+                    </label>
+                    <label class="field">
+                      <span>Furnished</span>
+                      <select required>
+                        <option value="">Choose</option>
+                        <option>No</option>
+                        <option>Yes</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="grid-2">
+                    <label class="field">
+                      <span>House type</span>
+                      <select required>
+                        <option value="">Choose</option>
+                        <option>Unit</option>
+                        <option>House</option>
+                        <option>Two storey</option>
+                        <option>Multi storey</option>
+                      </select>
+                    </label>
+                    <label class="field">
+                      <span>Blinds</span>
+                      <select required>
+                        <option value="">Choose</option>
+                        <option>No blinds</option>
+                        <option>Vertical</option>
+                        <option>Venetians</option>
+                        <option>Rollers</option>
+                        <option>Shutters</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="checks">
+                    <label><input type="checkbox" /> Carpet steam</label>
+                    <label><input type="checkbox" /> Pest treatment</label>
+                  </div>
+                </div>
+                <div data-spring hidden>
+                  <label class="field">
+                    <span>Hours needed</span>
+                    <select required>
+                      <option value="">Choose</option>
+                      <option>2 hours</option>
+                      <option>3 hours</option>
+                      <option>4 hours</option>
+                      <option>6 hours</option>
+                      <option>8 hours</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+              <div data-step="2" hidden>
+                <label class="field"><span>Full name</span><input type="text" required /></label>
+                <label class="field"><span>Phone</span><input type="tel" required /></label>
+                <label class="field"><span>Email</span><input type="email" required /></label>
+                <label class="field"><span>Suburb</span><input type="text" required /></label>
+              </div>
+              <p class="form-note" data-note></p>
+              <div class="form-nav">
+                <button class="btn btn-ghost" type="button" data-back hidden>Back</button>
+                <button class="btn btn-clay" type="button" data-next>Continue</button>
+              </div>
+            </form>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="wrap split">
+          <div>
+            <p class="eyebrow">Bond back support</p>
+            <h2>Professional bond cleaning for Gold Coast rentals.</h2>
+            <p>
+              Moving out is already a long list. Bond Clean Specialist takes the
+              exit clean so you can hand the keys back with a property that
+              matches a standard real-estate checklist.
+            </p>
+            <p>
+              If the agent asks for a touch-up on work we completed, we return
+              within 72 hours at no extra charge, subject to our bond-back terms.
+            </p>
+            <a class="btn btn-clay" href="tel:1300555014">Call 1300 555 014</a>
+          </div>
+          <div class="stat-row">
+            <div class="stat"><b>1500+</b>Happy clients</div>
+            <div class="stat"><b>72 hrs</b>Free reclean window</div>
+            <div class="stat"><b>700+</b>Completed jobs</div>
+            <div class="stat"><b>7 days</b>Booking availability</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="eyebrow">Why choose us</p>
+            <h2>A clear process, not a rushed once-over.</h2>
+          </div>
+          <div class="cards">
+            <article class="card">
+              <span class="num">01</span>
+              <h3>Checklist-led cleans</h3>
+              <p>We follow a room-by-room list used by local agents so ovens, tracks, and wet areas are not skipped.</p>
+            </article>
+            <article class="card">
+              <span class="num">02</span>
+              <h3>Bond-back reclean</h3>
+              <p>If the inspection notes a gap in our work, we come back inside 72 hours and finish it at no cost.</p>
+            </article>
+            <article class="card">
+              <span class="num">03</span>
+              <h3>Book and pay simply</h3>
+              <p>Send the form, lock a date by phone, and pay through a secure online link before the team arrives.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="wrap split">
+          <div>
+            <p class="eyebrow">Affordable packages</p>
+            <h2>Full-home exit cleans without hidden extras.</h2>
+            <p>
+              Pricing is based on bedrooms, bathrooms, and add-ons such as carpet
+              steam or pest treatment. A one-bedroom unit is quoted differently
+              from a two-storey house, and you see that breakdown before you book.
+            </p>
+            <p>
+              Indoor rooms, kitchens, laundries, and bathrooms sit in the base
+              package. Outdoor pressure work and high-access windows are listed
+              separately so the quote stays honest.
+            </p>
+            <button class="btn btn-ink" type="button" data-open-quote>Request a free quote</button>
+          </div>
+          <article class="card media">
+            <img src="https://images.unsplash.com/photo-1556912173-46c336c7fd55?auto=format&fit=crop&w=1100&q=80" alt="Clean kitchen after a bond clean" />
+            <div class="pad">
+              <h3>Kitchen, wet areas, and living spaces</h3>
+              <p>Degrease, sanitise, vacuum, and mop are included in every Bond Clean Specialist visit.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section moss">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="eyebrow">How we work</p>
+            <h2>Three steps from quote to walkthrough.</h2>
+          </div>
+          <div class="cards">
+            <article class="card">
+              <span class="num">01</span>
+              <h3>Book your slot</h3>
+              <p>Call 1300 555 014 or send the quote form. We confirm the date, access, and any extras the same day.</p>
+            </article>
+            <article class="card">
+              <span class="num">02</span>
+              <h3>We clean the property</h3>
+              <p>The team arrives with machines and products, then works through the Bond Clean Specialist checklist.</p>
+            </article>
+            <article class="card">
+              <span class="num">03</span>
+              <h3>You send feedback</h3>
+              <p>After the agent inspects, tell us if anything needs another pass. Recleans sit inside 72 hours.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="eyebrow">The team</p>
+            <h2>Local cleaners you can leave with the keys.</h2>
+          </div>
+          <div class="feature-grid">
+            <article class="feature">
+              <h3>Trained on rentals</h3>
+              <p>Each cleaner has worked vacant units and houses, including ovens, tracks, and built-in robes.</p>
+            </article>
+            <article class="feature">
+              <h3>Police checked</h3>
+              <p>The on-site team is identity-checked and covered by public liability insurance.</p>
+            </article>
+            <article class="feature">
+              <h3>On-time arrival</h3>
+              <p>We send an arrival window the day before so you can plan the meter read and key handover.</p>
+            </article>
+            <article class="feature">
+              <h3>Calm handoff</h3>
+              <p>You get a short job summary when we leave, so the agent conversation is easier.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="eyebrow">Reviews</p>
+            <h2>What recent clients said.</h2>
+          </div>
+          <div class="people">
+            <blockquote class="quote">
+              <p>The Southport unit looked inspection-ready. Oven, balcony tracks, and the second bathroom were done properly.</p>
+              <footer>Amelia Hart</footer>
+            </blockquote>
+            <blockquote class="quote">
+              <p>We booked late in the week and they still fitted us in. Bond came back with no extra invoice from the agent.</p>
+              <footer>Daniel Cho</footer>
+            </blockquote>
+            <blockquote class="quote">
+              <p>Friendly crew, no damage to furniture we had not moved yet, and a clear quote before they started.</p>
+              <footer>Priya Nair</footer>
+            </blockquote>
+            <blockquote class="quote">
+              <p>Same-day carpet add-on was worth it. The townhouse smelled clean and the photos for the agent were easy.</p>
+              <footer>Marcus Reid</footer>
+            </blockquote>
+            <blockquote class="quote">
+              <p>They recleaned one cupboard the next morning after the inspection note. No argument, just sorted.</p>
+              <footer>Elena Voss</footer>
+            </blockquote>
+            <blockquote class="quote">
+              <p>Good communication and a fair price for a four-bedroom house in Upper Coomera.</p>
+              <footer>Jason Blake</footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap split">
+          <div>
+            <p class="eyebrow">More than dusting</p>
+            <h2>One team for the exit clean and the extras.</h2>
+            <p>
+              Bond Clean Specialist can add oven, BBQ, carpet, and pest work to
+              the same booking. That keeps one crew, one invoice, and one
+              reclean promise instead of three different contractors.
+            </p>
+          </div>
+          <div class="benefit-grid">
+            <div class="benefit"><h3>Green products</h3><p>Low-fume formulas for kitchens and kids’ rooms.</p></div>
+            <div class="benefit"><h3>Real people on the phone</h3><p>A coordinator answers 1300 555 014 seven days.</p></div>
+            <div class="benefit"><h3>Time back</h3><p>You pack and move. We take the cleaning hours.</p></div>
+            <div class="benefit"><h3>Rated local crews</h3><p>Regular Gold Coast and Brisbane teams, not a random pickup.</p></div>
+            <div class="benefit"><h3>Polite on site</h3><p>Shoes off at the door and a walk-through before we leave.</p></div>
+            <div class="benefit"><h3>Seven-day roster</h3><p>Weekend and mid-week slots, including tight handover dates.</p></div>
+            <div class="benefit"><h3>Fresh finish</h3><p>Floors mopped last so the property is ready for photos.</p></div>
+            <div class="benefit"><h3>Same-day options</h3><p>Ask early in the morning if you need an emergency slot.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section dark">
+        <div class="wrap cta-band">
+          <div>
+            <p class="eyebrow">New clients</p>
+            <h2>First booking with Bond Clean Specialist can include a 30% welcome rate.</h2>
+            <p>
+              Mention the welcome offer when you call or submit the form. The
+              coordinator applies it to the first package only, after the
+              property size is confirmed.
+            </p>
+          </div>
+          <div>
+            <button class="btn btn-clay" type="button" data-open-quote>Claim the quote</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap split">
+          <div data-tab-group>
+            <p class="eyebrow">What is included</p>
+            <h2>Room lists you can send to the agent.</h2>
+            <div class="tabs">
+              <button class="tab active" type="button" data-tab="general">General</button>
+              <button class="tab" type="button" data-tab="kitchen">Kitchen</button>
+              <button class="tab" type="button" data-tab="laundry">Laundry</button>
+              <button class="tab" type="button" data-tab="bath">Bathrooms</button>
+            </div>
+            <ul class="list" data-panel="general">
+              <li>Cobwebs, insect marks, and light fittings we can reach</li>
+              <li>Fans, split-system filters, switches, and skirting</li>
+              <li>Internal windows, tracks, and standard blinds</li>
+              <li>Vacuum and mop of hard floors, plus carpet vacuum</li>
+            </ul>
+            <ul class="list" data-panel="kitchen" hidden>
+              <li>Sinks, benches, splashbacks, and cupboard interiors</li>
+              <li>Stovetop, oven, rangehood, and appliance exteriors</li>
+              <li>Floors, skirting, and sliding-door tracks</li>
+              <li>Switches and accessible vents</li>
+            </ul>
+            <ul class="list" data-panel="laundry" hidden>
+              <li>Tubs, cabinets, and behind the washer where safe</li>
+              <li>Lint catch around the dryer</li>
+              <li>Walls, windows, and floors</li>
+              <li>Doors, tracks, and power points</li>
+            </ul>
+            <ul class="list" data-panel="bath" hidden>
+              <li>Toilet, cistern, shower, bath, and soap holder</li>
+              <li>Mirrors, tapware, rails, and exhaust fan</li>
+              <li>Cupboards, floors, and window tracks</li>
+              <li>Spot-clean of marks on walls and switches</li>
+            </ul>
+          </div>
+          <div data-tab-group>
+            <h3>Not included unless quoted</h3>
+            <div class="tabs">
+              <button class="tab active" type="button" data-tab="x-general">General</button>
+              <button class="tab" type="button" data-tab="x-kitchen">Kitchen</button>
+              <button class="tab" type="button" data-tab="x-laundry">Laundry</button>
+              <button class="tab" type="button" data-tab="x-bath">Bathrooms</button>
+            </div>
+            <ul class="list" data-panel="x-general">
+              <li>Pressure cleaning, garage shells, and high work above a step ladder</li>
+              <li>Hazardous areas or broken fittings</li>
+              <li>Damage beyond normal wear and tear</li>
+            </ul>
+            <ul class="list" data-panel="x-kitchen" hidden>
+              <li>Inaccessible light fittings and roller-blind servicing</li>
+              <li>Moving large appliances without notice</li>
+            </ul>
+            <ul class="list" data-panel="x-laundry" hidden>
+              <li>Full dryer-vent dismantle and stain removal that needs specialist gear</li>
+              <li>Items not listed on the booking</li>
+            </ul>
+            <ul class="list" data-panel="x-bath" hidden>
+              <li>Heavy mould treatment and full wall restoration</li>
+              <li>Work at heights without the agreed ladder setup</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="eyebrow">Areas</p>
+            <h2>We cover Gold Coast suburbs and nearby Brisbane streets.</h2>
+          </div>
+          <div class="areas">
+            <a href="areas.html">Southport</a>
+            <a href="areas.html">Surfers Paradise</a>
+            <a href="areas.html">Broadbeach</a>
+            <a href="areas.html">Robina</a>
+            <a href="areas.html">Helensvale</a>
+            <a href="areas.html">Coomera</a>
+            <a href="areas.html">Upper Coomera</a>
+            <a href="areas.html">Varsity Lakes</a>
+            <a href="areas.html">Burleigh Heads</a>
+            <a href="areas.html">Palm Beach</a>
+            <a href="areas.html">Coolangatta</a>
+            <a href="areas.html">Nerang</a>
+            <a href="areas.html">Ashmore</a>
+            <a href="areas.html">Labrador</a>
+            <a href="areas.html">Runaway Bay</a>
+            <a href="areas.html">Hope Island</a>
+          </div>
+          <p><a class="btn btn-ghost" href="areas.html">See the full area list</a></p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap split">
+          <div>
+            <p class="eyebrow">Questions</p>
+            <h2>Straight answers before you book.</h2>
+          </div>
+          <div class="faq">
+            <details open>
+              <summary>What is bond cleaning?</summary>
+              <p>It is a deep exit clean of a rental so the property meets the condition expected at handover. Tenants use it to support a full bond refund.</p>
+            </details>
+            <details>
+              <summary>Why use Bond Clean Specialist?</summary>
+              <p>You get a written checklist, insured local cleaners, and a timed reclean if the agent finds a gap in our work.</p>
+            </details>
+            <details>
+              <summary>Do you offer a bond-back promise?</summary>
+              <p>Yes. If our clean is the issue, we return within 72 hours at no charge. Terms apply and we explain them on the quote.</p>
+            </details>
+            <details>
+              <summary>How is the price set?</summary>
+              <p>Size, condition, and extras such as carpet or pest work change the figure. Send the form and we reply with a fixed range.</p>
+            </details>
+            <details>
+              <summary>How long does a clean take?</summary>
+              <p>Most units take a few hours. Larger houses can run most of the day. We confirm the window when we book.</p>
+            </details>
+            <details>
+              <summary>Should the property be empty?</summary>
+              <p>Yes if you can. Remove boxes and heavy furniture so we can reach walls, carpets, and cupboard interiors.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section dark">
+        <div class="wrap cta-band">
+          <div>
+            <p class="eyebrow">Bond Clean Specialist</p>
+            <h2>Book the exit clean and keep the moving day simple.</h2>
+            <p>Call the team or send the form. We will lock a date that matches your key handover.</p>
+          </div>
+          <div>
+            <a class="btn btn-ghost light" href="tel:1300555014">1300 555 014</a>
+            <button class="btn btn-clay" type="button" data-open-quote>Get a quote</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <h3>Bond Clean Specialist</h3>
+          <p>Residential end-of-lease cleaning for Gold Coast and Brisbane rentals, plus oven, BBQ, carpet, and pest add-ons.</p>
+        </div>
+        <div>
+          <h3>Useful links</h3>
+          <a href="about.html">About</a>
+          <a href="tips.html">Cleaning tips</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h3>Services</h3>
+          <a href="services.html#bond">Bond cleaning</a>
+          <a href="services.html#spring">Spring cleaning</a>
+          <a href="services.html#bbq">BBQ cleaning</a>
+          <a href="services.html#oven">Oven cleaning</a>
+          <a href="services.html#carpet">Carpet cleaning</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="tel:1300555014">1300 555 014</a>
+          <p>ABN 12 345 678 901</p>
+        </div>
+      </div>
+      <div class="wrap tiny">© 2026 Bond Clean Specialist. All rights reserved.</div>
+    </footer>
+
+    <div class="mobile-cta">
+      <a href="tel:1300555014">Call us</a>
+      <button type="button" data-open-quote>Get free quote</button>
+    </div>
+
+    <div class="quote-layer" data-quote>
+      <div class="quote-dim" data-close-quote></div>
+      <aside class="quote-panel" role="dialog" aria-label="Request a free quote">
+        <div class="quote-top">
+          <h2>Request a free quote</h2>
+          <button class="close-x" type="button" data-close-quote aria-label="Close">×</button>
+        </div>
+        <div class="success" data-success>
+          <h3>Quote request sent</h3>
+          <p>Bond Clean Specialist will call you with a written price.</p>
+        </div>
+        <form data-quote-form>
+          <div class="steps"><span class="on" data-bar></span><span data-bar></span></div>
+          <div data-step="1">
+            <label class="field">
+              <span>Service</span>
+              <select data-service required>
+                <option value="bond">Bond cleaning</option>
+                <option value="spring">Spring cleaning</option>
+              </select>
+            </label>
+            <div data-bond>
+              <div class="grid-2">
+                <label class="field"><span>Bed + study</span>
+                  <select required>
+                    <option value="">Choose</option>
+                    <option>1 room</option>
+                    <option>2 rooms</option>
+                    <option>3 rooms</option>
+                    <option>4 rooms</option>
+                  </select>
+                </label>
+                <label class="field"><span>Bathrooms</span>
+                  <select required>
+                    <option value="">Choose</option>
+                    <option>1 bathroom</option>
+                    <option>2 bathrooms</option>
+                    <option>3 bathrooms</option>
+                  </select>
+                </label>
+              </div>
+              <div class="checks">
+                <label><input type="checkbox" /> Carpet steam</label>
+                <label><input type="checkbox" /> Pest treatment</label>
+              </div>
+            </div>
+            <div data-spring hidden>
+              <label class="field"><span>Hours needed</span>
+                <select required>
+                  <option value="">Choose</option>
+                  <option>3 hours</option>
+                  <option>4 hours</option>
+                  <option>6 hours</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div data-step="2" hidden>
+            <label class="field"><span>Full name</span><input type="text" required /></label>
+            <label class="field"><span>Phone</span><input type="tel" required /></label>
+            <label class="field"><span>Email</span><input type="email" required /></label>
+            <label class="field"><span>Suburb</span><input type="text" required /></label>
+          </div>
+          <p class="form-note" data-note></p>
+          <div class="form-nav">
+            <button class="btn btn-ghost" type="button" data-back hidden>Back</button>
+            <button class="btn btn-clay" type="button" data-next>Continue</button>
+          </div>
+        </form>
+      </aside>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
