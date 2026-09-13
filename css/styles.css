@@ -1,17 +1,17 @@
 :root {
-  --navy: #0b2a5b;
-  --navy-deep: #071d40;
-  --blue: #1557c0;
-  --blue-mid: #2a6fe0;
-  --sky: #e8f1fb;
-  --ice: #f4f8fd;
+  --navy: #0c2958;
+  --navy-deep: #081e40;
+  --blue: #163a73;
+  --blue-mid: #1f4d8f;
+  --sky: #eef2f7;
+  --ice: #f6f8fb;
   --ink: #1b2433;
   --ink-soft: #4a5568;
-  --line: #c9d6e8;
-  --gold: #e09b1a;
-  --gold-deep: #c48410;
+  --line: #d5dce6;
+  --gold: #dc9b21;
+  --gold-deep: #c48612;
   --white: #ffffff;
-  --shadow: 0 10px 28px rgba(11, 42, 91, 0.12);
+  --shadow: 0 10px 28px rgba(12, 41, 88, 0.12);
   --radius: 6px;
   --header: 70px;
   --max: 1180px;
@@ -198,30 +198,19 @@ p {
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
   min-width: 0;
   color: #fff;
 }
 
-.mark {
-  width: 38px;
-  height: 38px;
+.brand img {
+  display: block;
+  height: 52px;
+  width: auto;
+  max-width: min(240px, 52vw);
+  object-fit: contain;
+  background: #fff;
   border-radius: 4px;
-  background: var(--gold);
-  color: var(--navy-deep);
-  display: grid;
-  place-items: center;
-  font-family: "Merriweather", Georgia, serif;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
-.brand-name {
-  font-family: "Merriweather", Georgia, serif;
-  font-size: 0.98rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  padding: 2px 8px;
 }
 
 .nav {
@@ -628,6 +617,16 @@ p + .btn,
 .footer-grid h3 {
   color: #fff;
   font-size: 1.15rem;
+}
+
+.footer-logo {
+  height: 56px;
+  width: auto;
+  max-width: 220px;
+  background: #fff;
+  border-radius: 4px;
+  padding: 4px 10px;
+  margin-bottom: 12px;
 }
 
 .site-footer a {
