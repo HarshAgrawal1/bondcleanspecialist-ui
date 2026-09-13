@@ -13,7 +13,7 @@
   --white: #ffffff;
   --shadow: 0 10px 28px rgba(12, 41, 88, 0.12);
   --radius: 6px;
-  --header: 70px;
+  --header: 92px;
   --max: 1180px;
 }
 
@@ -199,18 +199,17 @@ p {
   display: flex;
   align-items: center;
   min-width: 0;
-  color: #fff;
 }
 
 .brand img {
   display: block;
-  height: 52px;
+  height: 64px;
   width: auto;
-  max-width: min(240px, 52vw);
+  max-width: min(340px, 64vw);
   object-fit: contain;
   background: #fff;
-  border-radius: 4px;
-  padding: 2px 8px;
+  border-radius: 6px;
+  padding: 8px 12px;
 }
 
 .nav {
@@ -357,6 +356,10 @@ p {
   font-size: clamp(1.85rem, 6vw, 3.3rem);
 }
 
+.hero .eyebrow {
+  color: var(--gold);
+}
+
 .hero .lede {
   color: #d7e4f7;
 }
@@ -427,6 +430,18 @@ p {
   color: #e8f1fb;
 }
 
+.section.dark .eyebrow,
+.section.moss .eyebrow {
+  color: var(--gold);
+}
+
+.section.dark .num,
+.section.moss .num,
+.section.dark .stat b,
+.section.moss .stat b {
+  color: var(--gold);
+}
+
 .section-head {
   display: grid;
   gap: 10px;
@@ -492,6 +507,66 @@ p {
   font-family: "Merriweather", Georgia, serif;
   color: var(--blue);
   font-size: 1.8rem;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 26px 24px 22px;
+  box-shadow: 0 8px 20px rgba(12, 41, 88, 0.06);
+}
+
+.service-card .label {
+  margin: 0 0 8px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+.service-card h3 {
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  color: var(--ink-soft);
+}
+
+.checks-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.checks-list li {
+  position: relative;
+  padding: 0 0 0 22px;
+  border: 0;
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+.checks-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.service-card .btn {
+  margin: 22px 0 0;
+  align-self: flex-start;
 }
 
 .card.media {
@@ -620,12 +695,12 @@ p + .btn,
 }
 
 .footer-logo {
-  height: 56px;
+  height: 52px;
   width: auto;
-  max-width: 220px;
+  max-width: 260px;
   background: #fff;
   border-radius: 4px;
-  padding: 4px 10px;
+  padding: 8px 10px;
   margin-bottom: 12px;
 }
 
@@ -809,9 +884,12 @@ p + .btn,
   color: #fff;
 }
 
-.page-hero h1,
-.page-hero .eyebrow {
+.page-hero h1 {
   color: #fff;
+}
+
+.page-hero .eyebrow {
+  color: var(--gold);
 }
 
 .page-hero .lede {
