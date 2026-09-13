@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <div class="topbar"><div class="topbar-inner"><span>Bond back support on every booked clean</span><a href="tel:1300555014">1300 555 014</a></div></div>
+    <div class="topbar"><div class="topbar-inner"><span>Bond cleaning, spring cleaning and oven detailing</span><a href="tel:1300555014">1300 555 014</a></div></div>
     <header class="site-header">
       <div class="header-inner">
         <a class="brand" href="index.html"><span class="mark">B</span><span class="brand-name">Bond Clean Specialist</span></a>
@@ -19,26 +19,30 @@
           <a href="services.html">Services</a>
           <a href="areas.html">Areas</a>
           <a href="about.html">About</a>
-          <a href="tips.html">Cleaning tips</a>
+          <a href="tips.html">How to prepare</a>
           <a class="active" href="contact.html">Contact</a>
         </nav>
         <div class="header-actions">
           <button class="menu-btn" type="button" data-menu aria-label="Menu"><span></span><span></span><span></span></button>
-          <button class="quote-open" type="button" data-open-quote>Get a quote</button>
+          <button class="quote-open" type="button" data-open-quote>Request a free quote</button>
         </div>
       </div>
       <div class="mobile-nav" data-mobile-nav>
         <a href="index.html">Home</a><a href="services.html">Services</a><a href="areas.html">Areas</a>
-        <a href="about.html">About</a><a href="tips.html">Cleaning tips</a><a href="contact.html">Contact</a>
+        <a href="about.html">About</a><a href="tips.html">How to prepare</a><a href="contact.html">Contact</a>
       </div>
     </header>
 
     <main>
       <section class="page-hero">
         <div class="wrap">
-          <p class="eyebrow">Talk to the desk</p>
-          <h1>Call, message, or send the quote form.</h1>
-          <p class="lede">A coordinator answers seven days. Have the suburb, bedroom count, and handover date ready.</p>
+          <p class="eyebrow">Contact us</p>
+          <h1>Let’s get your property cleaned</h1>
+          <p class="lede">
+            Whether you need a bond clean before moving out, a spring clean to
+            refresh your home, or a one-off oven clean, we’re ready to help.
+            Reach out today and we’ll get back to you with a quote.
+          </p>
         </div>
       </section>
 
@@ -46,48 +50,46 @@
         <div class="wrap split">
           <div class="card">
             <h3>Bond Clean Specialist</h3>
-            <p>Phone: <a href="tel:1300555014">1300 555 014</a></p>
-            <p>Email: hello@bondcleanspecialist.com.au</p>
-            <p>Hours: 7 days, 7:30am to 6:30pm</p>
-            <p>ABN 12 345 678 901</p>
-            <p>Gold Coast office visits are by appointment only. Most bookings are confirmed on the phone.</p>
-            <a class="btn btn-ink" href="tel:1300555014">Call now</a>
+            <p>Phone: <a href="tel:1300555014">1300 555 014</a> — call us for a quick chat or to book a service.</p>
+            <p>Email: <a href="mailto:hello@bondcleanspecialist.com.au">hello@bondcleanspecialist.com.au</a> — send us the details of your property and cleaning needs.</p>
+            <p>Service areas: Gold Coast and Brisbane. See the full suburb list on the <a href="areas.html">areas page</a>.</p>
+            <p>Hours: seven days. Have the property type, service required, and preferred date ready.</p>
+            <a class="btn btn-ink" href="tel:1300555014">Call 1300 555 014</a>
           </div>
           <aside class="quote-card">
             <h2>Request a free quote</h2>
-            <p class="hint">Same two-step form used on the home page.</p>
+            <p class="hint">Name, phone, email, property type, service and preferred date.</p>
             <div class="success" data-success>
-              <h3>Message received</h3>
-              <p>We will call you from Bond Clean Specialist with a written price.</p>
+              <h3>Enquiry received</h3>
+              <p>We’ll get back to you with a quote based on your property.</p>
             </div>
             <form data-quote-form>
               <div class="steps"><span class="on" data-bar></span><span data-bar></span></div>
               <div data-step="1">
-                <label class="field"><span>Service</span>
-                  <select data-service required>
-                    <option value="bond">Bond cleaning</option>
-                    <option value="spring">Spring cleaning</option>
+                <label class="field">
+                  <span>Service required</span>
+                  <select required>
+                    <option value="">Choose</option>
+                    <option>Bond cleaning</option>
+                    <option>Spring cleaning</option>
+                    <option>Oven cleaning</option>
                   </select>
                 </label>
-                <div data-bond>
-                  <div class="grid-2">
-                    <label class="field"><span>Bed + study</span>
-                      <select required><option value="">Choose</option><option>1 room</option><option>2 rooms</option><option>3 rooms</option><option>4 rooms</option></select>
-                    </label>
-                    <label class="field"><span>Bathrooms</span>
-                      <select required><option value="">Choose</option><option>1 bathroom</option><option>2 bathrooms</option><option>3 bathrooms</option></select>
-                    </label>
-                  </div>
-                </div>
-                <div data-spring hidden>
-                  <label class="field"><span>Hours needed</span>
-                    <select required><option value="">Choose</option><option>3 hours</option><option>4 hours</option><option>6 hours</option></select>
-                  </label>
-                </div>
+                <label class="field">
+                  <span>Property type</span>
+                  <select required>
+                    <option value="">Choose</option>
+                    <option>Unit</option>
+                    <option>House</option>
+                    <option>Townhouse</option>
+                    <option>Two storey</option>
+                  </select>
+                </label>
+                <label class="field"><span>Preferred date</span><input type="date" required /></label>
               </div>
               <div data-step="2" hidden>
                 <label class="field"><span>Full name</span><input type="text" required /></label>
-                <label class="field"><span>Phone</span><input type="tel" required /></label>
+                <label class="field"><span>Phone number</span><input type="tel" required /></label>
                 <label class="field"><span>Email</span><input type="email" required /></label>
                 <label class="field"><span>Suburb</span><input type="text" required /></label>
               </div>
@@ -104,28 +106,28 @@
 
     <footer class="site-footer">
       <div class="wrap footer-grid">
-        <div><h3>Bond Clean Specialist</h3><p>Residential end-of-lease cleaning for Gold Coast and Brisbane rentals.</p></div>
-        <div><h3>Useful links</h3><a href="about.html">About</a><a href="tips.html">Cleaning tips</a><a href="services.html">Services</a></div>
-        <div><h3>Services</h3><a href="services.html#bond">Bond cleaning</a><a href="areas.html">Areas</a></div>
-        <div><h3>Contact</h3><a href="tel:1300555014">1300 555 014</a><p>ABN 12 345 678 901</p></div>
+        <div><h3>Bond Clean Specialist</h3><p>Professional bond cleaning, spring cleaning, and oven cleaning for properties across the Gold Coast and Brisbane.</p></div>
+        <div><h3>Services</h3><a href="services.html#bond">Bond cleaning</a><a href="services.html#spring">Spring cleaning</a><a href="services.html#oven">Oven cleaning</a></div>
+        <div><h3>Contact</h3><a href="tel:1300555014">1300 555 014</a><a href="mailto:hello@bondcleanspecialist.com.au">hello@bondcleanspecialist.com.au</a></div>
+        <div><h3>Legal</h3><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms and conditions</a></div>
       </div>
       <div class="wrap tiny">© 2026 Bond Clean Specialist. All rights reserved.</div>
     </footer>
-    <div class="mobile-cta"><a href="tel:1300555014">Call us</a><button type="button" data-open-quote>Get free quote</button></div>
+    <div class="mobile-cta"><a href="tel:1300555014">Call us</a><button type="button" data-open-quote>Request a free quote</button></div>
     <div class="quote-layer" data-quote>
       <div class="quote-dim" data-close-quote></div>
       <aside class="quote-panel" role="dialog" aria-label="Request a free quote">
         <div class="quote-top"><h2>Request a free quote</h2><button class="close-x" type="button" data-close-quote aria-label="Close">×</button></div>
-        <div class="success" data-success><h3>Quote request sent</h3><p>Bond Clean Specialist will call you with a written price.</p></div>
+        <div class="success" data-success><h3>Quote request sent</h3><p>Bond Clean Specialist will get back to you with a quote.</p></div>
         <form data-quote-form>
           <div class="steps"><span class="on" data-bar></span><span data-bar></span></div>
           <div data-step="1">
-            <label class="field"><span>Service</span><select required><option>Bond cleaning</option><option>Spring cleaning</option></select></label>
-            <label class="field"><span>Suburb</span><input type="text" required /></label>
+            <label class="field"><span>Service required</span><select required><option>Bond cleaning</option><option>Spring cleaning</option><option>Oven cleaning</option></select></label>
+            <label class="field"><span>Preferred date</span><input type="date" required /></label>
           </div>
           <div data-step="2" hidden>
             <label class="field"><span>Full name</span><input type="text" required /></label>
-            <label class="field"><span>Phone</span><input type="tel" required /></label>
+            <label class="field"><span>Phone number</span><input type="tel" required /></label>
             <label class="field"><span>Email</span><input type="email" required /></label>
           </div>
           <p class="form-note" data-note></p>

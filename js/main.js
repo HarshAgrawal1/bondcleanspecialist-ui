@@ -96,7 +96,7 @@
     function showService() {
       const value = service ? service.value : "bond";
       if (bondFields) bondFields.hidden = value !== "bond";
-      if (springFields) springFields.hidden = value !== "spring";
+      if (springFields) springFields.hidden = value === "bond";
     }
 
     function showStep(n) {
