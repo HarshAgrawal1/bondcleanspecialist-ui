@@ -61,7 +61,73 @@
     if (e.key === "Escape") closeQuote();
   });
 
-  document.querySelectorAll("[data-quote-form]").forEach(setupForm);
+  const quoteFields = `
+    <div class="steps"><span class="on" data-bar></span><span data-bar></span></div>
+    <div data-step="1">
+      <label class="field">
+        <span>Service required</span>
+        <select data-service required>
+          <option value="">Choose</option>
+          <option value="bond">Bond cleaning</option>
+          <option value="spring">Spring cleaning</option>
+          <option value="oven">Oven cleaning</option>
+        </select>
+      </label>
+      <label class="field">
+        <span>Property type</span>
+        <select required>
+          <option value="">Choose</option>
+          <option>Unit</option>
+          <option>House</option>
+          <option>Townhouse</option>
+          <option>Two storey</option>
+        </select>
+      </label>
+      <div class="grid-2">
+        <label class="field">
+          <span>Bedrooms</span>
+          <select required>
+            <option value="">Choose</option>
+            <option>1 bedroom</option>
+            <option>2 bedrooms</option>
+            <option>3 bedrooms</option>
+            <option>4 bedrooms</option>
+            <option>5+ bedrooms</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Bathrooms</span>
+          <select required>
+            <option value="">Choose</option>
+            <option>1 bathroom</option>
+            <option>2 bathrooms</option>
+            <option>3 bathrooms</option>
+            <option>4 bathrooms</option>
+          </select>
+        </label>
+      </div>
+      <label class="field">
+        <span>Preferred date</span>
+        <input type="date" required />
+      </label>
+    </div>
+    <div data-step="2" hidden>
+      <label class="field"><span>Full name</span><input type="text" required /></label>
+      <label class="field"><span>Phone number</span><input type="tel" required /></label>
+      <label class="field"><span>Email</span><input type="email" required /></label>
+      <label class="field"><span>Suburb</span><input type="text" required /></label>
+    </div>
+    <p class="form-note" data-note></p>
+    <div class="form-nav">
+      <button class="btn btn-ghost" type="button" data-back hidden>Back</button>
+      <button class="btn btn-clay" type="button" data-next>Continue</button>
+    </div>
+  `;
+
+  document.querySelectorAll("[data-quote-form]").forEach((form) => {
+    form.innerHTML = quoteFields;
+    setupForm(form);
+  });
 
   document.querySelectorAll("[data-tab-group]").forEach((group) => {
     const tabs = [...group.querySelectorAll("[data-tab]")].filter(
@@ -88,16 +154,7 @@
     const success = form.parentElement.querySelector("[data-success]");
     const nextBtn = form.querySelector("[data-next]");
     const backBtn = form.querySelector("[data-back]");
-    const service = form.querySelector("[data-service]");
-    const bondFields = form.querySelector("[data-bond]");
-    const springFields = form.querySelector("[data-spring]");
     let step = 1;
-
-    function showService() {
-      const value = service ? service.value : "bond";
-      if (bondFields) bondFields.hidden = value !== "bond";
-      if (springFields) springFields.hidden = value === "bond";
-    }
 
     function showStep(n) {
       step = n;
@@ -110,8 +167,6 @@
       if (note) note.textContent = "";
     }
 
-    if (service) service.addEventListener("change", showService);
-    showService();
     showStep(1);
 
     if (nextBtn) {
