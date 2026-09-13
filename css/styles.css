@@ -380,7 +380,8 @@ p {
 
 .hero h1 {
   color: var(--navy);
-  font-size: clamp(1.85rem, 6vw, 3.3rem);
+  font-size: clamp(1.85rem, 6vw, 3.15rem);
+  letter-spacing: -0.03em;
 }
 
 .hero .eyebrow {
@@ -466,8 +467,93 @@ p {
 }
 
 .section {
-  padding: 64px 0;
+  padding: 76px 0;
   background: var(--white);
+}
+
+.trust-bar {
+  display: grid;
+  gap: 12px;
+}
+
+.trust-bar article {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 16px 16px;
+}
+
+.trust-bar h3 {
+  font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.trust-bar p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+.include-cols {
+  display: grid;
+  gap: 8px 32px;
+}
+
+.include-cols ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.include-cols li {
+  padding: 10px 0 10px 22px;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+
+.include-cols li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.05em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--navy);
+}
+
+.review-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.review {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 24px 22px 20px;
+  box-shadow: 0 8px 20px rgba(12, 41, 88, 0.05);
+}
+
+.review p {
+  color: #222;
+  min-height: 6.5em;
+}
+
+.review cite {
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 0.92rem;
+}
+
+.review cite span {
+  display: block;
+  margin-top: 2px;
+  font-weight: 600;
+  color: var(--ink-soft);
 }
 
 .section.alt {
@@ -612,9 +698,9 @@ p {
 
 .split-photo {
   width: 100%;
-  height: 240px;
+  height: 260px;
   object-fit: cover;
-  border-radius: var(--radius);
+  border-radius: 10px;
   margin-bottom: 14px;
   box-shadow: var(--shadow);
 }
@@ -1320,6 +1406,19 @@ p + .btn,
 
   .footer-grid {
     grid-template-columns: 1.3fr 0.8fr 0.8fr 1fr;
+  }
+
+  .trust-bar,
+  .review-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .trust-bar {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .include-cols {
+    grid-template-columns: 1fr 1fr;
   }
 
   .cards,
