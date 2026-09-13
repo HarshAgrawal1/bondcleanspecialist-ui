@@ -31,7 +31,9 @@
   }
 
   document
-    .querySelectorAll(".section, .card, .stat, .quote, .feature, .benefit, .page-hero")
+    .querySelectorAll(
+      ".service-card, .card, .stat, .quote, .feature, .benefit, .section-head, .cta-band, .faq details, .footer-grid > div"
+    )
     .forEach((el) => el.setAttribute("data-reveal", ""));
 
   const revealItems = document.querySelectorAll("[data-reveal]");
@@ -45,10 +47,10 @@
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.14, rootMargin: "0px 0px -48px 0px" }
     );
     revealItems.forEach((el, i) => {
-      el.style.transitionDelay = `${Math.min(i % 6, 5) * 70}ms`;
+      el.style.transitionDelay = `${Math.min(i % 6, 5) * 80}ms`;
       io.observe(el);
     });
   } else {
