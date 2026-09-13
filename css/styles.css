@@ -513,6 +513,10 @@ p {
   gap: 28px;
 }
 
+.split + .cards {
+  margin-top: 28px;
+}
+
 .stat-row,
 .cards,
 .people,
@@ -1151,6 +1155,29 @@ p + .btn,
   margin: 0 auto 16px;
 }
 
+.illo-scene {
+  width: min(100%, 400px);
+  margin: 8px auto 0;
+}
+
+.section.dark .illo-scene {
+  background: #fff;
+  border-radius: 16px;
+  padding: 10px 8px 0;
+}
+
+.page-hero .wrap.has-illo {
+  display: grid;
+  gap: 20px;
+  align-items: center;
+}
+
+.illo-mop {
+  transform-box: fill-box;
+  transform-origin: 30% 15%;
+  animation: illoMop 2.2s ease-in-out infinite;
+}
+
 .illo-sm {
   width: 56px;
   height: 56px;
@@ -1241,6 +1268,11 @@ p + .btn,
   to { transform: rotate(360deg); }
 }
 
+@keyframes illoMop {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(7deg); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1270,11 +1302,20 @@ p + .btn,
     display: none !important;
   }
 
+  .page-hero .wrap.has-illo {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+
   .hero-grid,
   .split,
   .cta-band {
     grid-template-columns: 1.05fr 0.95fr;
     align-items: start;
+  }
+
+  .cta-band.has-illo {
+    grid-template-columns: 0.85fr 1.1fr auto;
+    align-items: center;
   }
 
   .footer-grid {
