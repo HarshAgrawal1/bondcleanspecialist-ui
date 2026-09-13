@@ -592,9 +592,27 @@ p {
   border: 1px solid var(--line);
   border-top: 4px solid var(--navy);
   border-radius: var(--radius);
-  padding: 26px 24px 22px;
+  padding: 0 24px 22px;
+  overflow: hidden;
   box-shadow: 0 8px 20px rgba(12, 41, 88, 0.06);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.service-card > img {
+  width: calc(100% + 48px);
+  max-width: none;
+  height: 168px;
+  object-fit: cover;
+  margin: 0 -24px 18px;
+}
+
+.split-photo {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: 14px;
+  box-shadow: var(--shadow);
 }
 
 .service-card:hover {
@@ -1114,6 +1132,113 @@ p + .btn,
 .reveal-in {
   opacity: 1;
   transform: none;
+}
+
+.illo {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+}
+
+.illo svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.illo-lg {
+  width: min(100%, 320px);
+  margin: 0 auto 16px;
+}
+
+.illo-sm {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 10px;
+}
+
+.feature,
+.card {
+  position: relative;
+}
+
+.illo-bob {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: illoBob 3s ease-in-out infinite;
+}
+
+.illo-spark {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: illoSpark 1.8s ease-in-out infinite;
+}
+
+.illo-spark.d2 { animation-delay: 0.35s; }
+.illo-spark.d3 { animation-delay: 0.7s; }
+
+.illo-mist {
+  animation: illoMist 1.6s ease-in-out infinite;
+}
+
+.illo-mist.d2 { animation-delay: 0.25s; }
+.illo-mist.d3 { animation-delay: 0.5s; }
+
+.illo-wipe {
+  animation: illoWipe 2.4s ease-in-out infinite;
+}
+
+.illo-shine {
+  animation: illoShine 2s ease-in-out infinite;
+}
+
+.illo-check {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 0;
+  animation: illoDraw 2.2s ease-in-out infinite;
+}
+
+.illo-check.d2 { animation-delay: 0.4s; }
+
+.illo-hand {
+  transform-box: fill-box;
+  transform-origin: bottom center;
+  animation: illoTick 4s linear infinite;
+}
+
+@keyframes illoBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes illoSpark {
+  0%, 100% { opacity: 0.35; transform: scale(0.7); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+@keyframes illoMist {
+  0% { opacity: 0; transform: translate(0, 0); }
+  40% { opacity: 1; }
+  100% { opacity: 0; transform: translate(6px, -8px); }
+}
+
+@keyframes illoWipe {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-18px); }
+}
+
+@keyframes illoShine {
+  0%, 100% { transform: translateX(0); opacity: 0.15; }
+  50% { transform: translateX(16px); opacity: 0.5; }
+}
+
+@keyframes illoDraw {
+  0% { stroke-dashoffset: 40; }
+  40%, 100% { stroke-dashoffset: 0; }
+}
+
+@keyframes illoTick {
+  to { transform: rotate(360deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
