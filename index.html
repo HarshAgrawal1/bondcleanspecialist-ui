@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bond Clean Specialist | Bond, Spring and Oven Cleaning</title>
+    <title>Bond Clean Specialist | Cleaning for Homes and Businesses</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,11 +11,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
   </head>
   <body>
     <div class="topbar">
       <div class="topbar-inner">
-        <span>Bond cleaning, spring cleaning and oven detailing</span>
+        <span>Homes, rentals and commercial cleaning</span>
         <a href="tel:1300555014">1300 555 014</a>
       </div>
     </div>
@@ -23,16 +24,27 @@
     <header class="site-header">
       <div class="header-inner">
         <a class="brand" href="index.html">
-          <img src="logo.png" alt="Bond Cleaning Specialist" />
+          <img src="logo.png" alt="Bond Clean Specialist" />
         </a>
         <nav class="nav">
           <a class="active" href="index.html">Home</a>
           <div class="drop">
             <span>Services</span>
-            <div class="drop-list">
+            <div class="drop-list wide">
               <a href="services.html#bond">Bond cleaning</a>
+              <a href="services.html#carpet">Carpet steam cleaning</a>
               <a href="services.html#spring">Spring cleaning</a>
-              <a href="services.html#oven">Oven cleaning</a>
+              <a href="services.html#pest">Pest control &amp; flea treatment</a>
+              <a href="services.html#oven">Oven &amp; BBQ cleaning</a>
+              <a href="services.html#airbnb">Airbnb cleaning</a>
+              <a href="services.html#deep">Deep cleaning</a>
+              <a href="services.html#builder">Builder cleaning</a>
+              <a href="services.html#upholstery">Upholstery cleaning</a>
+              <a href="services.html#pressure">Pressure washing</a>
+              <a href="services.html#gym">Gym cleaning</a>
+              <a href="services.html#office">Office cleaning</a>
+              <a href="services.html#hospitality">Pub &amp; hospitality clean</a>
+              <a href="services.html#retail">Retail store cleaning</a>
             </div>
           </div>
           <a href="areas.html">Areas</a>
@@ -59,267 +71,218 @@
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero photo-hero">
+        <div class="hero-bg">
+          <img src="images/hero-cleaner.png" alt="" />
+        </div>
         <div class="wrap hero-grid">
           <div class="hero-copy">
             <p class="eyebrow">Bond Clean Specialist</p>
-            <h1>Moving out? Let us handle the clean.</h1>
+            <h1>Professional cleaning for a brighter space.</h1>
             <p class="lede">
-              Bond cleaning, spring cleaning and oven detailing — done properly,
-              so you don’t have to.
+              Residential and commercial cleaning across Brisbane and the Gold Coast.
             </p>
             <p class="lede">
-              Packing boxes, changing addresses, organising removalists — the last
-              thing you need on top of all that is a full property clean. Bond
-              Clean Specialist takes care of the scrubbing, so you can focus on
-              the move and leave the property looking the way it should.
+              Moving is stressful enough. Let our team take care of the detailed
+              cleaning so you can focus on moving forward — or keep the office,
+              gym or shop looking ready for customers.
             </p>
             <ul class="trust-list">
-              <li>Bond cleaning</li>
-              <li>Spring cleaning</li>
-              <li>Oven detailing</li>
-              <li>Clear quote before we start</li>
+              <li>Clear pricing and quotes</li>
+              <li>Detailed cleaning</li>
+              <li>Brisbane and Gold Coast</li>
+              <li>Easy booking</li>
             </ul>
             <div>
-              <button class="btn btn-clay" type="button" data-open-quote>Request a free quote</button>
-              <a class="btn btn-ghost" href="services.html">See our services</a>
+              <button class="btn btn-gold" type="button" data-open-quote>Get a free quote</button>
+              <a class="btn btn-ghost light" href="services.html">Our services</a>
             </div>
           </div>
 
           <aside class="quote-card" id="quote">
-            <h2>Request a free quote</h2>
-            <p class="hint">Tell us the property details first, then how we can reach you.</p>
+            <h2>Get your free cleaning quote</h2>
+            <p class="hint">Tell us a little about your property and we’ll get back to you with a clear quote. Your details are only used to respond to your enquiry.</p>
             <div class="success" data-success>
               <h3>Quote request sent</h3>
               <p>Thank you. Bond Clean Specialist will get back to you with a quote based on your property.</p>
             </div>
-            <form data-quote-form>
-              <div class="steps"><span class="on" data-bar></span><span data-bar></span></div>
-              <div data-step="1">
-                <label class="field">
-                  <span>Service required</span>
-                  <select data-service required>
-                    <option value="bond">Bond cleaning</option>
-                    <option value="spring">Spring cleaning</option>
-                    <option value="oven">Oven cleaning</option>
-                  </select>
-                </label>
-                <div data-bond>
-                  <div class="grid-2">
-                    <label class="field">
-                      <span>Property type</span>
-                      <select required>
-                        <option value="">Choose</option>
-                        <option>Unit</option>
-                        <option>House</option>
-                        <option>Townhouse</option>
-                        <option>Two storey</option>
-                      </select>
-                    </label>
-                    <label class="field">
-                      <span>Bedrooms</span>
-                      <select required>
-                        <option value="">Choose</option>
-                        <option>1 bedroom</option>
-                        <option>2 bedrooms</option>
-                        <option>3 bedrooms</option>
-                        <option>4 bedrooms</option>
-                        <option>5+ bedrooms</option>
-                      </select>
-                    </label>
-                  </div>
-                  <div class="grid-2">
-                    <label class="field">
-                      <span>Bathrooms</span>
-                      <select required>
-                        <option value="">Choose</option>
-                        <option>1 bathroom</option>
-                        <option>2 bathrooms</option>
-                        <option>3 bathrooms</option>
-                        <option>4 bathrooms</option>
-                      </select>
-                    </label>
-                    <label class="field">
-                      <span>Preferred date</span>
-                      <input type="date" required />
-                    </label>
-                  </div>
-                </div>
-                <div data-spring hidden>
-                  <label class="field">
-                    <span>Property type</span>
-                    <select required>
-                      <option value="">Choose</option>
-                      <option>Unit</option>
-                      <option>House</option>
-                      <option>Townhouse</option>
-                    </select>
-                  </label>
-                  <label class="field">
-                    <span>Preferred date</span>
-                    <input type="date" required />
-                  </label>
-                </div>
-              </div>
-              <div data-step="2" hidden>
-                <label class="field"><span>Full name</span><input type="text" required /></label>
-                <label class="field"><span>Phone number</span><input type="tel" required /></label>
-                <label class="field"><span>Email</span><input type="email" required /></label>
-                <label class="field"><span>Suburb</span><input type="text" required /></label>
-              </div>
-              <p class="form-note" data-note></p>
-              <div class="form-nav">
-                <button class="btn btn-ghost" type="button" data-back hidden>Back</button>
-                <button class="btn btn-clay" type="button" data-next>Continue</button>
-              </div>
-            </form>
+            <form data-quote-form></form>
           </aside>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section" id="services">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="eyebrow">Our professional cleaning services</p>
+            <h2>Residential and commercial cleaning, quoted to the property.</h2>
+            <p>
+              At Bond Clean Specialist, we provide professional residential and
+              commercial cleaning services for tenants, homeowners, property
+              managers, real estate agencies, builders and businesses. Our focus
+              is on reliable service, attention to detail and high-quality cleaning
+              tailored to each property’s requirements.
+            </p>
+          </div>
+          <div class="photo-grid">
+            <a class="photo-tile" href="services.html#bond">
+              <img src="images/svc-bond.png" alt="Cleaner working through a bright vacant living room" />
+              <div class="cap"><h3>Bond Cleaning</h3><p>End of lease cleaning</p></div>
+            </a>
+            <a class="photo-tile" href="services.html#carpet">
+              <img src="images/svc-carpet.png" alt="Carpet steam extraction on a light grey carpet" />
+              <div class="cap"><h3>Carpet Steam Cleaning</h3><p>Fresh, clean carpets</p></div>
+            </a>
+            <a class="photo-tile" href="services.html#spring">
+              <img src="images/svc-spring.png" alt="Cleaner refreshing a bright living room" />
+              <div class="cap"><h3>Spring Cleaning</h3><p>Flexible hourly-rate cleaning</p></div>
+            </a>
+            <a class="photo-tile" href="services.html#pest">
+              <img src="images/svc-pest.png" alt="Pest technician treating a modern home" />
+              <div class="cap"><h3>Pest Control &amp; Flea Treatment</h3><p>Homes and rentals</p></div>
+            </a>
+            <a class="photo-tile" href="services.html#oven">
+              <img src="images/svc-oven.png" alt="Detailed cleaning inside a stainless steel oven" />
+              <div class="cap"><h3>Oven &amp; BBQ Cleaning</h3><p>Remove grease. Restore shine.</p></div>
+            </a>
+            <a class="photo-tile" href="services.html#airbnb">
+              <img src="images/svc-airbnb.png" alt="Bedroom prepared with hotel-style white bedding" />
+              <div class="cap"><h3>Airbnb Cleaning</h3><p>Guest ready, every time</p></div>
+            </a>
+            <a class="photo-tile" href="services.html#deep">
+              <img src="images/svc-deep.png" alt="Detailed cleaning of a modern glass shower" />
+              <div class="cap"><h3>Deep Cleaning</h3><p>When regular cleaning is not enough</p></div>
+            </a>
+            <a class="photo-tile" href="services.html#builder">
+              <img src="images/svc-builder.png" alt="Post-construction clean in a newly finished apartment" />
+              <div class="cap"><h3>Builder Cleaning</h3><p>Post-construction cleaning</p></div>
+            </a>
+            <a class="photo-tile" href="services.html#upholstery">
+              <img src="images/svc-upholstery.png" alt="Upholstery extraction on a grey fabric sofa" />
+              <div class="cap"><h3>Upholstery Cleaning</h3><p>Refresh your furniture</p></div>
+            </a>
+            <a class="photo-tile" href="services.html#pressure">
+              <img src="images/svc-pressure.png" alt="Pressure washing a concrete driveway" />
+              <div class="cap"><h3>Pressure Washing</h3><p>Outdoor surfaces, restored</p></div>
+            </a>
+            <a class="photo-tile" href="services.html#gym">
+              <img src="images/svc-gym.png" alt="Cleaner wiping gym equipment" />
+              <div class="cap"><h3>Gym Cleaning</h3><p>A cleaner workout space</p></div>
+            </a>
+            <a class="photo-tile" href="services.html#office">
+              <img src="images/svc-office.png" alt="Cleaner working in a modern office" />
+              <div class="cap"><h3>Office Cleaning</h3><p>One-off or recurring</p></div>
+            </a>
+            <a class="photo-tile" href="services.html#hospitality">
+              <img src="images/svc-hospitality.png" alt="Cleaner wiping tables in a restaurant after close" />
+              <div class="cap"><h3>Pub &amp; Hospitality Cleaning</h3><p>After-trade presentation</p></div>
+            </a>
+            <a class="photo-tile" href="services.html#retail">
+              <img src="images/svc-retail.png" alt="Cleaner mopping a retail store aisle" />
+              <div class="cap"><h3>Retail Store Cleaning</h3><p>Ready before open</p></div>
+            </a>
+          </div>
+          <a class="btn btn-gold" href="services.html">View all services</a>
+        </div>
+      </section>
+
+      <section class="trust-strip">
         <div class="wrap trust-bar">
           <article>
-            <h3>Quote before we start</h3>
-            <p>We talk through the property first, then send a clear price. No guesswork on the day.</p>
+            <h3>Trusted and reliable</h3>
+            <p>Professional, consistent service from quote to finished clean.</p>
           </article>
           <article>
-            <h3>Inspection-level detail</h3>
-            <p>Skirting, tracks, splashbacks and ovens get the same care as the rooms you walk through first.</p>
+            <h3>High-quality standards</h3>
+            <p>Attention to the detail that a standard tidy often misses.</p>
           </article>
           <article>
-            <h3>Gold Coast and Brisbane</h3>
-            <p>Local work across both cities. If your suburb is not listed, call and we will tell you straight.</p>
+            <h3>Experienced team</h3>
+            <p>Skilled residential and commercial cleaning for each property type.</p>
           </article>
           <article>
-            <h3>If we miss a spot</h3>
-            <p>Send the inspection notes. Where the miss is ours, we arrange a reclean. Terms sit with your quote.</p>
+            <h3>Flexible scheduling</h3>
+            <p>One-off or regular cleaning, organised around your times.</p>
           </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap split">
+          <div>
+            <p class="eyebrow">About Bond Clean Specialist</p>
+            <h2>Cleaning that takes one more thing off your list.</h2>
+            <p>
+              At Bond Clean Specialist, we take pride in delivering high-quality
+              cleaning services for homes, rental properties and businesses across
+              Brisbane and the Gold Coast.
+            </p>
+            <p>
+              Moving house comes with enough to organise. Packing, utilities,
+              paperwork and inspections can quickly become overwhelming. We take
+              care of the cleaning — with detailed bond cleaning, spring cleaning,
+              carpets, ovens and commercial work — so the process stays clear from
+              booking to completion.
+            </p>
+            <a class="btn btn-gold" href="about.html">Learn more about us</a>
+            <div class="fact-row">
+              <div><b>14+</b><span>Professional services</span></div>
+              <div><b>7</b><span>Days a week support</span></div>
+              <div><b>2</b><span>Cities: Brisbane &amp; Gold Coast</span></div>
+            </div>
+          </div>
+          <div class="about-photo">
+            <img class="split-photo" src="images/about-living.png" alt="A bright, freshly cleaned living room" />
+            <div class="about-badge">
+              <img src="logo.png" alt="" />
+              <ul>
+                <li>Residential cleaning</li>
+                <li>Commercial cleaning</li>
+                <li>Real-estate standard cleaning</li>
+                <li>Brisbane and Gold Coast</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="section alt">
-        <div class="wrap split">
+        <div class="wrap split flip">
           <div>
-            <p class="eyebrow">Introduction</p>
-            <h2>One job taken off your list: getting the property properly clean.</h2>
+            <p class="eyebrow">Bond cleaning</p>
+            <h2>Moving out? Start with a detailed bond clean.</h2>
             <p>
-              Bond Clean Specialist exists to take one job off your list: getting a
-              property properly clean. Whether you’re moving out of a rental,
-              refreshing your own home, or preparing a property between tenants,
-              cleaning takes time most people don’t have to spare — and doing it
-              thoroughly takes more effort than a quick tidy-up.
-            </p>
-            <p>
-              We handle the detailed work: kitchens, bathrooms, ovens, and
-              everything in between. You get a property that’s genuinely clean,
-              without spending your weekend on your hands and knees.
-            </p>
-            <a class="btn btn-ink" href="contact.html">Let’s talk through your property</a>
-          </div>
-          <div>
-            <img class="split-photo" src="images/bond-living.jpg" alt="A vacant living room after a thorough end of lease clean" />
-            <div class="stat-row">
-              <div class="stat"><b>01</b>Bond cleaning</div>
-              <div class="stat"><b>02</b>Spring cleaning</div>
-              <div class="stat"><b>03</b>Oven cleaning</div>
-              <div class="stat"><b>04</b>Clear quote first</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section alt" id="services">
-        <div class="wrap">
-          <div class="section-head">
-            <p class="eyebrow">Our cleaning services</p>
-            <h2>Three services, each done properly.</h2>
-          </div>
-          <div class="cards">
-            <article class="service-card">
-              <img src="images/bathroom-clean.jpg" alt="A bathroom after a detailed bond clean" />
-              <p class="label">Bond cleaning</p>
-              <h3>End of lease cleaning done right</h3>
-              <p>
-                A bond clean needs to hold up to a landlord or agent’s inspection,
-                which means covering areas a standard clean often misses. We work
-                through your property methodically, from skirting boards to splashbacks.
-              </p>
-              <ul class="checks-list">
-                <li>Detailed clean covering the areas typically checked at inspection</li>
-                <li>One less task during a busy and stressful move</li>
-                <li>Consistent, thorough approach from start to finish</li>
-              </ul>
-              <a class="btn btn-clay" href="services.html#bond">Book your bond clean</a>
-            </article>
-            <article class="service-card">
-              <img src="images/spring-kitchen.jpg" alt="A kitchen after a thorough spring clean" />
-              <p class="label">Spring cleaning</p>
-              <h3>A genuine reset for your home</h3>
-              <p>
-                Everyday cleaning keeps things tidy, but it rarely reaches the areas
-                that quietly build up over time — behind appliances, inside cupboards,
-                along skirting boards. A spring clean gets into all of it.
-              </p>
-              <ul class="checks-list">
-                <li>Reaches the spots regular cleaning tends to skip</li>
-                <li>Leaves your whole home feeling properly fresh</li>
-                <li>A good option before guests, seasons change, or just when it’s time</li>
-              </ul>
-              <a class="btn btn-ink" href="services.html#spring">Book a spring clean</a>
-            </article>
-            <article class="service-card">
-              <img src="images/oven-detail.jpg" alt="A spotless oven after professional detailing" />
-              <p class="label">Oven cleaning</p>
-              <h3>Grease and grime, properly removed</h3>
-              <p>
-                Baked-on residue builds up inside ovens faster than most people
-                realise, and it doesn’t come off with a wipe and some spray. We
-                break it down properly, inside and out.
-              </p>
-              <ul class="checks-list">
-                <li>Removes built-up grease without damaging surfaces</li>
-                <li>Saves you the scrubbing and the harsh fumes</li>
-                <li>Can be booked on its own or added to a bond clean</li>
-              </ul>
-              <a class="btn btn-clay" href="services.html#oven">Book an oven clean</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="wrap split">
-          <div>
-            <p class="eyebrow">What a visit typically covers</p>
-            <h2>A methodical walk-through, not a quick tidy.</h2>
-            <p>
-              Every property is a little different, so the exact list is confirmed
-              with your quote. Most bond and spring cleans still follow the same
-              path through the home, so the easy-to-miss spots are not left to chance.
+              Leaving a rental can be stressful enough without spending your final
+              days scrubbing every corner. Our bond cleaning service is designed
+              to cover the areas commonly checked during a rental inspection —
+              from kitchens and bathrooms to floors, skirting boards, cupboards
+              and window tracks.
             </p>
             <div class="include-cols">
               <ul>
-                <li>Kitchen benches, splashbacks, cupboard faces and appliance exteriors</li>
-                <li>Bathrooms: tiles, showers, vanities, mirrors and tapware</li>
-                <li>Skirting boards, light switches, door frames and window tracks</li>
+                <li>Kitchen</li>
+                <li>Bathrooms</li>
+                <li>Bedrooms</li>
+                <li>Living areas</li>
               </ul>
               <ul>
-                <li>Bedrooms and living areas dusted and wiped through</li>
-                <li>Hard floors vacuumed and mopped</li>
-                <li>Oven cleaned with a bond clean, or booked on its own</li>
+                <li>Floors</li>
+                <li>Skirting boards</li>
+                <li>Window tracks</li>
+                <li>Oven</li>
               </ul>
             </div>
-            <a class="btn btn-ink" href="services.html">See the full service notes</a>
+            <button class="btn btn-gold" type="button" data-open-quote>Get a bond clean quote</button>
           </div>
-          <div class="illo illo-scene" data-illo="mopper" aria-hidden="true"></div>
+          <div>
+            <img class="split-photo" src="images/svc-bond.png" alt="Professional cleaner working in a bright vacant living room" />
+          </div>
         </div>
       </section>
 
       <section class="section moss">
         <div class="wrap">
           <div class="split">
-            <div class="illo illo-scene" data-illo="window" aria-hidden="true"></div>
             <div class="section-head">
             <p class="eyebrow">Why choose Bond Clean Specialist</p>
             <h2>The detail that actually matters when a property needs to be spotless.</h2>
@@ -330,36 +293,31 @@
               areas that actually matter when a property needs to be spotless.
             </p>
             </div>
+            <img class="split-photo" src="images/scene-window.png" alt="Cleaner wiping a bright living-room window" />
           </div>
           <div class="feature-grid">
             <article class="feature">
-              <div class="illo illo-sm" data-illo="clipboard" aria-hidden="true"></div>
-              <h3>Thorough, not rushed</h3>
+<h3>Thorough, not rushed</h3>
               <p>We work through each property methodically rather than cutting corners to save time.</p>
             </article>
             <article class="feature">
-              <div class="illo illo-sm" data-illo="spark" aria-hidden="true"></div>
-              <h3>Attention to the details that count</h3>
+<h3>Attention to the details that count</h3>
               <p>Skirting boards, tracks, and corners get the same care as benchtops and floors.</p>
             </article>
             <article class="feature">
-              <div class="illo illo-sm" data-illo="calendar" aria-hidden="true"></div>
-              <h3>Convenient to book</h3>
+<h3>Convenient to book</h3>
               <p>Tell us what you need, and we’ll organise a time that works for you.</p>
             </article>
             <article class="feature">
-              <div class="illo illo-sm" data-illo="chat" aria-hidden="true"></div>
-              <h3>Clear communication</h3>
+<h3>Clear communication</h3>
               <p>You’ll know what’s included in your clean before we start.</p>
             </article>
             <article class="feature">
-              <div class="illo illo-sm" data-illo="home" aria-hidden="true"></div>
-              <h3>Focused on the result you actually want</h3>
+<h3>Focused on the result you actually want</h3>
               <p>A property that looks and feels properly clean, not just tidied.</p>
             </article>
             <article class="feature">
-              <div class="illo illo-sm" data-illo="shield" aria-hidden="true"></div>
-              <h3>Quote before we start</h3>
+<h3>Quote before we start</h3>
               <p>We talk through your property first, then put together a clear quote.</p>
             </article>
           </div>
@@ -368,38 +326,34 @@
 
       <section class="section">
         <div class="wrap">
-          <div class="split">
+          <div class="split flip">
             <div class="section-head">
             <p class="eyebrow">How it works</p>
             <h2>Four steps from the first message to a cleaner property.</h2>
             </div>
-            <div class="illo illo-scene" data-illo="ovenkneel" aria-hidden="true"></div>
+            <img class="split-photo" src="images/scene-kitchen.png" alt="Cleaner wiping a modern kitchen splashback" />
           </div>
           <div class="cards four">
             <article class="card">
-              <div class="illo illo-sm" data-illo="chat" aria-hidden="true"></div>
-              <span class="num">01</span>
+<span class="num">01</span>
               <h3>Tell us what you need</h3>
               <p>
                 Reach out with a few details about your property and the service
-                you’re after, whether that’s a bond clean, spring clean, or oven clean.
+                you’re after — a bond clean, a carpet, an office, or a gym.
               </p>
             </article>
             <article class="card">
-              <div class="illo illo-sm" data-illo="clipboard" aria-hidden="true"></div>
-              <span class="num">02</span>
+<span class="num">02</span>
               <h3>Get your quote</h3>
               <p>We’ll talk through your requirements and put together a clear quote based on your property.</p>
             </article>
             <article class="card">
-              <div class="illo illo-sm" data-illo="spray" aria-hidden="true"></div>
-              <span class="num">03</span>
+<span class="num">03</span>
               <h3>We handle the cleaning</h3>
               <p>On the day, our team works through the property thoroughly, covering everything included in your booking.</p>
             </article>
             <article class="card">
-              <div class="illo illo-sm" data-illo="spark" aria-hidden="true"></div>
-              <span class="num">04</span>
+<span class="num">04</span>
               <h3>Enjoy a cleaner property</h3>
               <p>Walk into a space that’s properly clean, without having spent your own time or energy getting it there.</p>
             </article>
@@ -415,28 +369,42 @@
           </div>
           <div class="cards">
             <article class="card">
-              <div class="illo illo-sm" data-illo="key" aria-hidden="true"></div>
-              <h3>Tenants</h3>
+<h3>Tenants</h3>
               <p>Preparing to move out and wanting their bond clean handled to a proper standard.</p>
             </article>
             <article class="card">
-              <div class="illo illo-sm" data-illo="home" aria-hidden="true"></div>
-              <h3>Homeowners</h3>
+<h3>Homeowners</h3>
               <p>After a deeper clean than a regular tidy-up provides.</p>
             </article>
             <article class="card">
-              <div class="illo illo-sm" data-illo="shield" aria-hidden="true"></div>
-              <h3>Landlords</h3>
+<h3>Landlords</h3>
               <p>Wanting a property presented well before new tenants move in.</p>
             </article>
             <article class="card">
-              <div class="illo illo-sm" data-illo="calendar" aria-hidden="true"></div>
-              <h3>Property professionals</h3>
-              <p>Who need a dependable cleaning service for turnovers and preparation between tenancies.</p>
+<h3>Property professionals</h3>
+              <p>Who need a dependable clean for turnovers and preparation between tenancies.</p>
+            </article>
+            <article class="card">
+<h3>Hosts</h3>
+              <p>Turning an Airbnb around between guests without leaving it looking recently vacated.</p>
+            </article>
+            <article class="card">
+<h3>Businesses</h3>
+              <p>Offices, gyms, pubs and shops that need a rostered clean after trade.</p>
             </article>
           </div>
           <p>If you’re not sure which service fits your situation, get in touch and we can talk it through.</p>
-          <button class="btn btn-clay" type="button" data-open-quote>Request a free quote</button>
+          <button class="btn btn-gold" type="button" data-open-quote>Request a free quote</button>
+        </div>
+      </section>
+
+      <section class="areas-banner">
+        <img src="images/areas-brisbane.png" alt="" />
+        <div class="wrap">
+          <p class="eyebrow" style="color:#e09b1a">Servicing Brisbane &amp; the Gold Coast</p>
+          <h2>Professional cleaning for homes and businesses across both cities.</h2>
+          <p>If your suburb is listed, we can usually talk through a quote. If it sits just outside the list, call 1300 555 014 and ask.</p>
+          <a class="btn btn-gold" href="areas.html">View service areas</a>
         </div>
       </section>
 
@@ -452,7 +420,7 @@
                 on their own.
               </p>
             </div>
-            <div class="illo illo-scene" data-illo="boxes" aria-hidden="true"></div>
+            <img class="split-photo" src="images/scene-move.png" alt="A vacant apartment ready after packing" />
           </div>
           <div class="review-grid">
             <article class="review">
@@ -510,16 +478,38 @@
             <details>
               <summary>Do you provide spring cleaning?</summary>
               <p>
-                Yes. Our spring cleaning service is designed to go beyond a regular
-                clean, reaching the areas that build up over time, such as behind
-                appliances and inside cupboards.
+                Yes. Spring cleaning is charged at an hourly rate, so you can
+                choose how much time you need and which rooms to prioritise.
+                Specialised extras such as ovens or carpets can be quoted separately.
               </p>
             </details>
             <details>
-              <summary>Can you clean ovens?</summary>
+              <summary>Can you clean ovens and barbecues?</summary>
               <p>
-                Yes. Oven cleaning is available as part of a bond clean or as a
-                standalone service, and covers built-up grease and residue inside and out.
+                Yes. Oven and BBQ cleaning can sit with a bond clean or run as its
+                own visit. We break down built-up grease on racks, trays, glass and
+                hotplates.
+              </p>
+            </details>
+            <details>
+              <summary>Do you steam-clean carpets?</summary>
+              <p>
+                Yes. Carpet steam cleaning is a listed service. Tell us the rooms
+                and any stains when you enquire so the quote matches the work.
+              </p>
+            </details>
+            <details>
+              <summary>Do you treat pests and fleas?</summary>
+              <p>
+                Yes. We inspect first, then treat the rooms that need it. Preparation
+                notes and any follow-up sit with the quote.
+              </p>
+            </details>
+            <details>
+              <summary>Do you clean offices, gyms, pubs and shops?</summary>
+              <p>
+                Yes. Office, gym, hospitality and retail cleaning are part of the
+                same list. Recurring or one-off — we confirm that when we quote.
               </p>
             </details>
             <details>
@@ -574,11 +564,11 @@
       </section>
 
       <section class="section dark">
-        <div class="wrap cta-band has-illo">
-          <div class="illo illo-scene" data-illo="vacuum" aria-hidden="true"></div>
+        <div class="wrap cta-band">
+          <img class="split-photo" src="images/scene-vacuum.png" alt="Cleaner vacuuming a bright hallway" />
           <div>
-            <p class="eyebrow">Ready for a cleaner property?</p>
-            <h2>From bond cleaning to spring cleaning and oven detailing.</h2>
+            <p class="eyebrow">Ready to take cleaning off your list?</p>
+            <h2>Tell us about your property and we’ll help you organise the right service.</h2>
             <p>
               Bond Clean Specialist is ready to take the job off your hands. Get in
               touch today and let’s organise a quote that suits your property and
@@ -587,7 +577,7 @@
           </div>
           <div>
             <a class="btn btn-ghost light" href="tel:1300555014">1300 555 014</a>
-            <button class="btn btn-clay" type="button" data-open-quote>Request your free quote</button>
+            <button class="btn btn-gold" type="button" data-open-quote>Get a free quote</button>
           </div>
         </div>
       </section>
@@ -596,14 +586,27 @@
     <footer class="site-footer">
       <div class="wrap footer-grid">
         <div>
-          <img class="footer-logo" src="logo.png" alt="Bond Cleaning Specialist" />
-          <p>Professional bond cleaning, spring cleaning, and oven cleaning for properties across the Gold Coast and Brisbane.</p>
+          <img class="footer-logo" src="logo.png" alt="Bond Clean Specialist" />
+          <p>Professional cleaning for homes, rentals and commercial spaces across the Gold Coast and Brisbane.</p>
         </div>
         <div>
           <h3>Services</h3>
-          <a href="services.html#bond">Bond cleaning</a>
-          <a href="services.html#spring">Spring cleaning</a>
-          <a href="services.html#oven">Oven cleaning</a>
+          <div class="footer-service-links">
+            <a href="services.html#bond">Bond cleaning</a>
+            <a href="services.html#carpet">Carpet steam cleaning</a>
+            <a href="services.html#spring">Spring cleaning</a>
+            <a href="services.html#pest">Pest control &amp; fleas</a>
+            <a href="services.html#oven">Oven &amp; BBQ cleaning</a>
+            <a href="services.html#airbnb">Airbnb cleaning</a>
+            <a href="services.html#deep">Deep cleaning</a>
+            <a href="services.html#builder">Builder cleaning</a>
+            <a href="services.html#upholstery">Upholstery cleaning</a>
+            <a href="services.html#pressure">Pressure washing</a>
+            <a href="services.html#gym">Gym cleaning</a>
+            <a href="services.html#office">Office cleaning</a>
+            <a href="services.html#hospitality">Pub &amp; hospitality</a>
+            <a href="services.html#retail">Retail store cleaning</a>
+          </div>
         </div>
         <div>
           <h3>Contact</h3>
