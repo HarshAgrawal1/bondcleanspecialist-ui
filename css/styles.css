@@ -1106,7 +1106,11 @@ p {
 }
 
 .cta-band .split-photo {
-  height: 210px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: 50% 30%;
   margin: 0;
 }
 
@@ -1975,12 +1979,15 @@ p + .btn,
     height: auto;
     max-height: none;
     object-fit: contain;
+    object-position: center;
     margin-bottom: 14px;
   }
 
   .cta-band .split-photo {
-    height: 200px;
+    height: auto;
+    aspect-ratio: 3 / 2;
     object-fit: cover;
+    object-position: 50% 30%;
     margin-bottom: 0;
   }
 
