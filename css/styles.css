@@ -1902,6 +1902,7 @@ p + .btn,
   }
 
   .quote-open {
+    order: 1;
     padding: 0 12px;
     height: 36px;
     font-size: 0.8rem;
@@ -1909,6 +1910,7 @@ p + .btn,
   }
 
   .menu-btn {
+    order: 2;
     width: 36px;
     height: 36px;
   }
@@ -2109,12 +2111,16 @@ p + .btn,
   }
 
   .quote-open {
-    display: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 10px;
+    height: 34px;
+    font-size: 0.75rem;
   }
 
   .brand img {
-    height: 44px;
-    max-width: min(210px, 68vw);
+    height: 40px;
+    max-width: min(148px, 40vw);
   }
 
   .photo-tile img {
