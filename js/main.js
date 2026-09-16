@@ -1,6 +1,13 @@
 (function () {
   document.documentElement.classList.add("js-ready");
 
+  document.querySelectorAll(".hero-bg video").forEach((video) => {
+    video.muted = true;
+    const play = () => video.play().catch(() => {});
+    if (video.readyState >= 2) play();
+    else video.addEventListener("canplay", play, { once: true });
+  });
+
   const menuBtn = document.querySelector("[data-menu]");
   const mobileNav = document.querySelector("[data-mobile-nav]");
   const quoteLayer = document.querySelector("[data-quote]");
@@ -29,6 +36,13 @@
   if (menuBtn && mobileNav) {
     menuBtn.addEventListener("click", () => mobileNav.classList.toggle("open"));
   }
+
+  document.querySelectorAll("[data-mobile-drop]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const wrap = btn.closest(".mobile-drop");
+      if (wrap) wrap.classList.toggle("open");
+    });
+  });
 
   document
     .querySelectorAll(
@@ -65,7 +79,13 @@
 
   const quoteFields = `
     <div class="steps"><span class="on" data-bar></span><span data-bar></span></div>
+    <p class="step-label" data-step-label>Step 1 of 2 — Your details</p>
     <div data-step="1">
+      <label class="field"><span>Full name</span><input type="text" required /></label>
+      <label class="field"><span>Phone number</span><input type="tel" required /></label>
+      <label class="field"><span>Email</span><input type="email" required /></label>
+    </div>
+    <div data-step="2" hidden>
       <label class="field">
         <span>Service required</span>
         <select data-service required>
@@ -119,21 +139,16 @@
           </select>
         </label>
       </div>
+      <label class="field"><span>Suburb</span><input type="text" required /></label>
       <label class="field">
         <span>Preferred date</span>
         <input type="date" required />
       </label>
     </div>
-    <div data-step="2" hidden>
-      <label class="field"><span>Full name</span><input type="text" required /></label>
-      <label class="field"><span>Phone number</span><input type="tel" required /></label>
-      <label class="field"><span>Email</span><input type="email" required /></label>
-      <label class="field"><span>Suburb</span><input type="text" required /></label>
-    </div>
     <p class="form-note" data-note></p>
     <div class="form-nav">
       <button class="btn btn-ghost" type="button" data-back hidden>Back</button>
-      <button class="btn btn-clay" type="button" data-next>Continue</button>
+      <button class="btn btn-gold" type="button" data-next>Continue</button>
     </div>
   `;
 
@@ -164,6 +179,7 @@
     const panes = form.querySelectorAll("[data-step]");
     const bars = form.querySelectorAll("[data-bar]");
     const note = form.querySelector("[data-note]");
+    const label = form.querySelector("[data-step-label]");
     const success = form.parentElement.querySelector("[data-success]");
     const nextBtn = form.querySelector("[data-next]");
     const backBtn = form.querySelector("[data-back]");
@@ -176,7 +192,11 @@
       });
       bars.forEach((bar, i) => bar.classList.toggle("on", i < n));
       if (backBtn) backBtn.hidden = n === 1;
-      if (nextBtn) nextBtn.textContent = n === 2 ? "Send quote request" : "Continue";
+      if (nextBtn) nextBtn.textContent = n === 2 ? "GET MY FREE QUOTE" : "Continue";
+      if (label) {
+        label.textContent =
+          n === 1 ? "Step 1 of 2 — Your details" : "Step 2 of 2 — Property details";
+      }
       if (note) note.textContent = "";
     }
 
@@ -200,7 +220,7 @@
         const visible = form.querySelector("[data-step='2']");
         const required = [...visible.querySelectorAll("[required]")];
         if (!required.every((el) => el.value.trim())) {
-          note.textContent = "Please add your name, phone and email so we can reply.";
+          note.textContent = "Please complete the property details so we can quote.";
           return;
         }
         form.hidden = true;
