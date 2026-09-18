@@ -1237,11 +1237,51 @@ p + .btn,
   margin: 0;
 }
 
-.cta-band > div:last-child {
+.cta-band > div:last-child,
+.cta-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   align-items: center;
+}
+
+.why-points,
+.cta-points {
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.why-points li,
+.cta-points li {
+  position: relative;
+  padding: 8px 0 8px 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.why-points li::before,
+.cta-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.section.moss .why-points li {
+  border-bottom-color: rgba(11, 42, 91, 0.12);
+}
+
+.section.dark .cta-points li {
+  border-bottom-color: rgba(255, 255, 255, 0.16);
+  color: #d7e4f7;
+}
+
+.cta-copy p {
+  max-width: 52ch;
 }
 
 .tabs {
@@ -1825,7 +1865,7 @@ p + .btn,
   .split,
   .cta-band {
     grid-template-columns: 1.05fr 0.95fr;
-    align-items: start;
+    align-items: center;
   }
 
   .service-detail .split {
