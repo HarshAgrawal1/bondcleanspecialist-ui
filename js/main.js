@@ -13,18 +13,48 @@
   const quoteLayer = document.querySelector("[data-quote]");
   const openers = document.querySelectorAll("[data-open-quote]");
   const closers = document.querySelectorAll("[data-close-quote]");
+  let quoteScrollY = 0;
+
+  if (quoteLayer) {
+    document.documentElement.appendChild(quoteLayer);
+  }
+
+  function isQuoteOpen() {
+    return !!(quoteLayer && quoteLayer.classList.contains("open"));
+  }
+
+  function onQuoteScroll(e) {
+    if (!isQuoteOpen()) return;
+    if (e.target.closest(".quote-panel")) return;
+    e.preventDefault();
+  }
 
   function openQuote() {
     if (!quoteLayer) return;
+    quoteScrollY = window.scrollY || window.pageYOffset || 0;
     quoteLayer.classList.add("open");
-    document.body.style.overflow = "hidden";
+    document.documentElement.classList.add("is-quote-open");
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${quoteScrollY}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
   }
 
   function closeQuote() {
     if (!quoteLayer) return;
     quoteLayer.classList.remove("open");
-    document.body.style.overflow = "";
+    document.documentElement.classList.remove("is-quote-open");
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.left = "";
+    document.body.style.right = "";
+    document.body.style.width = "";
+    window.scrollTo(0, quoteScrollY);
   }
+
+  document.addEventListener("wheel", onQuoteScroll, { passive: false });
+  document.addEventListener("touchmove", onQuoteScroll, { passive: false });
 
   const header = document.querySelector(".site-header");
   if (header) {
@@ -93,7 +123,6 @@
           <option value="bond">Bond cleaning</option>
           <option value="carpet">Carpet steam cleaning</option>
           <option value="spring">Spring cleaning</option>
-          <option value="pest">Pest control &amp; flea treatment</option>
           <option value="oven">Oven &amp; BBQ cleaning</option>
           <option value="airbnb">Airbnb cleaning</option>
           <option value="deep">Deep cleaning</option>
@@ -104,6 +133,7 @@
           <option value="office">Office cleaning</option>
           <option value="hospitality">Pub &amp; hospitality clean</option>
           <option value="retail">Retail store cleaning</option>
+          <option value="pest">Pest control &amp; flea treatment</option>
         </select>
       </label>
       <label class="field" data-property hidden>
@@ -259,5 +289,41 @@
 
     if (serviceSelect) serviceSelect.addEventListener("change", syncDetails);
     syncDetails();
+  }
+
+  document.querySelectorAll(".faq-grid, .faq").forEach((group) => {
+    if (group.matches(".faq") && group.closest(".faq-grid")) return;
+    const items = group.querySelectorAll("details");
+    items.forEach((item) => {
+      item.addEventListener("toggle", () => {
+        if (!item.open) return;
+        items.forEach((other) => {
+          if (other !== item) other.open = false;
+        });
+      });
+    });
+  });
+
+  const toTop = document.querySelector("[data-to-top]");
+  const footerEl = document.querySelector(".site-footer");
+  if (toTop) {
+    toTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    if (footerEl && "IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        ([entry]) => toTop.classList.toggle("show", entry.isIntersecting),
+        { threshold: 0.08 }
+      );
+      io.observe(footerEl);
+    } else {
+      const onScroll = () => {
+        const nearBottom =
+          window.innerHeight + window.scrollY >= document.body.offsetHeight - 280;
+        toTop.classList.toggle("show", nearBottom);
+      };
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+    }
   }
 })();

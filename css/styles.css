@@ -29,7 +29,7 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -38,7 +38,7 @@ body {
   color: var(--ink);
   background: var(--white);
   line-height: 1.65;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 img {
@@ -231,6 +231,7 @@ p {
 }
 
 .nav a,
+.drop > a,
 .drop > span,
 .drop > button {
   font-size: 1.05rem;
@@ -242,16 +243,23 @@ p {
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
+.drop > a,
 .drop > button {
   background: none;
   border: 0;
+  border-bottom: 2px solid transparent;
   font: inherit;
   font-size: 1.05rem;
   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
 }
 
 .nav a:hover,
 .nav a.active,
+.drop:hover > a,
+.drop:focus-within > a,
 .drop:hover > span,
 .drop:hover > button,
 .drop.open > span,
@@ -267,13 +275,13 @@ p {
 .drop-list {
   display: none;
   position: absolute;
-  top: 100%;
+  top: calc(100% - 2px);
   left: 0;
   min-width: 210px;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 8px;
+  padding: 12px 8px 8px;
   box-shadow: var(--shadow);
   z-index: 20;
   animation: dropIn 0.2s ease;
@@ -322,7 +330,7 @@ p {
 }
 
 .menu-btn,
-.quote-open {
+button.quote-open {
   height: 40px;
   border: 0;
   cursor: pointer;
@@ -363,7 +371,7 @@ p {
   transform: translateY(-1px);
 }
 
-.quote-open {
+button.quote-open {
   padding: 0 16px;
   border-radius: 99px;
   background: var(--gold);
@@ -373,7 +381,7 @@ p {
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-.quote-open:hover {
+button.quote-open:hover {
   background: var(--gold-deep);
   transform: translateY(-1px);
   box-shadow: 0 8px 16px rgba(196, 134, 18, 0.28);
@@ -543,27 +551,57 @@ p {
 
 .quote-card {
   background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 0 16px 16px;
-  box-shadow: 0 16px 40px rgba(12, 41, 88, 0.12);
+  border: 0;
+  border-radius: 16px;
+  padding: 0 18px 20px;
+  box-shadow: 0 24px 50px rgba(12, 41, 88, 0.22);
+  outline: 3px solid rgba(224, 155, 26, 0.38);
   color: var(--ink);
   overflow: hidden;
 }
 
+.quote-card-head {
+  margin: 0 -18px 16px;
+  padding: 18px 18px 16px;
+  background: linear-gradient(180deg, #123a78, var(--navy));
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.quote-card-head::after {
+  content: "";
+  display: block;
+  height: 5px;
+  background: var(--gold);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.quote-kicker {
+  margin: 0 0 6px;
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
 .quote-card h2 {
-  font-size: 1.15rem;
-  margin: 0 -16px 14px;
-  padding: 16px;
-  background: var(--navy);
+  font-size: 1.32rem;
+  margin: 0;
+  padding: 0;
+  background: none;
   color: #fff;
   text-align: center;
 }
 
 .quote-card .hint {
   color: var(--ink-soft);
-  font-size: 0.86rem;
-  margin-bottom: 12px;
+  font-size: 0.92rem;
+  margin-bottom: 14px;
 }
 
 .section {
@@ -1311,8 +1349,23 @@ p + .btn,
   padding: 13px 0;
 }
 
+.faq details p {
+  margin: 10px 0 0;
+}
+
 .faq details[open] p {
-  animation: fadeIn 0.35s ease;
+  animation: faqOpen 0.7s ease;
+}
+
+@keyframes faqOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .faq summary {
@@ -1358,7 +1411,35 @@ p + .btn,
   object-position: left center;
   background: none;
   padding: 0;
+  margin-bottom: 0;
+}
+
+.site-footer a.footer-brand {
+  display: inline-block;
   margin-bottom: 12px;
+}
+
+.abn-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 14px 0 0;
+  padding: 8px 14px 8px 8px;
+  background: #fff8ea;
+  border: 1px solid #ead7a8;
+  border-radius: 8px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: 0.02em;
+}
+
+.abn-mark span {
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  padding: 5px 8px;
+  border-radius: 5px;
 }
 
 .site-footer a {
@@ -1378,61 +1459,71 @@ p + .btn,
 }
 
 .quote-layer {
+  display: none;
   position: fixed;
   inset: 0;
-  z-index: 80;
-  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+  overscroll-behavior: none;
 }
 
 .quote-layer.open {
-  pointer-events: auto;
+  display: block;
+}
+
+html.is-quote-open,
+html.is-quote-open body {
+  overflow: hidden !important;
+  overscroll-behavior: none;
 }
 
 .quote-dim {
   position: absolute;
   inset: 0;
-  background: rgba(7, 29, 64, 0.5);
-  opacity: 0;
-  transition: opacity 0.25s ease;
-}
-
-.quote-layer.open .quote-dim {
-  opacity: 1;
+  background: rgba(7, 29, 64, 0.55);
 }
 
 .quote-panel {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: min(420px, calc(100vw - 16px));
-  max-height: calc(100dvh - 16px);
+  position: relative;
+  width: min(460px, calc(100% - 32px));
+  max-height: min(90vh, 720px);
   overflow: auto;
+  overscroll-behavior: contain;
+  margin: 5vh auto;
   background: var(--white);
-  border-radius: var(--radius);
-  border-top: 5px solid var(--navy);
-  box-shadow: var(--shadow);
-  transform: translate(16px, -16px);
-  opacity: 0;
-  transform-origin: top right;
-  transition: transform 0.32s ease, opacity 0.32s ease;
-  padding: 16px;
-}
-
-.quote-layer.open .quote-panel {
-  transform: none;
-  opacity: 1;
+  border-radius: 16px;
+  box-shadow: 0 28px 60px rgba(12, 41, 88, 0.28);
+  outline: 3px solid rgba(224, 155, 26, 0.35);
+  padding: 0 20px 18px;
 }
 
 .quote-top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 12px;
-  margin-bottom: 12px;
+  margin: 0 -20px 16px;
+  padding: 16px 16px 14px;
+  background: linear-gradient(180deg, #123a78, var(--navy));
+  color: #fff;
+  position: relative;
+  border-radius: 16px 16px 0 0;
+}
+
+.quote-top::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: var(--gold);
 }
 
 .quote-top h2 {
-  font-size: 1.3rem;
+  font-size: 1.28rem;
   margin: 0;
+  color: #fff;
 }
 
 .close-x {
@@ -1440,7 +1531,8 @@ p + .btn,
   height: 36px;
   border: 0;
   border-radius: 4px;
-  background: var(--sky);
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
   cursor: pointer;
 }
 
@@ -1458,7 +1550,7 @@ p + .btn,
 }
 
 .steps span.on {
-  background: var(--primary);
+  background: var(--gold);
 }
 
 .field {
@@ -1476,10 +1568,11 @@ p + .btn,
 .field select,
 .field textarea {
   width: 100%;
-  border: 1px solid var(--line);
-  background: var(--ice);
-  border-radius: 4px;
-  padding: 10px 12px;
+  border: 1px solid #d5deea;
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px 14px;
+  min-height: 46px;
 }
 
 .field input:focus,
@@ -1522,6 +1615,23 @@ p + .btn,
   display: flex;
   gap: 8px;
   margin-top: 8px;
+}
+
+.quote-card .form-nav,
+.quote-panel .form-nav {
+  flex-wrap: wrap;
+}
+
+.quote-card .form-nav .btn,
+.quote-panel .form-nav .btn {
+  margin: 8px 0 0;
+}
+
+.quote-card .form-nav .btn-gold,
+.quote-panel .form-nav .btn-gold {
+  flex: 1 1 100%;
+  width: 100%;
+  min-height: 48px;
 }
 
 .success {
@@ -1610,7 +1720,7 @@ p + .btn,
   animation: fadeIn 0.55s ease 0.12s both;
 }
 
-.quote-open {
+button.quote-open {
   animation: fadeIn 0.55s ease 0.18s both;
 }
 
@@ -1977,7 +2087,7 @@ p + .btn,
     max-width: min(250px, 68vw);
   }
 
-  .quote-open {
+  button.quote-open {
     order: 1;
     padding: 0 12px;
     height: 36px;
@@ -2106,11 +2216,8 @@ p + .btn,
   }
 
   .quote-panel {
-    top: 0;
-    right: 0;
-    width: 100%;
-    max-height: 100dvh;
-    border-radius: 0;
+    width: min(460px, calc(100% - 24px));
+    margin: 24px auto 88px;
   }
 
   .page-hero {
@@ -2181,7 +2288,7 @@ p + .btn,
     margin: 0;
   }
 
-  .quote-open {
+  button.quote-open {
     display: inline-flex;
     align-items: center;
     padding: 0 10px;
@@ -2216,7 +2323,8 @@ p + .btn,
 }
 
 .drop > span,
-.drop > button {
+.drop > button,
+.drop > a {
   display: inline-flex;
   align-items: center;
 }
@@ -2250,11 +2358,11 @@ p + .btn,
 }
 
 .quote-card {
-  padding: 0 18px 20px;
+  padding: 0 18px 22px;
 }
 
 .quote-card h2 {
-  font-size: 1.35rem;
+  font-size: 1.42rem;
 }
 
 .quote-card .hint,
@@ -2347,6 +2455,20 @@ p + .btn,
   border-radius: 10px;
   padding: 22px 18px;
   text-align: center;
+}
+
+.stat-badge {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 14px rgba(196, 134, 18, 0.28);
 }
 
 .stat-card img {
@@ -2476,14 +2598,25 @@ p + .btn,
   gap: 8px;
 }
 
+.mobile-drop-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.mobile-drop-head a {
+  flex: 1;
+}
+
+.mobile-drop-head button,
 .mobile-drop > button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
   background: none;
   border: 0;
-  padding: 0;
+  padding: 4px 8px;
   font: inherit;
   font-weight: 700;
   color: #111;
@@ -2540,5 +2673,67 @@ p + .btn,
 
   .footer-grid {
     grid-template-columns: 1.2fr 0.9fr 1.2fr 0.85fr;
+  }
+}
+
+.nav .drop-list a {
+  border-bottom: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.why-lede {
+  max-width: 62ch;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.legal-copy {
+  max-width: 72ch;
+}
+
+.legal-copy h2 {
+  font-size: 1.2rem;
+  margin-top: 1.6em;
+}
+
+.legal-copy a {
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.to-top {
+  position: fixed;
+  right: 18px;
+  bottom: 96px;
+  z-index: 55;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(12, 41, 88, 0.22);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+@media (min-width: 900px) {
+  .to-top {
+    bottom: 28px;
   }
 }
