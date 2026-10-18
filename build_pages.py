@@ -354,14 +354,60 @@ GC_AREAS = [
     "Upper Coomera", "Varsity Lakes",
 ]
 BNE_AREAS = [
-    "Annerley", "Ashgrove", "Chermside", "Clayfield", "Coorparoo", "Greenslopes",
-    "Kangaroo Point", "Kedron", "Lutwyche", "Moorooka", "Mount Gravatt", "North Lakes",
-    "Nundah", "Spring Hill", "Sunnybank", "Woolloongabba",
+    "Acacia Ridge", "Albion", "Alderley", "Algester", "Annerley", "Archerfield",
+    "Ascot", "Ashgrove", "Aspley", "Auchenflower", "Bald Hills", "Balmoral",
+    "Banyo", "Bardon", "Bellbowrie", "Belmont", "Boondall", "Bowen Hills",
+    "Bracken Ridge", "Bridgeman Downs", "Brighton", "Brisbane City", "Brookfield",
+    "Bulimba", "Calamvale", "Camp Hill", "Cannon Hill", "Carina", "Carina Heights",
+    "Carindale", "Carseldine", "Chapel Hill", "Chelmer", "Chermside",
+    "Chermside West", "Clayfield", "Coopers Plains", "Coorparoo", "Corinda",
+    "Darra", "Deagon", "Doolandella", "Drewvale", "Durack", "Dutton Park",
+    "Eagle Farm", "East Brisbane", "Eight Mile Plains", "Ellen Grove", "Enoggera",
+    "Everton Park", "Fairfield", "Fig Tree Pocket", "Fitzgibbon", "Forest Lake",
+    "Fortitude Valley", "Geebung", "Gordon Park", "Graceville", "Grange",
+    "Greenslopes", "Gumdale", "Hamilton", "Hawthorne", "Heathwood", "Hemmant",
+    "Hendra", "Highgate Hill", "Holland Park", "Holland Park West",
+    "Indooroopilly", "Inala", "Jamboree Heights", "Jindalee", "Kangaroo Point",
+    "Kedron", "Kelvin Grove", "Kenmore", "Kenmore Hills", "Kuraby", "Lutwyche",
+    "Macgregor", "Manly", "Manly West", "Mansfield", "McDowall", "Middle Park",
+    "Milton", "Mitchelton", "Moggill", "Moorooka", "Morningside", "Mount Gravatt",
+    "Mount Gravatt East", "Mount Ommaney", "Murarrie", "Nathan", "New Farm",
+    "Newmarket", "Newstead", "Northgate", "Nudgee", "Nundah", "Oxley",
+    "Paddington", "Pallara", "Parkinson", "Petrie Terrace", "Pullenvale",
+    "Red Hill", "Richlands", "Riverhills", "Robertson", "Rochedale", "Rocklea",
+    "Runcorn", "Salisbury", "Sandgate", "Seventeen Mile Rocks", "Sherwood",
+    "Sinnamon Park", "South Brisbane", "Spring Hill", "St Lucia", "Stafford",
+    "Stafford Heights", "Stones Corner", "Sunnybank", "Sunnybank Hills",
+    "Taigum", "Tarragindi", "Taringa", "Teneriffe", "The Gap", "Tingalpa",
+    "Toowong", "Upper Mount Gravatt", "Virginia", "Wacol", "Wakerley",
+    "Wavell Heights", "West End", "Westlake", "Wishart", "Woolloongabba",
+    "Wooloowin", "Wynnum", "Wynnum West", "Yeerongpilly", "Yeronga", "Zillmere",
+    "Bahrs Scrub", "Bannockburn", "Beenleigh", "Belivah", "Berrinba", "Bethania",
+    "Boronia Heights", "Browns Plains", "Buccan", "Carbrook", "Cedar Creek",
+    "Cedar Grove", "Cedar Vale", "Chambers Flat", "Cornubia", "Crestmead",
+    "Daisy Hill", "Eagleby", "Edens Landing", "Flagstone", "Flinders Lakes",
+    "Forestdale", "Greenbank", "Heritage Park", "Hillcrest", "Holmview",
+    "Jimboomba", "Kagaru", "Kingston", "Logan Central", "Logan Reserve",
+    "Logan Village", "Loganholme", "Loganlea", "Luscombe", "Marsden",
+    "Meadowbrook", "Monarch Glen", "Mount Warren Park", "Mundoolun", "Munruben",
+    "New Beith", "North Maclean", "Park Ridge", "Park Ridge South", "Priestdale",
+    "Regents Park", "Rochedale South", "Shailer Park", "Slacks Creek",
+    "South Maclean", "Springwood", "Stockleigh", "Tanah Merah", "Tamborine",
+    "Underwood", "Veresdale", "Veresdale Scrub", "Waterford", "Waterford West",
+    "Windaroo", "Wolffdene", "Woodhill", "Woodridge", "Yarrabilba",
 ]
 
 
 def slugify(name):
     return name.lower().replace("&", "and").replace(" ", "-")
+
+
+# Homepage suburb sample only — menus and areas.html use the full lists
+NAV_BNE_SAMPLE = [
+    "Annerley", "Ashgrove", "Chermside", "Clayfield", "Coorparoo", "Greenslopes",
+    "Kangaroo Point", "Kedron", "Lutwyche", "Moorooka", "Mount Gravatt", "Nundah",
+    "Spring Hill", "Sunnybank", "West End", "Woolloongabba",
+]
 
 
 def header(prefix, active):
@@ -432,7 +478,7 @@ def header(prefix, active):
           </div>
           <div class="mobile-drop-list">
             {"".join(f'<a href="{prefix}areas/{slugify(n)}.html">{n}</a>' for n in BNE_AREAS)}
-            {"".join(f'<a href="{prefix}areas/{slugify(n)}.html">{n}</a>' for n in GC_AREAS[:8])}
+            {"".join(f'<a href="{prefix}areas/{slugify(n)}.html">{n}</a>' for n in GC_AREAS)}
           </div>
         </div>
         {a("prices.html", "Prices", "prices")}
@@ -651,7 +697,7 @@ def index_page():
             </a>'''
         )
     bne_links = "".join(
-        f'<a href="areas/{slugify(n)}.html">{n}</a>' for n in BNE_AREAS
+        f'<a href="areas/{slugify(n)}.html">{n}</a>' for n in NAV_BNE_SAMPLE
     )
     faqs = [
         ("What is bond cleaning?", "Bond cleaning, also known as end of lease cleaning, is a detailed clean of a rental property carried out when a tenant moves out. It is designed to cover the areas typically checked during a property inspection."),
@@ -758,8 +804,8 @@ def index_page():
         <div class="wrap">
           <div class="section-head">
             <p class="eyebrow">Service areas</p>
-            <h2>We cover all the suburbs in Brisbane</h2>
-            <p>Bond cleaning, spring cleaning and the rest of our list across Brisbane. Gold Coast suburbs are on the areas page.</p>
+            <h2>We cover suburbs across Brisbane and the Gold Coast</h2>
+            <p>Bond cleaning, spring cleaning and the rest of our list across Brisbane and the Gold Coast. See the areas page for the full suburb list.</p>
           </div>
           <div class="suburb-grid">
             {bne_links}
