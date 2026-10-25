@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0b2a5b;
+  --color-navy-deep: #081e40;
+  --color-gold: #e09b1a;
+  --color-gold-deep: #c48612;
+  --color-sky: #f4f7fb;
+  --color-line: #e3e8ef;
+  --font-sans: var(--font-sans), "Segoe UI", Arial, sans-serif;
+  --font-serif: var(--font-serif), Georgia, serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans), "Segoe UI", Arial, sans-serif;
+    color: #111;
+    background: #fff;
+    line-height: 1.65;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif), Georgia, serif;
+  }
+}

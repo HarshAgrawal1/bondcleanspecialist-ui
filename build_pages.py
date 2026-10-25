@@ -25,7 +25,7 @@ SERVICES = [
             ("What is bond cleaning?", "Bond cleaning, also called end of lease cleaning, is a detailed clean of a rental when a tenant moves out. It is designed to cover areas typically checked at inspection."),
             ("What does it include?", "Kitchens, bathrooms, bedrooms, living areas and floors, including skirting boards, window tracks and oven cleaning. Exact inclusions depend on the property and your quote."),
             ("Do I need to be moved out?", "It helps to have belongings out so we can reach every surface. Tell us if some furniture will still be there."),
-            ("How do I get a price?", "Request a quote with the property type, bedrooms, suburb and preferred date, or call 1300 555 014."),
+            ("How do I get a price?", "Request a quote with the property type, bedrooms, suburb and preferred date, or call 0422 555 984."),
         ],
     },
     {
@@ -289,7 +289,7 @@ SERVICES = [
             ("Do you clean kitchens and bathrooms?", "Yes, as part of a typical office clean. Confirm inclusions on the quote."),
             ("Can we book once only?", "Yes. One-off office cleans are available as well as recurring."),
             ("Do staff need to clear desks?", "A clear desk helps. Tell us how you work so we know what can be moved."),
-            ("Which suburbs?", "Brisbane and the Gold Coast. Call 1300 555 014 if you sit just outside the list."),
+            ("Which suburbs?", "Brisbane and the Gold Coast. Call 0422 555 984 if you sit just outside the list."),
         ],
     },
     {
@@ -456,7 +456,7 @@ def header(prefix, active):
           <button class="menu-btn" type="button" data-menu aria-label="Menu">
             <span></span><span></span><span></span>
           </button>
-          <a class="header-phone" href="tel:1300555014">1300 555 014</a>
+          <a class="header-phone" href="tel:0422555984">0422 555 984</a>
           <button class="quote-open" type="button" data-open-quote>Get a quote</button>
         </div>
       </div>
@@ -500,7 +500,7 @@ def footer(prefix):
             <img class="footer-logo" src="{prefix}logo.png" alt="Bond Clean Specialist" />
           </a>
           <p>Professional bond, spring and oven cleaning across Brisbane and the Gold Coast.</p>
-          <p class="abn-mark"><span>ABN</span> 12 345 678 901</p>
+          <p class="abn-mark"><span>ABN</span> 48 698 981 074</p>
         </div>
         <div>
           <h3>Useful links</h3>
@@ -520,8 +520,8 @@ def footer(prefix):
         </div>
         <div>
           <h3>Contact info</h3>
-          <a href="tel:1300555014">1300 555 014</a>
-          <a href="mailto:hello@bondcleanspecialist.com.au">hello@bondcleanspecialist.com.au</a>
+          <a href="tel:0422555984">0422 555 984</a>
+          <a href="mailto:info@bondcleanspecialist.com.au">info@bondcleanspecialist.com.au</a>
           <a href="{prefix}areas.html">Brisbane and Gold Coast</a>
           <a href="{prefix}privacy.html">Privacy policy</a>
           <a href="{prefix}terms.html">Terms and conditions</a>
@@ -531,7 +531,7 @@ def footer(prefix):
     </footer>
     <button class="to-top" type="button" data-to-top aria-label="Back to top">↑</button>
     <div class="mobile-cta">
-      <a href="tel:1300555014">Call us</a>
+      <a href="tel:0422555984">Call us</a>
       <button type="button" data-open-quote>Request a free quote</button>
     </div>
     <div class="quote-layer" data-quote>
@@ -619,7 +619,7 @@ def book_section(service_name):
             <article class="book-step">
               <span class="num">01</span>
               <h3>Request a quote</h3>
-              <p>Tell us the suburb, property type and preferred date. Call 1300 555 014 or use the quote form.</p>
+              <p>Tell us the suburb, property type and preferred date. Call 0422 555 984 or use the quote form.</p>
             </article>
             <article class="book-step">
               <span class="num">02</span>
@@ -705,7 +705,7 @@ def index_page():
         ("Do you provide spring cleaning?", "Yes. Spring cleaning is charged at an hourly rate, so you can choose how much time you need and which rooms to prioritise. Specialised extras such as ovens or carpets can be quoted separately."),
         ("Can you clean ovens and barbecues?", "Yes. Oven and BBQ cleaning can sit with a bond clean or run as its own visit. We break down built-up grease on racks, trays, glass and hotplates."),
         ("Do you steam-clean carpets?", "Yes. Carpet steam cleaning is a listed service. Tell us the rooms and any stains when you enquire so the quote matches the work."),
-        ("How can I request a quote?", "Get in touch with a few details about your property and the service you need, and we will provide a quote based on your specific requirements. Use the form on this page or call 1300 555 014."),
+        ("How can I request a quote?", "Get in touch with a few details about your property and the service you need, and we will provide a quote based on your specific requirements. Use the form on this page or call 0422 555 984."),
         ("How should I prepare for a bond clean?", "It helps to have the property empty of your belongings before we arrive, giving us clear access to every area that needs to be cleaned."),
         ("What areas do you service?", "Bond Clean Specialist works across the Gold Coast and Brisbane. If your suburb is not listed, call us and we will tell you whether we can book it."),
     ]
@@ -739,7 +739,7 @@ def index_page():
             </ul>
             <div>
               <button class="btn btn-gold" type="button" data-open-quote>Get a free quote</button>
-              <a class="btn btn-ghost light" href="tel:1300555014">Call 1300 555 014</a>
+              <a class="btn btn-ghost light" href="tel:0422555984">Call 0422 555 984</a>
             </div>
           </div>
           <aside class="quote-card" id="quote">
@@ -872,7 +872,7 @@ def index_page():
               <li>Reclean if the miss is ours</li>
             </ul>
             <div class="cta-actions">
-              <a class="btn btn-ghost light" href="tel:1300555014">1300 555 014</a>
+              <a class="btn btn-ghost light" href="tel:0422555984">0422 555 984</a>
               <button class="btn btn-gold" type="button" data-open-quote>Get a free quote</button>
             </div>
           </div>
@@ -994,7 +994,7 @@ def area_pages():
           <div>
             <h2>Professional cleaning for {name} homes and rentals.</h2>
             <p>We cover bond cleaning, spring cleaning, carpet steam cleaning, oven and BBQ cleaning, and the rest of our residential and commercial list when the property is in {name}.</p>
-            <p>Call 1300 555 014 or request a quote with your street, bedrooms and preferred date.</p>
+            <p>Call 0422 555 984 or request a quote with your street, bedrooms and preferred date.</p>
             <a class="btn btn-gold" href="../services/bond-cleaning.html">Bond cleaning in {name}</a>
           </div>
           <img class="split-photo" src="../images/svc-bond.png" alt="Bond cleaning" />
@@ -1014,7 +1014,7 @@ def areas_hub():
         <div class="wrap">
           <p class="eyebrow">Service areas</p>
           <h1>Serving Brisbane and the Gold Coast</h1>
-          <p class="lede">Each suburb has its own page. If your street sits just outside the list, call 1300 555 014 and ask.</p>
+          <p class="lede">Each suburb has its own page. If your street sits just outside the list, call 0422 555 984 and ask.</p>
         </div>
       </section>
       <section class="section alt">
@@ -1137,11 +1137,11 @@ def contact_page():
         <div class="wrap split">
           <div class="card">
             <h3>Bond Clean Specialist</h3>
-            <p>Phone: <a href="tel:1300555014">1300 555 014</a> — call us for a quick chat or to book a service.</p>
-            <p>Email: <a href="mailto:hello@bondcleanspecialist.com.au">hello@bondcleanspecialist.com.au</a> — send us the details of your property and cleaning needs.</p>
+            <p>Phone: <a href="tel:0422555984">0422 555 984</a> — call us for a quick chat or to book a service.</p>
+            <p>Email: <a href="mailto:info@bondcleanspecialist.com.au">info@bondcleanspecialist.com.au</a> — send us the details of your property and cleaning needs.</p>
             <p>Service areas: Gold Coast and Brisbane. See the full suburb list on the <a href="areas.html">areas page</a>.</p>
             <p>Hours: seven days. Have the property type, service required, and preferred date ready.</p>
-            <a class="btn btn-ink" href="tel:1300555014">Call 1300 555 014</a>
+            <a class="btn btn-ink" href="tel:0422555984">Call 0422 555 984</a>
           </div>
           <div class="quote-card">
             <h2>Get your free cleaning quote</h2>
@@ -1196,7 +1196,7 @@ if __name__ == "__main__":
         "contact",
         "Legal",
         """<div class="legal-copy">
-          <p>This privacy policy explains how Bond Clean Specialist collects, uses and looks after the personal information you give us when you request a quote, book a clean, call us or email us. If you have a question about your information, contact us on 1300 555 014 or hello@bondcleanspecialist.com.au.</p>
+          <p>This privacy policy explains how Bond Clean Specialist collects, uses and looks after the personal information you give us when you request a quote, book a clean, call us or email us. If you have a question about your information, contact us on 0422 555 984 or info@bondcleanspecialist.com.au.</p>
           <h2>Who we are</h2>
           <p>Bond Clean Specialist provides residential and commercial cleaning across Brisbane and the Gold Coast. When this policy says “we” or “us”, it means Bond Clean Specialist.</p>
           <h2>What we collect</h2>
@@ -1211,7 +1211,7 @@ if __name__ == "__main__":
           <h2>How long we keep it</h2>
           <p>We keep enquiry and booking details for as long as we need them to complete the job, handle a reclean request, or meet ordinary business record needs. If you ask us to update or remove your enquiry details, we will do so unless we still need them for a current booking or a legal reason.</p>
           <h2>Your choices</h2>
-          <p>You can ask us what information we hold about your enquiry, ask us to correct it, or ask us to remove it where we no longer need it. Email hello@bondcleanspecialist.com.au or call 1300 555 014 and we will help you.</p>
+          <p>You can ask us what information we hold about your enquiry, ask us to correct it, or ask us to remove it where we no longer need it. Email info@bondcleanspecialist.com.au or call 0422 555 984 and we will help you.</p>
           <h2>This website</h2>
           <p>This website is used to explain our services and collect quote requests. It may use ordinary technical logs needed to operate the site. Do not send sensitive personal information through the quote form unless it is needed for the booking.</p>
           <h2>Changes</h2>
@@ -1246,7 +1246,7 @@ if __name__ == "__main__":
           <p>We take care with the property while we work. Tell us about fragile items, wet paint, alarm sensors or anything that needs extra care before we arrive. We are not responsible for existing damage, hidden faults, or items that were not made available for cleaning.</p>
           <h2>Changes</h2>
           <p>We may update these terms from time to time. The version on this page applies to new quotes and bookings from the date it is published.</p>
-          <p>Questions about a quote or booking can be sent through the <a href="contact.html">contact page</a>, by calling 1300 555 014, or by emailing hello@bondcleanspecialist.com.au.</p>
+          <p>Questions about a quote or booking can be sent through the <a href="contact.html">contact page</a>, by calling 0422 555 984, or by emailing info@bondcleanspecialist.com.au.</p>
         </div>""",
     )
     print("done")
