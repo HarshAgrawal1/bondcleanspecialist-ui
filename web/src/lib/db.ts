@@ -1,7 +1,7 @@
-import mysql, { type Pool, type ResultSetHeader } from "mysql2/promise";
+import mysql, { type Pool, type ResultSetHeader, type RowDataPacket } from "mysql2/promise";
 import type { QuoteInput } from "./quote-schema";
 
-/** Lead workflow statuses for the future staff dashboard. */
+/** Lead workflow statuses for the staff dashboard. */
 export const QUOTE_STATUSES = [
   "new",
   "contacted",
@@ -15,6 +15,36 @@ export type QuoteStatus = (typeof QUOTE_STATUSES)[number];
 
 export const QUOTE_PRIORITIES = ["normal", "urgent"] as const;
 export type QuotePriority = (typeof QUOTE_PRIORITIES)[number];
+
+export type QuoteLeadRow = {
+  id: number;
+  reference: string;
+  service: string;
+  name: string;
+  email: string;
+  phone: string;
+  location: string;
+  job_date: string;
+  message: string | null;
+  bed_study: string | null;
+  bathroom: string | null;
+  living_area: string | null;
+  furnished: string | null;
+  house_type: string | null;
+  blinds: string | null;
+  extras: unknown;
+  hours: string | null;
+  ip: string | null;
+  status: QuoteStatus;
+  priority: QuotePriority;
+  quoted_amount: string | number | null;
+  assigned_to: string | null;
+  internal_notes: string | null;
+  source: string;
+  contacted_at: Date | string | null;
+  updated_at: Date | string;
+  created_at: Date | string;
+};
 
 let pool: Pool | null = null;
 let ensured = false;
@@ -170,4 +200,83 @@ export async function saveQuoteLead(
   );
 
   return { id: result.insertId };
+}
+
+export async function listQuoteLeads(opts?: {
+  status?: string;
+  limit?: number;
+}): Promise<QuoteLeadRow[]> {
+  const db = getPool();
+  if (!db) return [];
+  await ensureTable(db);
+
+  const limit = Math.min(Math.max(opts?.limit ?? 100, 1), 300);
+  const status = opts?.status?.trim();
+
+  if (status && status !== "all") {
+    const [rows] = await db.execute<RowDataPacket[]>(
+      `SELECT * FROM quote_leads WHERE status = :status ORDER BY created_at DESC LIMIT ${limit}`,
+      { status }
+    );
+    return rows as QuoteLeadRow[];
+  }
+
+  const [rows] = await db.execute<RowDataPacket[]>(
+    `SELECT * FROM quote_leads ORDER BY created_at DESC LIMIT ${limit}`
+  );
+  return rows as QuoteLeadRow[];
+}
+
+export type QuoteLeadUpdate = {
+  status?: QuoteStatus;
+  priority?: QuotePriority;
+  quoted_amount?: number | null;
+  assigned_to?: string | null;
+  internal_notes?: string | null;
+  contacted_at?: string | null;
+};
+
+export async function updateQuoteLead(id: number, patch: QuoteLeadUpdate): Promise<boolean> {
+  const db = getPool();
+  if (!db) return false;
+  await ensureTable(db);
+
+  const fields: string[] = [];
+  const params: Record<string, unknown> = { id };
+
+  if (patch.status !== undefined) {
+    fields.push("status = :status");
+    params.status = patch.status;
+    if (patch.status === "contacted" && patch.contacted_at === undefined) {
+      fields.push("contacted_at = COALESCE(contacted_at, NOW())");
+    }
+  }
+  if (patch.priority !== undefined) {
+    fields.push("priority = :priority");
+    params.priority = patch.priority;
+  }
+  if (patch.quoted_amount !== undefined) {
+    fields.push("quoted_amount = :quotedAmount");
+    params.quotedAmount = patch.quoted_amount;
+  }
+  if (patch.assigned_to !== undefined) {
+    fields.push("assigned_to = :assignedTo");
+    params.assignedTo = patch.assigned_to;
+  }
+  if (patch.internal_notes !== undefined) {
+    fields.push("internal_notes = :internalNotes");
+    params.internalNotes = patch.internal_notes;
+  }
+  if (patch.contacted_at !== undefined) {
+    fields.push("contacted_at = :contactedAt");
+    params.contactedAt = patch.contacted_at;
+  }
+
+  if (!fields.length) return false;
+
+  const [result] = await db.execute<ResultSetHeader>(
+    `UPDATE quote_leads SET ${fields.join(", ")} WHERE id = :id`,
+    params as Record<string, string | number | null>
+  );
+  return result.affectedRows > 0;
 }

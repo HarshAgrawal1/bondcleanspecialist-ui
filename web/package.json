@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "jose": "^6.2.13",
     "mysql2": "^3.24.6",
     "next": "16.4.2",
     "nodemailer": "^10.2.1",

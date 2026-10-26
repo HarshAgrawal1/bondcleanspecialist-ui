@@ -7,6 +7,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: ["/bcs-ops", "/bcs-ops/", "/api/bcs-ops"],
     },
     sitemap: `${base}/sitemap.xml`,
   };
