@@ -32,11 +32,11 @@ export default function Header() {
     `border-b-2 py-1 text-[1.05rem] font-semibold hover:border-navy hover:text-navy ${activeFor(href, label) ? "border-navy text-navy" : "border-transparent text-slate-900"}`;
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-white">
-      <div className="mx-auto flex min-h-[88px] w-[min(1180px,calc(100%-24px))] items-center justify-between gap-3">
-        <Link href="/" className="flex items-center">
+      <div className="mx-auto flex min-h-[88px] w-full max-w-[1180px] items-center justify-between gap-3 px-5 sm:px-8 lg:px-10">
+        <Link href="/" className="flex shrink-0 items-center">
           <Image src="/logo.png" alt="Bond Clean Specialist" width={220} height={72} className="h-[62px] w-auto object-contain" priority />
         </Link>
-        <nav className="hidden items-center gap-[18px] lg:flex" aria-label="Main">
+        <nav className="hidden min-w-0 flex-1 items-center justify-center gap-3 xl:gap-[18px] lg:flex" aria-label="Main">
           {NAV.map((item) =>
             item.label === "Services" ? (
               <div key={item.label} className="group relative">
@@ -65,7 +65,7 @@ export default function Header() {
             )
           )}
         </nav>
-        <div className="ml-auto flex shrink-0 items-center gap-2">
+        <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-2.5">
           <QuoteButton className="order-1 inline-flex h-9 items-center whitespace-nowrap rounded-full bg-gold px-3 text-[0.8rem] font-bold text-navy hover:bg-gold-deep lg:order-none lg:h-10 lg:px-4 lg:text-sm">Get a quote</QuoteButton>
           <a href={PHONE_HREF} className="hidden h-10 items-center rounded-full border-2 border-navy px-3.5 text-sm font-bold text-navy min-[900px]:inline-flex">{PHONE}</a>
           <button type="button" aria-label="Menu" aria-expanded={open} onClick={() => setOpen((o) => !o)} className="order-2 grid h-9 w-9 place-items-center gap-1 rounded border border-line bg-sky lg:hidden">
@@ -75,7 +75,7 @@ export default function Header() {
       </div>
       {open && (
         <div className="border-t border-line bg-white lg:hidden">
-          <div className="mx-auto grid w-[min(1180px,calc(100%-24px))] gap-1 py-3">
+          <div className="mx-auto grid w-full max-w-[1180px] gap-1 px-5 py-3 sm:px-8">
             {NAV.map((item) =>
               item.label === "Services" || item.label === "Areas" ? (
                 <div key={item.label} className="grid gap-1">

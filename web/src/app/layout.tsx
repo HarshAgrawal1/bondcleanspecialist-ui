@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   title: "Bond Clean Specialist | Cleaning for Homes and Businesses",
   description:
     "Residential and commercial cleaning across Brisbane and the Gold Coast. Bond cleaning, spring cleaning, carpets, ovens and commercial work, quoted to the property.",
+  icons: {
+    icon: [{ url: "/favicon.png", type: "image/png" }],
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
