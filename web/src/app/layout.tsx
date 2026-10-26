@@ -1,19 +1,6 @@
 import type { Metadata } from "next";
-import { Merriweather, Source_Sans_3 } from "next/font/google";
 import { QuoteProvider } from "@/components/QuoteModal";
 import "./globals.css";
-
-const merriweather = Merriweather({
-  variable: "--font-serif",
-  subsets: ["latin"],
-  weight: ["700"],
-});
-
-const sourceSans = Source_Sans_3({
-  variable: "--font-sans",
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-});
 
 export const metadata: Metadata = {
   title: "Bond Clean Specialist | Cleaning for Homes and Businesses",
@@ -28,8 +15,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${merriweather.variable} ${sourceSans.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col"><QuoteProvider>{children}</QuoteProvider></body>
+    <html lang="en" className="h-full antialiased">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="flex min-h-full flex-col">
+        <QuoteProvider>{children}</QuoteProvider>
+      </body>
     </html>
   );
 }
