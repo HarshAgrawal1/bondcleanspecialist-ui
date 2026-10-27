@@ -4,7 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import { QuoteButton } from "@/components/QuoteModal";
-import { StatsSection, FaqSection } from "@/components/Sections";
+import { StatsSection, FaqSection, TrustedSection, HowWeWorkSection, BeforeAfterSection } from "@/components/Sections";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import { SERVICES, slugify } from "@/lib/data";
 
 const FAQS: [string, string][] = [
@@ -40,10 +41,10 @@ export default function Home() {
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden bg-navy-deep text-white">
-          <video className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline poster="/images/hero-cleaner.png">
+          <video className="absolute inset-0 h-full w-full object-cover brightness-110 contrast-105" autoPlay muted loop playsInline poster="/images/hero-cleaner.png">
             <source src="/videos/hero-clean.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#081e40]/90 via-[#081e40]/60 to-[#081e40]/25" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#081e40]/70 via-[#081e40]/35 to-[#081e40]/10" />
           <div className={`relative mx-auto grid gap-6 py-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-start ${wrap}`}>
             <div>
               <p className="mb-2 inline-flex items-center gap-2 rounded-full bg-gold px-3.5 py-1.5 text-[0.82rem] font-extrabold tracking-wide text-navy">
@@ -77,16 +78,32 @@ export default function Home() {
             <p className={eyebrow}>Our professional cleaning services</p>
             <h2 className={h2}>Residential and commercial cleaning, quoted to the property.</h2>
             <p className="mt-3 max-w-[72ch] text-slate-600">At Bond Clean Specialist, we provide professional residential and commercial cleaning services for tenants, homeowners, property managers, real estate agencies, builders and businesses. Our focus is on reliable service, attention to detail and high-quality cleaning tailored to each property’s requirements.</p>
-            <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-              {SERVICES.map((s) => (
-                <Link key={s.slug} href={`/services/${s.slug}`} className="group relative block overflow-hidden rounded-xl text-white">
-                  <Image src={`/images/${s.img}`} alt={s.name} width={480} height={360} className="aspect-[4/3] w-full object-cover transition duration-300 group-hover:scale-105" />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#081e40]/95 via-[#081e40]/55 to-transparent p-3 pt-8">
-                    <h3 className="font-sans text-[0.98rem] leading-tight text-white">{s.name}</h3>
-                    <p className="text-[0.82rem] text-slate-200">{s.short}</p>
-                  </div>
-                </Link>
-              ))}
+            <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+              {SERVICES.map((s) => {
+                const thumb = s.img === "svc-carpet.png" ? "scene-vacuum.png" : s.img;
+                return (
+                  <Link
+                    key={s.slug}
+                    href={`/services/${s.slug}`}
+                    className="group flex flex-col overflow-hidden rounded-xl border border-line bg-white shadow-sm transition hover:border-navy/20 hover:shadow-md"
+                  >
+                    <div className="relative overflow-hidden">
+                      <Image
+                        src={`/images/${thumb}`}
+                        alt={s.name}
+                        width={480}
+                        height={360}
+                        className="aspect-[4/3] w-full object-cover transition duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="flex flex-1 flex-col p-3.5">
+                      <h3 className="font-sans text-[1rem] font-bold leading-snug text-navy">{s.name}</h3>
+                      <p className="mt-1.5 line-clamp-2 flex-1 text-[0.86rem] leading-snug text-slate-600">{s.short}</p>
+                      <span className="mt-3 text-[0.82rem] font-bold text-navy group-hover:underline">View service →</span>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
             <Link href="/services" className="mt-7 inline-block rounded-lg bg-gold px-5 py-3 font-bold text-navy hover:bg-gold-deep">View all services</Link>
           </div>
@@ -105,6 +122,14 @@ export default function Home() {
             <Link href="/about" className="mt-5 inline-block rounded-lg bg-gold px-5 py-3 font-bold text-navy hover:bg-gold-deep">Learn more about us</Link>
           </div>
         </section>
+
+        <TrustedSection />
+
+        <HowWeWorkSection />
+
+        <BeforeAfterSection />
+
+        <TestimonialsSection />
 
         <StatsSection />
 

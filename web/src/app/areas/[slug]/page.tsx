@@ -8,6 +8,37 @@ import Footer from "@/components/Footer";
 import { PageHero, WhySection, BookSection, StatsSection } from "@/components/Sections";
 import { AREAS } from "@/lib/data";
 
+/** Rotate sharp photos so suburb pages are not identical. */
+const AREA_HERO_IMAGES = [
+  "stats-city.jpg",
+  "scene-bathroom.png",
+  "scene-kitchen.png",
+  "scene-move.png",
+  "scene-vacuum.png",
+  "scene-window.png",
+  "about-living.png",
+  "bond-living.jpg",
+  "spring-kitchen.jpg",
+  "svc-bond.png",
+  "svc-spring.png",
+  "svc-deep.png",
+] as const;
+
+const AREA_BODY_IMAGES = [
+  "bond-living.jpg",
+  "scene-move.png",
+  "spring-kitchen.jpg",
+  "oven-detail.jpg",
+  "scene-bathroom.png",
+  "clean-tools.jpg",
+  "scene-kitchen.png",
+  "scene-vacuum.png",
+  "about-living.png",
+  "svc-office.png",
+  "svc-airbnb.png",
+  "bathroom-clean.jpg",
+] as const;
+
 const WHY_SETS: [string, string][][] = [
   [
     ["Local knowledge of the streets", "We quote {name} jobs based on the property type we see across this suburb — units, houses and townhouses."],
@@ -46,7 +77,11 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
   if (idx < 0) notFound();
   const a = AREAS[idx];
   const variant = idx % 3;
-  const img = a.region === "Brisbane" ? "areas-brisbane.png" : "areas-goldcoast.png";
+  const heroImg = AREA_HERO_IMAGES[idx % AREA_HERO_IMAGES.length];
+  let bodyImg = AREA_BODY_IMAGES[idx % AREA_BODY_IMAGES.length];
+  if (bodyImg === heroImg) {
+    bodyImg = AREA_BODY_IMAGES[(idx + 1) % AREA_BODY_IMAGES.length];
+  }
   const intros = [
     `Bond Clean Specialist provides professional cleaning in ${a.name}, ${a.region}. Bond cleans, spring cleans, ovens, carpets and commercial work are quoted to the property — not a generic suburb average.`,
     `If you are moving out of a rental in ${a.name} or need a deeper home clean, we organise the visit around your date and the rooms that actually need the work.`,
@@ -59,7 +94,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
     <>
       <Header />
       <main>
-        <PageHero image={`/images/${img}`} kicker={a.region} title={`Cleaning services in ${a.name}`} lede={intros[variant]}>
+        <PageHero image={`/images/${heroImg}`} kicker={a.region} title={`Cleaning services in ${a.name}`} lede={intros[variant]}>
           <QuoteButton className="mt-6 inline-block rounded-lg bg-gold px-5 py-3 font-bold text-navy hover:bg-gold-deep">Get a {a.name} quote</QuoteButton>
         </PageHero>
 
@@ -68,10 +103,10 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
             <div>
               <h2 className="font-serif text-[clamp(1.6rem,3vw,2.2rem)] text-navy">Professional cleaning for {a.name} homes and rentals.</h2>
               <p className="mt-3 text-slate-700">We cover bond cleaning, spring cleaning, carpet steam cleaning, oven and BBQ cleaning, and the rest of our residential and commercial list when the property is in {a.name}.</p>
-              <p className="text-slate-700">Call 0422 555 984 or request a quote with your street, bedrooms and preferred date.</p>
+              <p className="mt-3 text-slate-700">Call 0422 555 984 or request a quote with your street, bedrooms and preferred date.</p>
               <Link href="/services/bond-cleaning" className="mt-4 inline-block rounded-lg bg-gold px-5 py-3 font-bold text-navy hover:bg-gold-deep">Bond cleaning in {a.name}</Link>
             </div>
-            <Image src="/images/svc-bond.png" alt="Bond cleaning" width={880} height={620} className="aspect-[4/3] w-full rounded-xl object-cover shadow-lg" />
+            <Image src={`/images/${bodyImg}`} alt={`Cleaning services in ${a.name}`} width={880} height={620} className="aspect-[4/3] w-full rounded-xl object-cover shadow-lg" />
           </div>
         </section>
 

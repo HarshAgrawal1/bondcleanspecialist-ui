@@ -23,13 +23,12 @@ export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
-  const activeFor = (href: string, label: string) => {
-    if (label === "Contact" && (pathname === "/privacy" || pathname === "/terms")) return true;
+  const activeFor = (href: string) => {
     if (href === "/") return pathname === "/";
     return pathname === href || pathname.startsWith(`${href}/`);
   };
-  const linkCls = (href: string, label: string) =>
-    `border-b-2 py-1 text-[1.05rem] font-semibold hover:border-navy hover:text-navy ${activeFor(href, label) ? "border-navy text-navy" : "border-transparent text-slate-900"}`;
+  const linkCls = (href: string) =>
+    `border-b-2 py-1 text-[1.05rem] font-semibold hover:border-navy hover:text-navy ${activeFor(href) ? "border-navy text-navy" : "border-transparent text-slate-900"}`;
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-white">
       <div className="mx-auto flex min-h-[88px] w-full max-w-[1180px] items-center justify-between gap-3 px-5 sm:px-8 lg:px-10">
@@ -40,7 +39,7 @@ export default function Header() {
           {NAV.map((item) =>
             item.label === "Services" ? (
               <div key={item.label} className="group relative">
-                <Link href={item.href} className={`inline-flex items-center ${linkCls(item.href, item.label)}`}>
+                <Link href={item.href} className={`inline-flex items-center ${linkCls(item.href)}`}>
                   Services <span className="ml-1.5 inline-block h-0 w-0 border-x-[5px] border-t-[6px] border-x-transparent border-t-current" />
                 </Link>
                 <div className="invisible absolute left-0 top-full z-20 grid min-w-[460px] grid-cols-2 gap-1 rounded-lg border border-line bg-white p-2 opacity-0 shadow-xl transition group-hover:visible group-hover:opacity-100">
@@ -51,7 +50,7 @@ export default function Header() {
               </div>
             ) : item.label === "Areas" ? (
               <div key={item.label} className="group relative">
-                <Link href={item.href} className={`inline-flex items-center ${linkCls(item.href, item.label)}`}>
+                <Link href={item.href} className={`inline-flex items-center ${linkCls(item.href)}`}>
                   Areas <span className="ml-1.5 inline-block h-0 w-0 border-x-[5px] border-t-[6px] border-x-transparent border-t-current" />
                 </Link>
                 <div className="invisible absolute left-0 top-full z-20 grid max-h-[min(70vh,520px)] min-w-[min(460px,86vw)] grid-cols-2 gap-1 overflow-y-auto rounded-lg border border-line bg-white p-2 opacity-0 shadow-xl transition group-hover:visible group-hover:opacity-100">
@@ -61,7 +60,7 @@ export default function Header() {
                 </div>
               </div>
             ) : (
-              <Link key={item.label} href={item.href} className={linkCls(item.href, item.label)}>{item.label}</Link>
+              <Link key={item.label} href={item.href} className={linkCls(item.href)}>{item.label}</Link>
             )
           )}
         </nav>
@@ -80,7 +79,7 @@ export default function Header() {
               item.label === "Services" || item.label === "Areas" ? (
                 <div key={item.label} className="grid gap-1">
                   <div className="flex items-center justify-between gap-2">
-                    <Link href={item.href} onClick={() => setOpen(false)} className={`flex-1 py-1 font-bold ${activeFor(item.href, item.label) ? "text-navy" : "text-slate-900"}`}>{item.label}</Link>
+                    <Link href={item.href} onClick={() => setOpen(false)} className={`flex-1 py-1 font-bold ${activeFor(item.href) ? "text-navy" : "text-slate-900"}`}>{item.label}</Link>
                     <button type="button" aria-label={`Open ${item.label.toLowerCase()} list`} onClick={() => setExpanded((e) => (e === item.label ? null : item.label))} className="px-2 py-1">
                       <span className="inline-block h-0 w-0 border-x-[5px] border-t-[6px] border-x-transparent border-t-current" />
                     </button>
@@ -94,7 +93,7 @@ export default function Header() {
                   )}
                 </div>
               ) : (
-                <Link key={item.label} href={item.href} onClick={() => setOpen(false)} className={`py-1 font-bold ${activeFor(item.href, item.label) ? "text-navy" : "text-slate-900"}`}>{item.label}</Link>
+                <Link key={item.label} href={item.href} onClick={() => setOpen(false)} className={`py-1 font-bold ${activeFor(item.href) ? "text-navy" : "text-slate-900"}`}>{item.label}</Link>
               )
             )}
           </div>
