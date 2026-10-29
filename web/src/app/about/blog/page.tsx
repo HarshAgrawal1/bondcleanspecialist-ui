@@ -16,7 +16,7 @@ export default function BlogIndexPage() {
       <Header />
       <main>
         <PageHero
-          image="/images/scene-vacuum.png"
+          image="/images/blog-checklist-v2.jpg"
           kicker="About · Blog"
           title="Cleaning tips and moving-out guides"
           lede="Practical notes on bond cleans, preparation and what to expect — written for Brisbane and Gold Coast properties."

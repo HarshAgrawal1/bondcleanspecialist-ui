@@ -79,9 +79,7 @@ export default function Home() {
             <h2 className={h2}>Residential and commercial cleaning, quoted to the property.</h2>
             <p className="mt-3 max-w-[72ch] text-slate-600">At Bond Clean Specialist, we provide professional residential and commercial cleaning services for tenants, homeowners, property managers, real estate agencies, builders and businesses. Our focus is on reliable service, attention to detail and high-quality cleaning tailored to each property’s requirements.</p>
             <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-              {SERVICES.map((s) => {
-                const thumb = s.img === "svc-carpet.png" ? "scene-vacuum.png" : s.img;
-                return (
+              {SERVICES.map((s) => (
                   <Link
                     key={s.slug}
                     href={`/services/${s.slug}`}
@@ -89,7 +87,7 @@ export default function Home() {
                   >
                     <div className="relative overflow-hidden">
                       <Image
-                        src={`/images/${thumb}`}
+                        src={`/images/${s.img}`}
                         alt={s.name}
                         width={480}
                         height={360}
@@ -102,8 +100,7 @@ export default function Home() {
                       <span className="mt-3 text-[0.82rem] font-bold text-navy group-hover:underline">View service →</span>
                     </div>
                   </Link>
-                );
-              })}
+              ))}
             </div>
             <Link href="/services" className="mt-7 inline-block rounded-lg bg-gold px-5 py-3 font-bold text-navy hover:bg-gold-deep">View all services</Link>
           </div>
@@ -112,7 +109,7 @@ export default function Home() {
         {/* About banner */}
         <section className="relative overflow-hidden py-[76px] text-white">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/about-living.png" alt="" className="absolute inset-0 h-full w-full object-cover" />
+          <img src="/images/brand-hero-v2.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
           <div className="absolute inset-0 bg-[#081e40]/72" />
           <div className={`relative ${wrap}`}>
             <p className="mb-2.5 text-[0.78rem] font-bold uppercase tracking-[0.12em] text-gold">About Bond Clean Specialist</p>
@@ -181,7 +178,7 @@ export default function Home() {
         {/* CTA */}
         <section className="bg-navy-deep py-[76px] text-white">
           <div className={`grid items-center gap-8 lg:grid-cols-2 ${wrap}`}>
-            <Image src="/images/scene-vacuum.png" alt="Cleaner vacuuming a bright hallway" width={880} height={620} className="aspect-[4/3] w-full rounded-xl object-cover shadow-lg" />
+            <Image src="/images/how-request-quote-v2.jpg" alt="Request a cleaning quote for your property" width={880} height={620} className="aspect-[4/3] w-full rounded-xl object-cover shadow-lg" />
             <div>
               <p className="mb-2.5 text-[0.78rem] font-bold uppercase tracking-[0.12em] text-gold">Ready to take cleaning off your list?</p>
               <h2 className="font-serif text-[clamp(1.7rem,3.4vw,2.4rem)] leading-[1.25] text-white">Tell us about your property and we will help you organise the right service.</h2>

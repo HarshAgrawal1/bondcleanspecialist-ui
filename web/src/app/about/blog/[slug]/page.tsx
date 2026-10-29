@@ -18,6 +18,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return { title: `${post.title} | Bond Clean Specialist`, description: post.excerpt };
 }
 
+const BLOG_HERO: Record<string, string> = {
+  "bond-clean-checklist": "/images/blog-checklist-v2.jpg",
+  "how-to-prepare-for-movers": "/images/blog-prepare-v2.jpg",
+  "bond-vs-spring-cleaning": "/images/blog-spring-v2.jpg",
+};
+
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = getPost(slug);
@@ -28,7 +34,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <Header />
       <main>
         <PageHero
-          image="/images/bond-living.jpg"
+          image={BLOG_HERO[post.slug] ?? "/images/blog-checklist-v2.jpg"}
           kicker={`Blog · ${post.date}`}
           title={post.title}
           lede={post.excerpt}

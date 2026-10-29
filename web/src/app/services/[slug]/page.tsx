@@ -11,18 +11,18 @@ import { SERVICES } from "@/lib/data";
 const BODY_IMAGE: Record<string, string> = {
   "bond-cleaning": "sec2-bond-v3.jpg",
   "carpet-steam-cleaning": "sec2-carpet-v3.jpg",
-  "spring-cleaning": "sec2-spring-v3.jpg",
+  "spring-cleaning": "sec2-spring-v4.jpg",
   "oven-bbq-cleaning": "sec2-oven-v3.jpg",
   "airbnb-cleaning": "sec2-airbnb-v3.jpg",
   "deep-cleaning": "sec2-deep-v3.jpg",
-  "builder-cleaning": "sec2-builder-v3.jpg",
+  "builder-cleaning": "sec2-builder-v4.jpg",
   "upholstery-cleaning": "sec2-upholstery-v3.jpg",
   "pressure-washing": "sec2-pressure-v3.jpg",
   "gym-cleaning": "sec2-gym-v3.jpg",
   "office-cleaning": "sec2-office-v3.jpg",
   "hospitality-cleaning": "sec2-hospitality-v3.jpg",
   "retail-store-cleaning": "sec2-retail-v3.jpg",
-  "pest-control": "sec2-pest-v3.jpg",
+  "pest-control": "sec2-pest-v4.jpg",
 };
 
 export function generateStaticParams() {
@@ -70,7 +70,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
         <WhySection items={s.why} variant={0} />
         <BookSection serviceName={s.name} serviceSlug={s.slug} />
-        <StatsSection image="/images/stats-city.jpg" />
+        <StatsSection image="/images/stats-brisbane-v3.jpg" />
         <FaqSection faqs={s.faqs} />
       </main>
       <Footer />

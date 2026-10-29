@@ -21,7 +21,7 @@ export default function LegalPage({
       <Header />
       <main>
         <PageHero
-          image="/images/clean-tools.jpg"
+          image="/images/brand-hero-v2.jpg"
           kicker="Legal"
           title={title}
           lede={lede}

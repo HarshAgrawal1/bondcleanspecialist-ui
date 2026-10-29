@@ -19,7 +19,7 @@ export default function ServicesPage() {
       <Header />
       <main>
         <PageHero
-          image="/images/about-living.png"
+          image="/images/brand-hero-v2.jpg"
           kicker="Our professional cleaning services"
           title="Residential and commercial cleaning, tailored to the property."
           lede="At Bond Clean Specialist, we provide professional residential and commercial cleaning services for tenants, homeowners, property managers, real estate agencies, builders and businesses across Brisbane and the Gold Coast."
@@ -86,8 +86,8 @@ export default function ServicesPage() {
         <section className="bg-navy-deep py-[76px] text-white">
           <div className="mx-auto grid w-[min(1180px,calc(100%-32px))] items-center gap-8 lg:grid-cols-2">
             <Image
-              src="/images/scene-vacuum.png"
-              alt="Cleaner vacuuming a bright hallway"
+              src="/images/how-request-quote-v2.jpg"
+              alt="Request a cleaning quote"
               width={880}
               height={620}
               className="aspect-[4/3] w-full rounded-xl object-cover shadow-lg"

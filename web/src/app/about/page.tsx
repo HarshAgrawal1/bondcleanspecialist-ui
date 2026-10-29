@@ -32,14 +32,14 @@ export default function AboutPage() {
       <Header />
       <main>
         <PageHero
-          image="/images/about-living.png"
+          image="/images/brand-hero-v2.jpg"
           kicker="About us"
           title="Cleaning handled properly, without adding stress to a busy day."
           lede="Bond Clean Specialist is a Brisbane and Gold Coast cleaning team built around a clear quote, detailed work and communication you can follow from the first message to the finished job."
         />
         <section className="bg-white py-[76px]">
           <div className="mx-auto grid w-[min(1180px,calc(100%-32px))] items-center gap-8 lg:grid-cols-2">
-            <Image src="/images/scene-bathroom.png" alt="A professionally cleaned modern bathroom" width={880} height={620} className="aspect-[4/3] w-full rounded-xl object-cover shadow-lg" />
+            <Image src="/images/about-team-v2.jpg" alt="Bond Clean Specialist cleaning team" width={880} height={620} className="aspect-[4/3] w-full rounded-xl object-cover shadow-lg" />
             <div>
               <p className="mb-2.5 text-[0.78rem] font-bold uppercase tracking-[0.12em] text-navy">Who we are</p>
               <h2 className="font-serif text-[clamp(1.6rem,3vw,2.2rem)] text-navy">A local team for homes, rentals and commercial spaces.</h2>
@@ -169,8 +169,8 @@ export default function AboutPage() {
               </div>
             </div>
             <Image
-              src="/images/scene-vacuum.png"
-              alt="Cleaner vacuuming a bright hallway"
+              src="/images/how-request-quote-v2.jpg"
+              alt="Request a cleaning quote"
               width={880}
               height={620}
               className="aspect-[4/3] w-full rounded-xl object-cover shadow-lg"

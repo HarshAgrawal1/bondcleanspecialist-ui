@@ -17,7 +17,7 @@ export default function ContactPage() {
       <Header />
       <main>
         <PageHero
-          image="/images/stats-city.jpg"
+          image="/images/how-request-quote-v2.jpg"
           kicker="Contact us"
           title="Let’s get your property cleaned"
           lede="Bond clean, carpet, office, gym or hospitality — tell us the property and the service. We will get back to you with a quote."

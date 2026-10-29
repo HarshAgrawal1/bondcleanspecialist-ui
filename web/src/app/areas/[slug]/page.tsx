@@ -8,35 +8,35 @@ import Footer from "@/components/Footer";
 import { PageHero, WhySection, BookSection, StatsSection } from "@/components/Sections";
 import { AREAS } from "@/lib/data";
 
-/** Rotate sharp photos so suburb pages are not identical. */
+/** Residential handover photos only — matches “homes and rentals” suburb copy. */
 const AREA_HERO_IMAGES = [
-  "stats-city.jpg",
-  "scene-bathroom.png",
+  "stats-brisbane-v3.jpg",
+  "stats-goldcoast-v3.jpg",
+  "vacant-ready-v2.jpg",
+  "brand-hero-v2.jpg",
+  "bond-living.jpg",
   "scene-kitchen.png",
-  "scene-move.png",
+  "scene-bathroom.png",
   "scene-vacuum.png",
   "scene-window.png",
-  "about-living.png",
-  "bond-living.jpg",
   "spring-kitchen.jpg",
   "svc-bond.png",
-  "svc-spring.png",
-  "svc-deep.png",
+  "bathroom-clean.jpg",
 ] as const;
 
 const AREA_BODY_IMAGES = [
+  "vacant-ready-v2.jpg",
   "bond-living.jpg",
-  "scene-move.png",
   "spring-kitchen.jpg",
-  "oven-detail.jpg",
-  "scene-bathroom.png",
-  "clean-tools.jpg",
   "scene-kitchen.png",
-  "scene-vacuum.png",
-  "about-living.png",
-  "svc-office.png",
-  "svc-airbnb.png",
+  "scene-bathroom.png",
   "bathroom-clean.jpg",
+  "scene-vacuum.png",
+  "scene-window.png",
+  "brand-hero-v2.jpg",
+  "sec2-carpet-v3.jpg",
+  "sec2-bond-v3.jpg",
+  "how-check-result-v2.jpg",
 ] as const;
 
 const WHY_SETS: [string, string][][] = [

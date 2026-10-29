@@ -77,8 +77,8 @@ const HOW_WE_WORK = [
     step: "01",
     title: "Request a quote",
     text: "Tell us the suburb, property type, service and preferred date — call 0422 555 984 or use the quote form. We come back with a clear price for that property.",
-    image: "/images/scene-move.png",
-    alt: "Property ready for a cleaning visit",
+    image: "/images/how-request-quote-v2.jpg",
+    alt: "Customer requesting a cleaning quote",
   },
   {
     step: "02",
@@ -91,8 +91,8 @@ const HOW_WE_WORK = [
     step: "03",
     title: "You check the result",
     text: "If something we cleaned is flagged and the miss is ours, we arrange a reclean so the job finishes properly.",
-    image: "/images/scene-bathroom.png",
-    alt: "A freshly cleaned bathroom",
+    image: "/images/how-check-result-v2.jpg",
+    alt: "Checking the finished clean after the visit",
   },
 ];
 
@@ -136,13 +136,13 @@ export { default as TestimonialsSection } from "./TestimonialsSection";
 const BEFORE_AFTER = [
   {
     title: "Kitchen",
-    before: "/images/ba-kitchen-before-v2.jpg",
-    after: "/images/ba-kitchen-after-v2.jpg",
+    before: "/images/ba-kitchen-before-v4.jpg",
+    after: "/images/ba-kitchen-after-v4.jpg",
   },
   {
     title: "Bathroom",
-    before: "/images/ba-bathroom-before-v2.jpg",
-    after: "/images/ba-bathroom-after-v2.jpg",
+    before: "/images/ba-bathroom-before-v4.jpg",
+    after: "/images/ba-bathroom-after-v4.jpg",
   },
 ] as const;
 
@@ -224,7 +224,7 @@ const STATS_ITEMS = [
   },
 ];
 
-export function StatsSection({ image = "/images/stats-city.jpg" }: { image?: string }) {
+export function StatsSection({ image = "/images/stats-brisbane-v3.jpg" }: { image?: string }) {
   return (
     <section className="bg-white py-[76px]">
       <div className={wrap}>
@@ -233,11 +233,11 @@ export function StatsSection({ image = "/images/stats-city.jpg" }: { image?: str
         <div className="mt-8 grid items-center gap-8 lg:grid-cols-2">
           <Image
             src={image}
-            alt=""
-            width={880}
-            height={660}
+            alt="Brisbane skyline"
+            width={1200}
+            height={1200}
             sizes="(max-width: 1024px) 100vw, 560px"
-            quality={95}
+            quality={100}
             className="aspect-square w-full rounded-xl object-cover object-center shadow-lg"
           />
           <div className="grid gap-3.5 sm:grid-cols-2">
@@ -277,9 +277,9 @@ const BOOK_STEPS = [
 ] as const;
 
 const DEFAULT_BOOK_IMAGES = [
-  "/images/scene-move.png",
-  "/images/scene-kitchen.png",
-  "/images/scene-bathroom.png",
+  "/images/how-request-quote-v2.jpg",
+  "/images/bookmid-bond-v3.jpg",
+  "/images/how-check-result-v2.jpg",
 ] as const;
 
 /** Quote → confirm visit → finished clean. Step 1 is never a cleaning-action shot. */

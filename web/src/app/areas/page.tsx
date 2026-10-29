@@ -77,7 +77,7 @@ export default function AreasPage() {
         <section className="bg-navy-deep py-[76px] text-white">
           <div className="mx-auto grid w-[min(1180px,calc(100%-32px))] items-center gap-8 lg:grid-cols-2">
             <Image
-              src="/images/scene-move.png"
+              src="/images/vacant-ready-v2.jpg"
               alt="Property ready for a bond clean"
               width={880}
               height={620}
