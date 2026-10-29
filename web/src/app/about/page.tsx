@@ -87,7 +87,7 @@ export default function AboutPage() {
               <div className="mt-6 grid gap-3.5">
                 {VALUES.map(([t, d]) => (
                   <article key={t} className="rounded-[10px] border border-line bg-sky p-6">
-                    <h3 className="mb-2 font-sans text-[1.1rem] text-navy">{t}</h3>
+                    <h3 className="mb-2 font-sans text-[1.1rem] font-bold text-navy">{t}</h3>
                     <p className="text-slate-600">{d}</p>
                   </article>
                 ))}
@@ -106,7 +106,7 @@ export default function AboutPage() {
             <div className="mt-8 grid gap-3.5 sm:grid-cols-2 lg:grid-cols-4">
               {WHY_CHOOSE.map(([t, d]) => (
                 <article key={t} className="rounded-[10px] border border-line bg-white p-6">
-                  <h3 className="mb-2 font-sans text-[1.1rem] text-navy">{t}</h3>
+                  <h3 className="mb-2 font-sans text-[1.1rem] font-bold text-navy">{t}</h3>
                   <p className="text-[0.95rem] text-slate-600">{d}</p>
                 </article>
               ))}

@@ -7,22 +7,22 @@ import Footer from "@/components/Footer";
 import { PageHero, WhySection, BookSection, StatsSection, FaqSection } from "@/components/Sections";
 import { SERVICES } from "@/lib/data";
 
-/** Body image differs from the hero (`s.img`) so the page does not repeat the same photo. */
+/** Section-2 image — finished space (no people); never reuse the hero (`s.img`). */
 const BODY_IMAGE: Record<string, string> = {
-  "bond-cleaning": "bond-living.jpg",
-  "carpet-steam-cleaning": "scene-vacuum.png",
-  "spring-cleaning": "spring-kitchen.jpg",
-  "oven-bbq-cleaning": "oven-detail.jpg",
-  "airbnb-cleaning": "scene-move.png",
-  "deep-cleaning": "scene-bathroom.png",
-  "builder-cleaning": "clean-tools.jpg",
-  "upholstery-cleaning": "about-living.png",
-  "pressure-washing": "scene-window.png",
-  "gym-cleaning": "scene-vacuum.png",
-  "office-cleaning": "scene-window.png",
-  "hospitality-cleaning": "scene-kitchen.png",
-  "retail-store-cleaning": "scene-window.png",
-  "pest-control": "clean-tools.jpg",
+  "bond-cleaning": "sec2-bond-v3.jpg",
+  "carpet-steam-cleaning": "sec2-carpet-v3.jpg",
+  "spring-cleaning": "sec2-spring-v3.jpg",
+  "oven-bbq-cleaning": "sec2-oven-v3.jpg",
+  "airbnb-cleaning": "sec2-airbnb-v3.jpg",
+  "deep-cleaning": "sec2-deep-v3.jpg",
+  "builder-cleaning": "sec2-builder-v3.jpg",
+  "upholstery-cleaning": "sec2-upholstery-v3.jpg",
+  "pressure-washing": "sec2-pressure-v3.jpg",
+  "gym-cleaning": "sec2-gym-v3.jpg",
+  "office-cleaning": "sec2-office-v3.jpg",
+  "hospitality-cleaning": "sec2-hospitality-v3.jpg",
+  "retail-store-cleaning": "sec2-retail-v3.jpg",
+  "pest-control": "sec2-pest-v3.jpg",
 };
 
 export function generateStaticParams() {
@@ -69,7 +69,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </section>
 
         <WhySection items={s.why} variant={0} />
-        <BookSection serviceName={s.name} />
+        <BookSection serviceName={s.name} serviceSlug={s.slug} />
         <StatsSection image="/images/stats-city.jpg" />
         <FaqSection faqs={s.faqs} />
       </main>

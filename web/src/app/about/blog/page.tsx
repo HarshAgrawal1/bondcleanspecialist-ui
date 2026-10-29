@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { PageHero } from "@/components/Sections";
 import { BLOG_POSTS } from "@/lib/blog";
 
 export const metadata: Metadata = {
@@ -14,17 +15,12 @@ export default function BlogIndexPage() {
     <>
       <Header />
       <main>
-        <section className="bg-white pb-5 pt-10">
-          <div className="mx-auto w-[min(720px,calc(100%-32px))] text-center">
-            <p className="mb-2.5 text-[0.78rem] font-bold uppercase tracking-[0.12em] text-navy">About · Blog</p>
-            <h1 className="font-serif text-[clamp(1.9rem,4.6vw,2.8rem)] leading-[1.2] text-navy">
-              Cleaning tips and moving-out guides
-            </h1>
-            <p className="mt-4 text-[1.05rem] text-slate-600">
-              Practical notes on bond cleans, preparation and what to expect — written for Brisbane and Gold Coast properties.
-            </p>
-          </div>
-        </section>
+        <PageHero
+          image="/images/scene-vacuum.png"
+          kicker="About · Blog"
+          title="Cleaning tips and moving-out guides"
+          lede="Practical notes on bond cleans, preparation and what to expect — written for Brisbane and Gold Coast properties."
+        />
         <section className="bg-white py-[76px]">
           <div className="mx-auto w-[min(720px,calc(100%-32px))] space-y-5">
             {BLOG_POSTS.map((post) => (

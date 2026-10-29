@@ -62,7 +62,7 @@ export function TrustedSection() {
           {TRUSTED_ITEMS.map((item) => (
             <article key={item.title} className="rounded-[10px] border border-line bg-white p-[22px_18px] text-center">
               <BadgeIcon>{item.icon}</BadgeIcon>
-              <h3 className="mb-1.5 font-sans text-[1.15rem] text-navy">{item.title}</h3>
+              <h3 className="mb-1.5 font-sans text-[1.15rem] font-bold text-navy">{item.title}</h3>
               <p className="text-[0.92rem] text-slate-600">{item.text}</p>
             </article>
           ))}
@@ -117,7 +117,7 @@ export function HowWeWorkSection() {
               />
               <div className="p-6">
                 <span className="font-serif text-[1.6rem] text-gold-deep">{item.step}</span>
-                <h3 className="mt-1 font-sans text-[1.15rem] text-navy">{item.title}</h3>
+                <h3 className="mt-1 font-sans text-[1.15rem] font-bold text-navy">{item.title}</h3>
                 <p className="mt-2 text-[0.95rem] text-slate-600">{item.text}</p>
               </div>
             </article>
@@ -244,7 +244,7 @@ export function StatsSection({ image = "/images/stats-city.jpg" }: { image?: str
             {STATS_ITEMS.map((item) => (
               <article key={item.title} className="rounded-[10px] border border-line bg-sky p-[22px_18px] text-center">
                 <BadgeIcon>{item.icon}</BadgeIcon>
-                <h3 className="mb-1.5 font-sans text-[1.15rem] text-navy">{item.title}</h3>
+                <h3 className="mb-1.5 font-sans text-[1.15rem] font-bold text-navy">{item.title}</h3>
                 <p className="text-[0.92rem] text-slate-600">{item.text}</p>
               </article>
             ))}
@@ -260,44 +260,66 @@ const BOOK_STEPS = [
     step: "01",
     title: "Request a quote",
     text: "Tell us the suburb, property type and preferred date. Call 0422 555 984 or use the quote form.",
-    image: "/images/scene-move.png",
-    alt: "Property ready for a cleaning quote",
+    alt: "Request a cleaning quote",
   },
   {
     step: "02",
     title: "Confirm the visit",
     text: "We send a clear quote. Once you accept, we lock in the time that works for the property.",
-    image: "/images/scene-kitchen.png",
-    alt: "Kitchen ready for a professional clean",
+    alt: "Confirm the cleaning visit",
   },
   {
     step: "03",
     title: "We handle the clean",
     text: "The team works through the agreed list. If a miss on our side is flagged, we arrange a reclean.",
-    image: "/images/scene-bathroom.png",
-    alt: "A finished bathroom after cleaning",
+    alt: "Professional cleaning completed",
   },
-];
+] as const;
 
-export function BookSection({ serviceName }: { serviceName: string }) {
+const DEFAULT_BOOK_IMAGES = [
+  "/images/scene-move.png",
+  "/images/scene-kitchen.png",
+  "/images/scene-bathroom.png",
+] as const;
+
+/** Quote → confirm visit → finished clean. Step 1 is never a cleaning-action shot. */
+const SERVICE_BOOK_IMAGES: Record<string, readonly [string, string, string]> = {
+  "bond-cleaning": ["/images/book1-bond-v3.jpg", "/images/bookmid-bond-v3.jpg", "/images/book-bond-v3.jpg"],
+  "carpet-steam-cleaning": ["/images/book1-carpet-v3.jpg", "/images/bookmid-carpet-v3.jpg", "/images/book-carpet-v3.jpg"],
+  "spring-cleaning": ["/images/book1-spring-v3.jpg", "/images/bookmid-spring-v3.jpg", "/images/book-spring-v3.jpg"],
+  "oven-bbq-cleaning": ["/images/book1-oven-v3.jpg", "/images/bookmid-oven-v3.jpg", "/images/book-oven-v3.jpg"],
+  "airbnb-cleaning": ["/images/book1-airbnb-v3.jpg", "/images/bookmid-airbnb-v3.jpg", "/images/book-airbnb-v3.jpg"],
+  "deep-cleaning": ["/images/book1-deep-v3.jpg", "/images/bookmid-deep-v3.jpg", "/images/book-deep-v3.jpg"],
+  "builder-cleaning": ["/images/book1-builder-v3.jpg", "/images/bookmid-builder-v3.jpg", "/images/book-builder-v3.jpg"],
+  "upholstery-cleaning": ["/images/book1-upholstery-v3.jpg", "/images/bookmid-upholstery-v3.jpg", "/images/book-upholstery-v3.jpg"],
+  "pressure-washing": ["/images/book1-pressure-v3.jpg", "/images/bookmid-pressure-v3.jpg", "/images/book-pressure-v3.jpg"],
+  "gym-cleaning": ["/images/book1-gym-v3.jpg", "/images/bookmid-gym-v3.jpg", "/images/book-gym-v3.jpg"],
+  "office-cleaning": ["/images/book1-office-v3.jpg", "/images/bookmid-office-v3.jpg", "/images/book-office-v3.jpg"],
+  "hospitality-cleaning": ["/images/book1-hospitality-v3.jpg", "/images/bookmid-hospitality-v3.jpg", "/images/book-hospitality-v3.jpg"],
+  "retail-store-cleaning": ["/images/book1-retail-v3.jpg", "/images/bookmid-retail-v3.jpg", "/images/book-retail-v3.jpg"],
+  "pest-control": ["/images/book1-pest-v3.jpg", "/images/bookmid-pest-v3.jpg", "/images/book-pest-v3.jpg"],
+};
+
+export function BookSection({ serviceName, serviceSlug }: { serviceName: string; serviceSlug?: string }) {
+  const images = (serviceSlug && SERVICE_BOOK_IMAGES[serviceSlug]) || DEFAULT_BOOK_IMAGES;
   return (
     <section className="bg-sky py-[76px]">
       <div className={wrap}>
         <p className={eyebrow}>How to book us</p>
         <h2 className="font-serif text-[clamp(1.7rem,3.4vw,2.4rem)] text-navy">Three steps to book {serviceName.toLowerCase()}.</h2>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
-          {BOOK_STEPS.map((item) => (
+          {BOOK_STEPS.map((item, i) => (
             <article key={item.step} className="overflow-hidden rounded-[10px] border border-line bg-white">
               <Image
-                src={item.image}
-                alt={item.alt}
+                src={images[i]}
+                alt={`${serviceName} — ${item.alt}`}
                 width={640}
                 height={400}
                 className="aspect-[16/10] w-full object-cover"
               />
               <div className="p-6">
                 <span className="font-serif text-[1.6rem] text-gold-deep">{item.step}</span>
-                <h3 className="mt-1 font-sans text-[1.1rem] text-navy">{item.title}</h3>
+                <h3 className="mt-1 font-sans text-[1.1rem] font-bold text-navy">{item.title}</h3>
                 <p className="mt-2 text-slate-600">{item.text}</p>
               </div>
             </article>
@@ -325,7 +347,7 @@ export function WhySection({ items, variant = 0 }: { items: readonly (readonly [
         <div className="mt-8 grid gap-3.5 md:grid-cols-3">
           {items.map(([title, text]) => (
             <article key={title} className="rounded-[10px] border border-line bg-white p-6">
-              <h3 className="mb-2 font-sans text-[1.1rem] text-navy">{title}</h3>
+              <h3 className="mb-2 font-sans text-[1.1rem] font-bold text-navy">{title}</h3>
               <p className="text-slate-600">{text}</p>
             </article>
           ))}

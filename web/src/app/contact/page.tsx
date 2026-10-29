@@ -25,7 +25,7 @@ export default function ContactPage() {
         <section className="bg-sky py-[76px]">
           <div className="mx-auto grid w-[min(1180px,calc(100%-32px))] items-start gap-8 lg:grid-cols-2">
             <div className="rounded-[10px] border border-line bg-white p-6">
-              <h3 className="mb-3 font-sans text-[1.2rem] text-navy">Bond Clean Specialist</h3>
+              <h3 className="mb-3 font-sans text-[1.2rem] font-bold text-navy">Bond Clean Specialist</h3>
               <p className="text-slate-700">Phone: <a className="font-semibold text-navy underline underline-offset-2 hover:text-navy-deep" href={PHONE_HREF}>{PHONE}</a> — call us for a quick chat or to book a service.</p>
               <p className="text-slate-700">Email: <a className="font-semibold text-navy underline underline-offset-2 hover:text-navy-deep" href={`mailto:${EMAIL}`}>{EMAIL}</a> — send us the details of your property and cleaning needs.</p>
               <p className="text-slate-700">Service areas: Gold Coast and Brisbane. See the full suburb list on the <Link className="font-semibold text-navy underline" href="/areas">areas page</Link>.</p>
