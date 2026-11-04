@@ -16,7 +16,7 @@ const FAQS: [string, string][] = [
   ["Do you steam-clean carpets?", "Yes. Carpet steam cleaning is a listed service. Tell us the rooms and any stains when you enquire so the quote matches the work."],
   ["How can I request a quote?", "Get in touch with a few details about your property and the service you need, and we will provide a quote based on your specific requirements. Use the form on this page or call 0422 555 984."],
   ["How should I prepare for a bond clean?", "It helps to have the property empty of your belongings before we arrive, giving us clear access to every area that needs to be cleaned."],
-  ["What areas do you service?", "Bond Clean Specialist works across the Gold Coast and Brisbane. If your suburb is not listed, call us and we will tell you whether we can book it."],
+  ["What areas do you service?", "Bond Clean Specialist works across Brisbane, the Gold Coast and Logan. If your suburb is not listed, call us and we will tell you whether we can book it."],
 ];
 
 const HOME_SUBURBS = ["Annerley", "Ashgrove", "Chermside", "Clayfield", "Coorparoo", "Greenslopes", "Kangaroo Point", "Kedron", "Lutwyche", "Moorooka", "Mount Gravatt", "Nundah", "Spring Hill", "Sunnybank", "West End", "Woolloongabba"];

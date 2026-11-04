@@ -9,7 +9,7 @@ import { GC_AREAS, BNE_AREAS, slugify, PHONE, PHONE_HREF } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Service areas | Bond Clean Specialist",
-  description: "Cleaning services across Brisbane and the Gold Coast suburbs.",
+  description: "Cleaning services across Brisbane, the Gold Coast and Logan suburbs.",
 };
 
 function AreaGrid({ names }: { names: string[] }) {

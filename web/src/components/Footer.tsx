@@ -24,7 +24,7 @@ export default function Footer() {
           <Link href="/" className="mb-3 inline-block">
             <Image src="/logo.png" alt="Bond Clean Specialist" width={220} height={58} className="h-[58px] w-auto object-contain" />
           </Link>
-          <p>Professional bond, spring and oven cleaning across Brisbane and the Gold Coast.</p>
+          <p>Professional bond, spring and oven cleaning across Brisbane, the Gold Coast and Logan.</p>
           <p className="mt-3.5 inline-flex items-center gap-2.5 rounded-lg border border-[#ead7a8] bg-[#fff8ea] py-2 pl-2 pr-3.5 font-extrabold text-navy">
             <span className="rounded bg-gold px-2 py-1 text-[0.72rem] tracking-[0.14em] text-navy">ABN</span> {ABN}
           </p>
@@ -54,13 +54,24 @@ export default function Footer() {
           <div className="flex flex-col gap-2">
             <a href={PHONE_HREF} className="font-semibold text-navy underline underline-offset-2 hover:text-navy-deep">{PHONE}</a>
             <a href={`mailto:${EMAIL}`} className="whitespace-nowrap text-[0.95rem] font-semibold text-navy underline underline-offset-2 hover:text-navy-deep">{EMAIL}</a>
-            <Link href="/areas" className="hover:text-navy">Brisbane and Gold Coast</Link>
+            <Link href="/areas" className="hover:text-navy">Brisbane, Gold Coast &amp; Logan</Link>
             <Link href="/privacy" className="hover:text-navy">Privacy policy</Link>
             <Link href="/terms" className="hover:text-navy">Terms and conditions</Link>
           </div>
         </div>
       </div>
-      <div className="mx-auto mt-6 w-[min(1180px,calc(100%-32px))] text-[0.82rem] text-slate-400">© 2026 Bond Clean Specialist. All rights reserved.</div>
+      <div className="mt-10 bg-navy-deep text-[0.82rem] text-slate-300">
+        <div className="mx-auto flex w-[min(1180px,calc(100%-32px))] flex-col gap-3 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+          <p>© 2026 Bond Clean Specialist. ABN {ABN}</p>
+          <p className="flex flex-wrap items-center gap-x-2 gap-y-1">
+            <Link href="/terms" className="hover:text-white">Terms</Link>
+            <span aria-hidden className="text-slate-500">|</span>
+            <Link href="/privacy" className="hover:text-white">Privacy</Link>
+            <span aria-hidden className="text-slate-500">|</span>
+            <span>Servicing Brisbane, Gold Coast &amp; Logan · Quality controlled &amp; insured</span>
+          </p>
+        </div>
+      </div>
     </footer>
   );
 }

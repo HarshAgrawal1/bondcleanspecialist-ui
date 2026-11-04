@@ -31,7 +31,7 @@ export default function Header() {
     `border-b-2 py-1 text-[1.05rem] font-semibold hover:border-navy hover:text-navy ${activeFor(href) ? "border-navy text-navy" : "border-transparent text-slate-900"}`;
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-white">
-      <div className="mx-auto flex min-h-[88px] w-full max-w-[1180px] items-center justify-between gap-3 px-5 sm:px-8 lg:px-10">
+      <div className="mx-auto flex min-h-[88px] w-[min(1180px,calc(100%-32px))] items-center justify-between gap-3">
         <Link href="/" className="flex shrink-0 items-center">
           <Image src="/logo.png" alt="Bond Clean Specialist" width={220} height={72} className="h-[62px] w-auto object-contain" priority />
         </Link>
@@ -74,7 +74,7 @@ export default function Header() {
       </div>
       {open && (
         <div className="border-t border-line bg-white lg:hidden">
-          <div className="mx-auto grid w-full max-w-[1180px] gap-1 px-5 py-3 sm:px-8">
+          <div className="mx-auto grid w-[min(1180px,calc(100%-32px))] gap-1 py-3">
             {NAV.map((item) =>
               item.label === "Services" || item.label === "Areas" ? (
                 <div key={item.label} className="grid gap-1">

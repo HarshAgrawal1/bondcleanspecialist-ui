@@ -183,7 +183,7 @@ export function BeforeAfterSection() {
 const STATS_ITEMS = [
   {
     title: "Happy clients",
-    text: "Tenants, homeowners and property teams across Brisbane and the Gold Coast.",
+    text: "Tenants, homeowners and property teams across Brisbane, the Gold Coast and Logan.",
     icon: (
       <>
         <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />

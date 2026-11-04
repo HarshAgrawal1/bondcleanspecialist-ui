@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { PageHero, WhySection, BookSection, StatsSection, FaqSection } from "@/components/Sections";
 import { SERVICES } from "@/lib/data";
+import { serviceMetadata } from "@/lib/seo";
 
 /** Section-2 image — finished space (no people); never reuse the hero (`s.img`). */
 const BODY_IMAGE: Record<string, string> = {
@@ -33,7 +34,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const s = SERVICES.find((x) => x.slug === slug);
   if (!s) return {};
-  return { title: `${s.name} | Bond Clean Specialist`, description: s.intro };
+  const seo = serviceMetadata(s.slug, s.name, s.intro);
+  return { title: seo.title, description: seo.description };
 }
 
 export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {

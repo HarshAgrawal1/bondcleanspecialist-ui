@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { PageHero, WhySection, BookSection, StatsSection } from "@/components/Sections";
 import { AREAS } from "@/lib/data";
+import { areaMetadata } from "@/lib/seo";
 
 /** Residential handover photos only — matches “homes and rentals” suburb copy. */
 const AREA_HERO_IMAGES = [
@@ -65,10 +66,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const a = AREAS.find((x) => x.slug === slug);
   if (!a) return {};
-  return {
-    title: `Cleaning in ${a.name} | Bond Clean Specialist`,
-    description: `Bond Clean Specialist provides professional cleaning in ${a.name}, ${a.region}. Bond cleans, spring cleans, ovens, carpets and commercial work, quoted to the property.`,
-  };
+  const seo = areaMetadata(a.name, a.region);
+  return { title: seo.title, description: seo.description };
 }
 
 export default async function AreaPage({ params }: { params: Promise<{ slug: string }> }) {
