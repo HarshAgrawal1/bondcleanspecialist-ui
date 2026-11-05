@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import Script from "next/script";
 
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
@@ -138,7 +139,7 @@ export default function QuoteForm() {
 
       {step === 2 && (
         <div>
-          <label className="block"><span className={labelSr}>Job Date</span><input className={inputCls} type="date" aria-label="Job Date" value={form.jobDate} onChange={(e) => set("jobDate", e.target.value)} /></label>
+          <JobDateField value={form.jobDate} onChange={(v) => set("jobDate", v)} />
           <div className="mt-3 flex flex-wrap gap-x-7 gap-y-2" role="radiogroup" aria-label="Service">
             <label className="inline-flex cursor-pointer items-center gap-2 font-semibold"><input type="radio" className="h-[18px] w-[18px] accent-navy" checked={service === "bond"} onChange={() => setService("bond")} /> Bond cleaning</label>
             <label className="inline-flex cursor-pointer items-center gap-2 font-semibold"><input type="radio" className="h-[18px] w-[18px] accent-navy" checked={service === "spring"} onChange={() => setService("spring")} /> Spring cleaning</label>
@@ -200,6 +201,143 @@ export default function QuoteForm() {
         )}
       </div>
     </div>
+  );
+}
+
+function parseIso(iso: string) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!match) return null;
+  return new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
+}
+
+function toIso(date: Date) {
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${date.getFullYear()}-${month}-${day}`;
+}
+
+function formatAu(iso: string) {
+  const date = parseIso(iso);
+  if (!date) return "";
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  return `${day}/${month}/${date.getFullYear()}`;
+}
+
+function monthDays(year: number, month: number) {
+  const first = new Date(year, month, 1);
+  const lead = (first.getDay() + 6) % 7;
+  const start = new Date(year, month, 1 - lead);
+  return Array.from({ length: 42 }, (_, i) => new Date(start.getFullYear(), start.getMonth(), start.getDate() + i));
+}
+
+function JobDateField({ value, onChange }: { value: string; onChange: (iso: string) => void }) {
+  const [open, setOpen] = useState(false);
+  const [view, setView] = useState(() => {
+    const base = parseIso(value) ?? new Date();
+    return { year: base.getFullYear(), month: base.getMonth() };
+  });
+  const [pos, setPos] = useState({ top: 0, left: 0, width: 280 });
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  useLayoutEffect(() => {
+    if (!open) return;
+    function place() {
+      const el = buttonRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const width = Math.min(Math.max(rect.width, 280), window.innerWidth - 16);
+      const left = Math.min(Math.max(8, rect.left), window.innerWidth - width - 8);
+      const calendarHeight = 340;
+      const spaceBelow = window.innerHeight - rect.bottom;
+      const top = spaceBelow < calendarHeight && rect.top > calendarHeight ? rect.top - calendarHeight - 6 : rect.bottom + 6;
+      setPos({ top, left, width });
+    }
+    place();
+    window.addEventListener("resize", place);
+    window.addEventListener("scroll", place, true);
+    return () => {
+      window.removeEventListener("resize", place);
+      window.removeEventListener("scroll", place, true);
+    };
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+    function onKey(event: KeyboardEvent) {
+      if (event.key === "Escape") setOpen(false);
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  function openCalendar() {
+    const base = parseIso(value) ?? new Date();
+    setView({ year: base.getFullYear(), month: base.getMonth() });
+    setOpen(true);
+  }
+
+  const days = monthDays(view.year, view.month);
+  const todayIso = toIso(new Date());
+  const monthLabel = new Date(view.year, view.month, 1).toLocaleDateString("en-AU", { month: "long", year: "numeric" });
+
+  return (
+    <label className="block">
+      <span className={labelSr}>Job Date</span>
+      <button
+        ref={buttonRef}
+        type="button"
+        className={`${inputCls} flex items-center justify-between text-left`}
+        aria-label="Job Date"
+        aria-haspopup="dialog"
+        aria-expanded={open}
+        onClick={openCalendar}
+      >
+        <span className={value ? "text-slate-900" : "text-slate-500"}>{value ? formatAu(value) : "DD/MM/YYYY"}</span>
+        <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0 text-navy" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8">
+          <rect x="3.5" y="5" width="17" height="15.5" rx="2" />
+          <path d="M8 3.5v3M16 3.5v3M3.5 10h17" />
+        </svg>
+      </button>
+      {open && createPortal(
+        <div className="fixed inset-0 z-[200]" onMouseDown={() => setOpen(false)}>
+          <div
+            role="dialog"
+            aria-label="Choose job date"
+            style={{ top: pos.top, left: pos.left, width: pos.width }}
+            className="absolute rounded-lg border border-slate-200 bg-white p-3 shadow-xl"
+            onMouseDown={(event) => event.stopPropagation()}
+          >
+            <div className="mb-2 flex items-center justify-between">
+              <button type="button" className="grid h-9 w-9 place-items-center rounded-md text-lg font-bold text-navy hover:bg-slate-100" aria-label="Previous month" onClick={() => setView((v) => v.month === 0 ? { year: v.year - 1, month: 11 } : { year: v.year, month: v.month - 1 })}>‹</button>
+              <p className="text-sm font-bold text-navy">{monthLabel}</p>
+              <button type="button" className="grid h-9 w-9 place-items-center rounded-md text-lg font-bold text-navy hover:bg-slate-100" aria-label="Next month" onClick={() => setView((v) => v.month === 11 ? { year: v.year + 1, month: 0 } : { year: v.year, month: v.month + 1 })}>›</button>
+            </div>
+            <div className="grid grid-cols-7 text-center text-xs font-bold text-slate-500">
+              {["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"].map((day) => <span key={day} className="py-1">{day}</span>)}
+            </div>
+            <div className="grid grid-cols-7">
+              {days.map((day) => {
+                const iso = toIso(day);
+                const inMonth = day.getMonth() === view.month;
+                const selected = iso === value;
+                return (
+                  <button
+                    key={iso}
+                    type="button"
+                    className={`mx-auto grid h-9 w-9 place-items-center rounded-full text-sm ${selected ? "bg-navy font-bold text-white" : inMonth ? "text-slate-800 hover:bg-slate-100" : "text-slate-300 hover:bg-slate-50"} ${iso === todayIso && !selected ? "ring-1 ring-navy" : ""}`}
+                    onClick={() => { onChange(iso); setOpen(false); }}
+                  >
+                    {day.getDate()}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>,
+        document.body,
+      )}
+    </label>
   );
 }
 

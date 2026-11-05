@@ -5,7 +5,52 @@ import { QuoteButton } from "@/components/QuoteModal";
 import { PageHero } from "@/components/Sections";
 import { PHONE, PHONE_HREF, EMAIL } from "@/lib/data";
 
-export type LegalSection = { heading?: string; paras: string[] };
+export type LegalSubsection = {
+  heading: string;
+  paras?: string[];
+  bullets?: string[];
+  after?: string[];
+};
+
+export type LegalSection = {
+  heading?: string;
+  paras: string[];
+  bullets?: string[];
+  after?: string[];
+  subsections?: LegalSubsection[];
+};
+
+function LegalCopy({
+  paras = [],
+  bullets,
+  after,
+}: {
+  paras?: string[];
+  bullets?: string[];
+  after?: string[];
+}) {
+  return (
+    <>
+      {paras.map((p) => (
+        <p key={p.slice(0, 48)} className="mt-3 text-[1.05rem] leading-relaxed text-slate-700 first:mt-0">
+          {p}
+        </p>
+      ))}
+      {bullets && bullets.length > 0 && (
+        <ul className="mt-3 list-disc space-y-2 pl-5 text-[1.05rem] leading-relaxed text-slate-700">
+          {bullets.map((item) => (
+            <li key={item.slice(0, 48)}>{item}</li>
+          ))}
+        </ul>
+      )}
+      {after?.map((p) => (
+        <p key={p.slice(0, 48)} className="mt-3 text-[1.05rem] leading-relaxed text-slate-700">
+          {p}
+        </p>
+      ))}
+    </>
+  );
+}
 
 export default function LegalPage({
   title,
@@ -36,10 +81,14 @@ export default function LegalPage({
                       {s.heading}
                     </h2>
                   )}
-                  {s.paras.map((p) => (
-                    <p key={p.slice(0, 40)} className="mt-3 text-[1.05rem] leading-relaxed text-slate-700 first:mt-0">
-                      {p}
-                    </p>
+                  <LegalCopy paras={s.paras} bullets={s.bullets} after={s.after} />
+                  {s.subsections?.map((sub) => (
+                    <div key={sub.heading} className="mt-6">
+                      <h3 className="mb-3 font-serif text-[1.15rem] font-semibold leading-snug text-navy">
+                        {sub.heading}
+                      </h3>
+                      <LegalCopy paras={sub.paras} bullets={sub.bullets} after={sub.after} />
+                    </div>
                   ))}
                 </div>
               ))}
