@@ -6,7 +6,7 @@ import QuoteForm from "@/components/QuoteForm";
 import { QuoteButton } from "@/components/QuoteModal";
 import { StatsSection, FaqSection, TrustedSection, HowWeWorkSection, BeforeAfterSection } from "@/components/Sections";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import { SERVICES, slugify } from "@/lib/data";
+import { SERVICES, slugify, PHONE, PHONE_HREF } from "@/lib/data";
 
 const FAQS: [string, string][] = [
   ["What is bond cleaning?", "Bond cleaning, also known as end of lease cleaning, is a detailed clean of a rental property carried out when a tenant moves out. It is designed to cover the areas typically checked during a property inspection."],
@@ -14,7 +14,7 @@ const FAQS: [string, string][] = [
   ["Do you provide spring cleaning?", "Yes. Spring cleaning is charged at an hourly rate, so you can choose how much time you need and which rooms to prioritise. Specialised extras such as ovens or carpets can be quoted separately."],
   ["Can you clean ovens and barbecues?", "Yes. Oven and BBQ cleaning can sit with a bond clean or run as its own visit. We break down built-up grease on racks, trays, glass and hotplates."],
   ["Do you steam-clean carpets?", "Yes. Carpet steam cleaning is a listed service. Tell us the rooms and any stains when you enquire so the quote matches the work."],
-  ["How can I request a quote?", "Get in touch with a few details about your property and the service you need, and we will provide a quote based on your specific requirements. Use the form on this page or call 0422 555 984."],
+  ["How can I request a quote?", `Get in touch with a few details about your property and the service you need, and we will provide a quote based on your specific requirements. Use the form on this page or call ${PHONE}.`],
   ["How should I prepare for a bond clean?", "It helps to have the property empty of your belongings before we arrive, giving us clear access to every area that needs to be cleaned."],
   ["What areas do you service?", "Bond Clean Specialist works across Brisbane, the Gold Coast and Logan. If your suburb is not listed, call us and we will tell you whether we can book it."],
 ];
@@ -60,7 +60,7 @@ export default function Home() {
               </ul>
               <div className="mt-5 flex flex-wrap gap-3">
                 <a href="#quote" className="rounded-lg bg-gold px-5 py-3 font-bold text-navy hover:bg-gold-deep">Get a free quote</a>
-                <a href="tel:0422555984" className="rounded-lg border border-white/40 px-5 py-3 font-bold text-white">Call 0422 555 984</a>
+                <a href={PHONE_HREF} className="rounded-lg border border-white/40 px-5 py-3 font-bold text-white">Call {PHONE}</a>
               </div>
             </div>
             <aside id="quote" className="overflow-hidden rounded-2xl bg-white text-slate-900 shadow-[0_24px_50px_rgba(8,30,64,0.35)] outline outline-[3px] outline-gold/40">
@@ -189,7 +189,7 @@ export default function Home() {
                 ))}
               </ul>
               <div className="mt-6 flex flex-wrap gap-3">
-                <a href="tel:0422555984" className="rounded-lg border border-white/40 px-5 py-3 font-bold text-white">0422 555 984</a>
+                <a href={PHONE_HREF} className="rounded-lg border border-white/40 px-5 py-3 font-bold text-white">{PHONE}</a>
                 <QuoteButton className="rounded-lg bg-gold px-5 py-3 font-bold text-navy hover:bg-gold-deep">Get a free quote</QuoteButton>
               </div>
             </div>

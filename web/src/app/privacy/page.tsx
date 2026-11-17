@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import LegalPage from "@/components/LegalPage";
+import { PHONE } from "@/lib/data";
 
 export const metadata: Metadata = { title: "Privacy policy | Bond Clean Specialist" };
 
 const SECTIONS = [
-  { paras: ["This privacy policy explains how Bond Clean Specialist collects, uses and looks after the personal information you give us when you request a quote, book a clean, call us or email us. If you have a question about your information, contact us on 0422 555 984 or info@bondcleanspecialist.com.au."] },
+  { paras: [`This privacy policy explains how Bond Clean Specialist collects, uses and looks after the personal information you give us when you request a quote, book a clean, call us or email us. If you have a question about your information, contact us on ${PHONE} or info@bondcleanspecialist.com.au.`] },
   { heading: "Who we are", paras: ["Bond Clean Specialist provides residential and commercial cleaning across Brisbane and the Gold Coast. When this policy says “we” or “us”, it means Bond Clean Specialist."] },
   { heading: "What we collect", paras: [
     "We collect the details you choose to send us. That typically includes your name, phone number, email address, suburb, property type, service required, preferred date, and any notes you add about the property or access. If you call us, we may write down the same type of information so we can quote and book the job.",
@@ -19,7 +20,7 @@ const SECTIONS = [
     "We may disclose information if we are required to by law, or if it is necessary to protect our rights, a customer, or the property.",
   ] },
   { heading: "How long we keep it", paras: ["We keep enquiry and booking details for as long as we need them to complete the job, handle a reclean request, or meet ordinary business record needs. If you ask us to update or remove your enquiry details, we will do so unless we still need them for a current booking or a legal reason."] },
-  { heading: "Your choices", paras: ["You can ask us what information we hold about your enquiry, ask us to correct it, or ask us to remove it where we no longer need it. Email info@bondcleanspecialist.com.au or call 0422 555 984 and we will help you."] },
+  { heading: "Your choices", paras: [`You can ask us what information we hold about your enquiry, ask us to correct it, or ask us to remove it where we no longer need it. Email info@bondcleanspecialist.com.au or call ${PHONE} and we will help you.`] },
   { heading: "This website", paras: ["This website is used to explain our services and collect quote requests. It may use ordinary technical logs needed to operate the site. Do not send sensitive personal information through the quote form unless it is needed for the booking."] },
   { heading: "Changes", paras: [
     "We may update this policy if how we handle information changes. The current version will be the one published on this page.",

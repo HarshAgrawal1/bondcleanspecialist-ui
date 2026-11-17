@@ -6,7 +6,7 @@ import { QuoteButton } from "@/components/QuoteModal";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { PageHero, WhySection, BookSection, StatsSection } from "@/components/Sections";
-import { AREAS } from "@/lib/data";
+import { AREAS, PHONE } from "@/lib/data";
 import { areaMetadata } from "@/lib/seo";
 
 /** Residential handover photos only — matches “homes and rentals” suburb copy. */
@@ -102,7 +102,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
             <div>
               <h2 className="font-serif text-[clamp(1.6rem,3vw,2.2rem)] text-navy">Professional cleaning for {a.name} homes and rentals.</h2>
               <p className="mt-3 text-slate-700">We cover bond cleaning, spring cleaning, carpet steam cleaning, oven and BBQ cleaning, and the rest of our residential and commercial list when the property is in {a.name}.</p>
-              <p className="mt-3 text-slate-700">Call 0422 555 984 or request a quote with your street, bedrooms and preferred date.</p>
+              <p className="mt-3 text-slate-700">Call {PHONE} or request a quote with your street, bedrooms and preferred date.</p>
               <Link href="/services/bond-cleaning" className="mt-4 inline-block rounded-lg bg-gold px-5 py-3 font-bold text-navy hover:bg-gold-deep">Bond cleaning in {a.name}</Link>
             </div>
             <Image src={`/images/${bodyImg}`} alt={`Cleaning services in ${a.name}`} width={880} height={620} className="aspect-[4/3] w-full rounded-xl object-cover shadow-lg" />

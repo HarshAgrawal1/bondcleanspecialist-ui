@@ -31,7 +31,7 @@ export default function AreasPage() {
           image="/images/areas-brisbane.png"
           kicker="Service areas"
           title="Serving Brisbane and the Gold Coast"
-          lede="Each suburb has its own page. If your street sits just outside the list, call 0422 555 984 and ask."
+          lede={`Each suburb has its own page. If your street sits just outside the list, call ${PHONE} and ask.`}
         />
         <section className="bg-sky py-[76px]">
           <div className="mx-auto w-[min(1180px,calc(100%-32px))]">

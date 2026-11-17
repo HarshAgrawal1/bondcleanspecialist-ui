@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import LegalPage from "@/components/LegalPage";
+import { PHONE } from "@/lib/data";
 
 export const metadata: Metadata = { title: "Terms & Conditions | Bond Clean Specialist" };
 
@@ -325,7 +326,7 @@ const SECTIONS = [
       "Customers may submit complaints to:",
       "Bond Clean Specialist Pty Ltd",
       "Email: info@bondcleanspecialist.com.au",
-      "Phone: 0422 555 984",
+      `Phone: ${PHONE}`,
       "Website: https://bondcleanspecialist.com.au",
       "Please include booking details, a description of the issue and any relevant supporting photographs or documents.",
       "We will review the complaint and work towards a reasonable resolution.",
@@ -356,7 +357,7 @@ const SECTIONS = [
     paras: [
       "Professional Bond Cleaning, End of Lease Cleaning and Commercial Cleaning Services across Brisbane, Logan and Gold Coast.",
       "Email: info@bondcleanspecialist.com.au",
-      "Phone: 0422 555 984",
+      `Phone: ${PHONE}`,
       "Website: https://bondcleanspecialist.com.au",
     ],
   },

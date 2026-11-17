@@ -3,6 +3,7 @@ import { quoteSchema } from "@/lib/quote-schema";
 import { rateLimit, verifyTurnstile } from "@/lib/rate-limit";
 import { isDbConfigured, saveQuoteLead } from "@/lib/db";
 import { isSmtpConfigured, sendQuoteNotification } from "@/lib/mail";
+import { PHONE } from "@/lib/data";
 
 const isProd = process.env.NODE_ENV === "production";
 
@@ -15,7 +16,7 @@ export async function POST(req: Request) {
   const rl = rateLimit(`quote:${ip}`);
   if (!rl.ok) {
     return NextResponse.json(
-      { error: "Too many requests. Please wait a few minutes or call 0422 555 984." },
+      { error: `Too many requests. Please wait a few minutes or call ${PHONE}.` },
       { status: 429, headers: { "Retry-After": String(Math.ceil(rl.retryAfterMs / 1000)) } }
     );
   }
@@ -55,7 +56,7 @@ export async function POST(req: Request) {
   if (isProd && (!isDbConfigured() || !isSmtpConfigured())) {
     console.error("[quote] production missing DB_* and/or SMTP_* env");
     return NextResponse.json(
-      { error: "Quote service is temporarily unavailable. Please call 0422 555 984." },
+      { error: `Quote service is temporarily unavailable. Please call ${PHONE}.` },
       { status: 503 }
     );
   }
@@ -69,7 +70,7 @@ export async function POST(req: Request) {
     } catch (err) {
       console.error("[quote] database save failed", reference, err);
       return NextResponse.json(
-        { error: "We could not save your request. Please call 0422 555 984 or try again." },
+        { error: `We could not save your request. Please call ${PHONE} or try again.` },
         { status: 500 }
       );
     }
@@ -85,7 +86,7 @@ export async function POST(req: Request) {
       // Lead is already in DB when configured — still tell the customer it failed so they call.
       if (isProd) {
         return NextResponse.json(
-          { error: "We saved your details but could not send the alert email. Please call 0422 555 984." },
+          { error: `We saved your details but could not send the alert email. Please call ${PHONE}.` },
           { status: 500 }
         );
       }

@@ -27,7 +27,7 @@ export const AREAS: Area[] = [
   ...BNE_AREAS.map((name) => ({ name, region: "Brisbane" as const, slug: slugify(name) })),
 ];
 
-export const PHONE = "0422 555 984";
-export const PHONE_HREF = "tel:0422555984";
+export const PHONE = "07 3063 3361";
+export const PHONE_HREF = "tel:0730633361";
 export const EMAIL = "info@bondcleanspecialist.com.au";
 export const ABN = "48 698 981 074";

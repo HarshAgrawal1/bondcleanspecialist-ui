@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { QuoteButton } from "./QuoteModal";
+import { PHONE } from "@/lib/data";
 
 const wrap = "mx-auto w-[min(1180px,calc(100%-32px))]";
 const eyebrow = "mb-2.5 text-[0.78rem] font-bold uppercase tracking-[0.12em] text-navy";
@@ -76,7 +77,7 @@ const HOW_WE_WORK = [
   {
     step: "01",
     title: "Request a quote",
-    text: "Tell us the suburb, property type, service and preferred date — call 0422 555 984 or use the quote form. We come back with a clear price for that property.",
+    text: `Tell us the suburb, property type, service and preferred date — call ${PHONE} or use the quote form. We come back with a clear price for that property.`,
     image: "/images/how-request-quote-v2.jpg",
     alt: "Customer requesting a cleaning quote",
   },
@@ -259,7 +260,7 @@ const BOOK_STEPS = [
   {
     step: "01",
     title: "Request a quote",
-    text: "Tell us the suburb, property type and preferred date. Call 0422 555 984 or use the quote form.",
+    text: `Tell us the suburb, property type and preferred date. Call ${PHONE} or use the quote form.`,
     alt: "Request a cleaning quote",
   },
   {

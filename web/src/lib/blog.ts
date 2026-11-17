@@ -1,3 +1,5 @@
+import { PHONE } from "@/lib/data";
+
 export type BlogSection = { heading?: string; paras: string[] };
 
 export type BlogPost = {
@@ -82,7 +84,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Things worth flagging",
         paras: [
-          "Mention pets, parking limits, alarm codes, fragile items, wet paint or anything that needs extra care. Those notes keep the visit smooth and reduce surprises on the day. If you are unsure what to prepare, call 0422 555 984 and we will walk through it with you.",
+          `Mention pets, parking limits, alarm codes, fragile items, wet paint or anything that needs extra care. Those notes keep the visit smooth and reduce surprises on the day. If you are unsure what to prepare, call ${PHONE} and we will walk through it with you.`,
         ],
       },
     ],
@@ -122,7 +124,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: "Which should you book?",
         paras: [
           "Handing back keys after a tenancy? Start with bond cleaning and list any extras you need. Still living in the home and want a thorough refresh on your terms? Spring cleaning is usually the better fit.",
-          "If you are unsure, send the suburb, property type and what you want finished — we will come back with a clear recommendation and quote. Call 0422 555 984 or use the quote form on the site.",
+          `If you are unsure, send the suburb, property type and what you want finished — we will come back with a clear recommendation and quote. Call ${PHONE} or use the quote form on the site.`,
         ],
       },
     ],
