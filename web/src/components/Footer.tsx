@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { SERVICES, PHONE, PHONE_HREF, EMAIL, ABN } from "@/lib/data";
@@ -13,6 +14,23 @@ const USEFUL = [
   { href: "/contact", label: "Contact" },
 ];
 
+function ContactIcon({ children }: { children: ReactNode }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className="h-[1.05rem] w-[1.05rem] shrink-0 text-navy"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      {children}
+    </svg>
+  );
+}
+
 export default function Footer() {
   const mid = Math.ceil(SERVICES.length / 2);
   const serviceCols = [SERVICES.slice(0, mid), SERVICES.slice(mid)];
@@ -24,7 +42,7 @@ export default function Footer() {
           <Link href="/" className="mb-3 inline-block">
             <Image src="/logo.png" alt="Bond Clean Specialist" width={220} height={58} className="h-[58px] w-auto object-contain" />
           </Link>
-          <p>Professional bond, spring and oven cleaning across Brisbane, the Gold Coast and Logan.</p>
+          <p>Professional bond, spring and oven cleaning across Brisbane and the Gold Coast.</p>
           <p className="mt-3.5 inline-flex items-center gap-2.5 rounded-lg border border-[#ead7a8] bg-[#fff8ea] py-2 pl-2 pr-3.5 font-extrabold text-navy">
             <span className="rounded bg-gold px-2 py-1 text-[0.72rem] tracking-[0.14em] text-navy">ABN</span> {ABN}
           </p>
@@ -51,12 +69,27 @@ export default function Footer() {
         </div>
         <div>
           <h3 className="mb-3 font-serif text-[1.15rem] text-navy">Contact info</h3>
-          <div className="flex flex-col gap-2">
-            <a href={PHONE_HREF} className="font-semibold text-navy underline underline-offset-2 hover:text-navy-deep">{PHONE}</a>
-            <a href={`mailto:${EMAIL}`} className="whitespace-nowrap text-[0.95rem] font-semibold text-navy underline underline-offset-2 hover:text-navy-deep">{EMAIL}</a>
-            <Link href="/areas" className="hover:text-navy">Brisbane, Gold Coast &amp; Logan</Link>
-            <Link href="/privacy" className="hover:text-navy">Privacy policy</Link>
-            <Link href="/terms" className="hover:text-navy">Terms and conditions</Link>
+          <div className="flex flex-col gap-2.5">
+            <a href={PHONE_HREF} className="inline-flex items-center gap-2.5 font-semibold text-navy underline underline-offset-2 hover:text-navy-deep">
+              <ContactIcon>
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.35a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.75.32 1.54.55 2.35.68A2 2 0 0 1 22 16.92z" />
+              </ContactIcon>
+              {PHONE}
+            </a>
+            <a href={`mailto:${EMAIL}`} className="inline-flex items-center gap-2.5 whitespace-nowrap text-[0.95rem] font-semibold text-navy underline underline-offset-2 hover:text-navy-deep">
+              <ContactIcon>
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </ContactIcon>
+              {EMAIL}
+            </a>
+            <Link href="/areas" className="inline-flex items-center gap-2.5 hover:text-navy">
+              <ContactIcon>
+                <path d="M20 10c0 4.99-8 12-8 12S4 14.99 4 10a8 8 0 1 1 16 0Z" />
+                <circle cx="12" cy="10" r="3" />
+              </ContactIcon>
+              Brisbane &amp; Gold Coast
+            </Link>
           </div>
         </div>
       </div>
@@ -68,7 +101,7 @@ export default function Footer() {
             <span aria-hidden className="text-slate-500">|</span>
             <Link href="/privacy" className="hover:text-white">Privacy</Link>
             <span aria-hidden className="text-slate-500">|</span>
-            <span>Servicing Brisbane, Gold Coast &amp; Logan · Quality controlled &amp; insured</span>
+            <span>Servicing Brisbane &amp; Gold Coast · Quality controlled &amp; insured</span>
           </p>
         </div>
       </div>

@@ -8,7 +8,7 @@ import { PHONE, PHONE_HREF, EMAIL } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Contact | Bond Clean Specialist",
-  description: "Contact Bond Clean Specialist for cleaning across Brisbane, the Gold Coast and Logan.",
+  description: "Contact Bond Clean Specialist for cleaning across Brisbane and the Gold Coast.",
 };
 
 export default function ContactPage() {
@@ -28,7 +28,7 @@ export default function ContactPage() {
               <h3 className="mb-3 font-sans text-[1.2rem] font-bold text-navy">Bond Clean Specialist</h3>
               <p className="text-slate-700">Phone: <a className="font-semibold text-navy underline underline-offset-2 hover:text-navy-deep" href={PHONE_HREF}>{PHONE}</a> — call us for a quick chat or to book a service.</p>
               <p className="text-slate-700">Email: <a className="font-semibold text-navy underline underline-offset-2 hover:text-navy-deep" href={`mailto:${EMAIL}`}>{EMAIL}</a> — send us the details of your property and cleaning needs.</p>
-              <p className="text-slate-700">Service areas: Brisbane, the Gold Coast and Logan. See the full suburb list on the <Link className="font-semibold text-navy underline" href="/areas">areas page</Link>.</p>
+              <p className="text-slate-700">Service areas: Brisbane and the Gold Coast. See the full suburb list on the <Link className="font-semibold text-navy underline" href="/areas">areas page</Link>.</p>
               <p className="text-slate-700">Hours: seven days. Have the property type, service required, and preferred date ready.</p>
               <a href={PHONE_HREF} className="mt-4 inline-block rounded-lg bg-navy px-5 py-3 font-bold text-white hover:bg-navy-deep">Call {PHONE}</a>
             </div>

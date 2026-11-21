@@ -355,7 +355,7 @@ const SECTIONS = [
   {
     heading: "Bond Clean Specialist Pty Ltd",
     paras: [
-      "Professional Bond Cleaning, End of Lease Cleaning and Commercial Cleaning Services across Brisbane, Logan and Gold Coast.",
+      "Professional Bond Cleaning, End of Lease Cleaning and Commercial Cleaning Services across Brisbane and the Gold Coast.",
       "Email: info@bondcleanspecialist.com.au",
       `Phone: ${PHONE}`,
       "Website: https://bondcleanspecialist.com.au",

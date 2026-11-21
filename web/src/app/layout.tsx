@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { QuoteProvider } from "@/components/QuoteModal";
+import ScrollToTop from "@/components/ScrollToTop";
 import { SEO_KEYWORDS } from "@/lib/seo";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Bond Clean Specialist | Cleaning for Homes and Businesses",
   description:
-    "Residential and commercial cleaning across Brisbane, the Gold Coast and Logan. Bond cleaning, spring cleaning, carpets, ovens and commercial work, quoted to the property.",
+    "Residential and commercial cleaning across Brisbane and the Gold Coast. Bond cleaning, spring cleaning, carpets, ovens and commercial work, quoted to the property.",
   keywords: [...SEO_KEYWORDS],
   icons: {
     icon: [{ url: "/favicon.png", type: "image/png" }],
@@ -27,7 +28,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
       </head>
       <body className="flex min-h-full flex-col">
-        <QuoteProvider>{children}</QuoteProvider>
+        <QuoteProvider>
+          {children}
+          <ScrollToTop />
+        </QuoteProvider>
       </body>
     </html>
   );

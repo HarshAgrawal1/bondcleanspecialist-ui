@@ -6,7 +6,6 @@ export const SEO_KEYWORDS = [
   "Professional Bond Cleaning Brisbane",
   "Bond Cleaning Gold Coast",
   "End of Lease Cleaning Gold Coast",
-  "Bond Cleaning Logan",
   "Commercial Cleaning Brisbane",
   "Office Cleaning Brisbane",
   "Window Cleaning Brisbane",
@@ -25,7 +24,7 @@ export const SEO_KEYWORDS = [
 /** Light description upgrades only — titles stay production-style: "{name} | Bond Clean Specialist". */
 const SERVICE_DESC: Record<string, string> = {
   "bond-cleaning":
-    "Bond cleaning and end of lease cleaning across Brisbane, the Gold Coast and Logan. Quoted to the property for rental move-outs — real estate standard detail.",
+    "Bond cleaning and end of lease cleaning across Brisbane and the Gold Coast. Quoted to the property for rental move-outs — real estate standard detail.",
   "office-cleaning":
     "Office cleaning and commercial cleaning in Brisbane — one-off or recurring. Workstations, meeting rooms, kitchens and bathrooms, quoted to your floorplate.",
 };
